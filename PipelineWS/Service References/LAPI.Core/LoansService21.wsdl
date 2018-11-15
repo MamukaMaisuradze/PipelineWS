@@ -1,0 +1,1217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://services.altasoft.ge/loans/v1.0" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://services.altasoft.ge/loans/v1.0" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://services.altasoft.ge/loans/v1.0/Imports">
+      <xsd:import schemaLocation="http://abs.vtb.com.ge/lapi/LoansService.svc?xsd=xsd0" namespace="http://services.altasoft.ge/loans/v1.0" />
+      <xsd:import schemaLocation="http://abs.vtb.com.ge/lapi/LoansService.svc?xsd=xsd2" namespace="http://services.altasoft.ge/common/v1.0" />
+      <xsd:import schemaLocation="http://abs.vtb.com.ge/lapi/LoansService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://abs.vtb.com.ge/lapi/LoansService.svc?xsd=xsd3" namespace="http://models.altasoft.ge/loans/v1.0" />
+      <xsd:import schemaLocation="http://abs.vtb.com.ge/lapi/LoansService.svc?xsd=xsd4" namespace="http://models.altasoft.ge/common/v1.0" />
+      <xsd:import schemaLocation="http://abs.vtb.com.ge/lapi/LoansService.svc?xsd=xsd5" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://abs.vtb.com.ge/lapi/LoansService.svc?xsd=xsd6" namespace="http://services.altasoft.ge/faults/v1.0" />
+      <xsd:import schemaLocation="http://abs.vtb.com.ge/lapi/LoansService.svc?xsd=xsd7" namespace="http://models.altasoft.ge/catalogs/v1.0" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="GetLoanRequest">
+    <wsdl:part name="parameters" element="tns:GetLoan" />
+  </wsdl:message>
+  <wsdl:message name="GetLoanRequest_Headers">
+    <wsdl:part xmlns:q1="http://services.altasoft.ge/common/v1.0" name="RequestHeaders" element="q1:RequestHeaders" />
+  </wsdl:message>
+  <wsdl:message name="GetLoanResponse">
+    <wsdl:part name="parameters" element="tns:GetLoanResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetLoanResponse_Headers">
+    <wsdl:part xmlns:q2="http://services.altasoft.ge/common/v1.0" name="ResponseHeaders" element="q2:ResponseHeaders" />
+  </wsdl:message>
+  <wsdl:message name="LoansService_GetLoan_ApiFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFault" />
+  </wsdl:message>
+  <wsdl:message name="ListLoansRequest">
+    <wsdl:part name="parameters" element="tns:ListLoans" />
+  </wsdl:message>
+  <wsdl:message name="ListLoansRequest_Headers">
+    <wsdl:part xmlns:q3="http://services.altasoft.ge/common/v1.0" name="RequestHeaders" element="q3:RequestHeaders" />
+  </wsdl:message>
+  <wsdl:message name="ListLoansResponse">
+    <wsdl:part name="parameters" element="tns:ListLoansResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListLoansResponse_Headers">
+    <wsdl:part xmlns:q4="http://services.altasoft.ge/common/v1.0" name="ResponseHeaders" element="q4:ResponseHeaders" />
+  </wsdl:message>
+  <wsdl:message name="LoansService_ListLoans_ApiFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFault" />
+  </wsdl:message>
+  <wsdl:message name="GetLoanProductRequest">
+    <wsdl:part name="parameters" element="tns:GetLoanProduct" />
+  </wsdl:message>
+  <wsdl:message name="GetLoanProductRequest_Headers">
+    <wsdl:part xmlns:q5="http://services.altasoft.ge/common/v1.0" name="RequestHeaders" element="q5:RequestHeaders" />
+  </wsdl:message>
+  <wsdl:message name="GetLoanProductResponse">
+    <wsdl:part name="parameters" element="tns:GetLoanProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetLoanProductResponse_Headers">
+    <wsdl:part xmlns:q6="http://services.altasoft.ge/common/v1.0" name="ResponseHeaders" element="q6:ResponseHeaders" />
+  </wsdl:message>
+  <wsdl:message name="LoansService_GetLoanProduct_ApiFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFault" />
+  </wsdl:message>
+  <wsdl:message name="ListLoanProductsRequest">
+    <wsdl:part name="parameters" element="tns:ListLoanProducts" />
+  </wsdl:message>
+  <wsdl:message name="ListLoanProductsRequest_Headers">
+    <wsdl:part xmlns:q7="http://services.altasoft.ge/common/v1.0" name="RequestHeaders" element="q7:RequestHeaders" />
+  </wsdl:message>
+  <wsdl:message name="ListLoanProductsResponse">
+    <wsdl:part name="parameters" element="tns:ListLoanProductsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListLoanProductsResponse_Headers">
+    <wsdl:part xmlns:q8="http://services.altasoft.ge/common/v1.0" name="ResponseHeaders" element="q8:ResponseHeaders" />
+  </wsdl:message>
+  <wsdl:message name="LoansService_ListLoanProducts_ApiFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFault" />
+  </wsdl:message>
+  <wsdl:message name="PutApplicationRequest">
+    <wsdl:part name="parameters" element="tns:PutApplication" />
+  </wsdl:message>
+  <wsdl:message name="PutApplicationRequest_Headers">
+    <wsdl:part xmlns:q9="http://services.altasoft.ge/common/v1.0" name="RequestHeaders" element="q9:RequestHeaders" />
+  </wsdl:message>
+  <wsdl:message name="PutApplicationResponse">
+    <wsdl:part name="parameters" element="tns:PutApplicationResponse" />
+  </wsdl:message>
+  <wsdl:message name="PutApplicationResponse_Headers">
+    <wsdl:part xmlns:q10="http://services.altasoft.ge/common/v1.0" name="ResponseHeaders" element="q10:ResponseHeaders" />
+  </wsdl:message>
+  <wsdl:message name="LoansService_PutApplication_ApiFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFault" />
+  </wsdl:message>
+  <wsdl:message name="PostApplicationRequest">
+    <wsdl:part name="parameters" element="tns:PostApplication" />
+  </wsdl:message>
+  <wsdl:message name="PostApplicationRequest_Headers">
+    <wsdl:part xmlns:q11="http://services.altasoft.ge/common/v1.0" name="RequestHeaders" element="q11:RequestHeaders" />
+  </wsdl:message>
+  <wsdl:message name="PostApplicationResponse">
+    <wsdl:part name="parameters" element="tns:PostApplicationResponse" />
+  </wsdl:message>
+  <wsdl:message name="PostApplicationResponse_Headers">
+    <wsdl:part xmlns:q12="http://services.altasoft.ge/common/v1.0" name="ResponseHeaders" element="q12:ResponseHeaders" />
+  </wsdl:message>
+  <wsdl:message name="LoansService_PostApplication_ApiFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFault" />
+  </wsdl:message>
+  <wsdl:message name="PutApplicationAttachmentRequest">
+    <wsdl:part name="parameters" element="tns:PutApplicationAttachment" />
+  </wsdl:message>
+  <wsdl:message name="PutApplicationAttachmentRequest_Headers">
+    <wsdl:part xmlns:q13="http://services.altasoft.ge/common/v1.0" name="RequestHeaders" element="q13:RequestHeaders" />
+  </wsdl:message>
+  <wsdl:message name="PutApplicationAttachmentResponse">
+    <wsdl:part name="parameters" element="tns:PutApplicationAttachmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="PutApplicationAttachmentResponse_Headers">
+    <wsdl:part xmlns:q14="http://services.altasoft.ge/common/v1.0" name="ResponseHeaders" element="q14:ResponseHeaders" />
+  </wsdl:message>
+  <wsdl:message name="LoansService_PutApplicationAttachment_ApiFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFault" />
+  </wsdl:message>
+  <wsdl:message name="PostApplicationAttachmentRequest">
+    <wsdl:part name="parameters" element="tns:PostApplicationAttachment" />
+  </wsdl:message>
+  <wsdl:message name="PostApplicationAttachmentRequest_Headers">
+    <wsdl:part xmlns:q15="http://services.altasoft.ge/common/v1.0" name="RequestHeaders" element="q15:RequestHeaders" />
+  </wsdl:message>
+  <wsdl:message name="PostApplicationAttachmentResponse">
+    <wsdl:part name="parameters" element="tns:PostApplicationAttachmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="PostApplicationAttachmentResponse_Headers">
+    <wsdl:part xmlns:q16="http://services.altasoft.ge/common/v1.0" name="ResponseHeaders" element="q16:ResponseHeaders" />
+  </wsdl:message>
+  <wsdl:message name="LoansService_PostApplicationAttachment_ApiFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFault" />
+  </wsdl:message>
+  <wsdl:message name="DeleteApplicationAttachmentRequest">
+    <wsdl:part name="parameters" element="tns:DeleteApplicationAttachment" />
+  </wsdl:message>
+  <wsdl:message name="DeleteApplicationAttachmentRequest_Headers">
+    <wsdl:part xmlns:q17="http://services.altasoft.ge/common/v1.0" name="RequestHeaders" element="q17:RequestHeaders" />
+  </wsdl:message>
+  <wsdl:message name="DeleteApplicationAttachmentResponse">
+    <wsdl:part name="parameters" element="tns:DeleteApplicationAttachmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteApplicationAttachmentResponse_Headers">
+    <wsdl:part xmlns:q18="http://services.altasoft.ge/common/v1.0" name="ResponseHeaders" element="q18:ResponseHeaders" />
+  </wsdl:message>
+  <wsdl:message name="LoansService_DeleteApplicationAttachment_ApiFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFault" />
+  </wsdl:message>
+  <wsdl:message name="PutCollateralRequest">
+    <wsdl:part name="parameters" element="tns:PutCollateral" />
+  </wsdl:message>
+  <wsdl:message name="PutCollateralRequest_Headers">
+    <wsdl:part xmlns:q19="http://services.altasoft.ge/common/v1.0" name="RequestHeaders" element="q19:RequestHeaders" />
+  </wsdl:message>
+  <wsdl:message name="PutCollateralResponse">
+    <wsdl:part name="parameters" element="tns:PutCollateralResponse" />
+  </wsdl:message>
+  <wsdl:message name="PutCollateralResponse_Headers">
+    <wsdl:part xmlns:q20="http://services.altasoft.ge/common/v1.0" name="ResponseHeaders" element="q20:ResponseHeaders" />
+  </wsdl:message>
+  <wsdl:message name="LoansService_PutCollateral_ApiFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFault" />
+  </wsdl:message>
+  <wsdl:message name="PutCollateralLinkRequest">
+    <wsdl:part name="parameters" element="tns:PutCollateralLink" />
+  </wsdl:message>
+  <wsdl:message name="PutCollateralLinkRequest_Headers">
+    <wsdl:part xmlns:q21="http://services.altasoft.ge/common/v1.0" name="RequestHeaders" element="q21:RequestHeaders" />
+  </wsdl:message>
+  <wsdl:message name="PutCollateralLinkResponse">
+    <wsdl:part name="parameters" element="tns:PutCollateralLinkResponse" />
+  </wsdl:message>
+  <wsdl:message name="PutCollateralLinkResponse_Headers">
+    <wsdl:part xmlns:q22="http://services.altasoft.ge/common/v1.0" name="ResponseHeaders" element="q22:ResponseHeaders" />
+  </wsdl:message>
+  <wsdl:message name="LoansService_PutCollateralLink_ApiFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFault" />
+  </wsdl:message>
+  <wsdl:message name="PostCollateralLinkRequest">
+    <wsdl:part name="parameters" element="tns:PostCollateralLink" />
+  </wsdl:message>
+  <wsdl:message name="PostCollateralLinkRequest_Headers">
+    <wsdl:part xmlns:q23="http://services.altasoft.ge/common/v1.0" name="RequestHeaders" element="q23:RequestHeaders" />
+  </wsdl:message>
+  <wsdl:message name="PostCollateralLinkResponse">
+    <wsdl:part name="parameters" element="tns:PostCollateralLinkResponse" />
+  </wsdl:message>
+  <wsdl:message name="PostCollateralLinkResponse_Headers">
+    <wsdl:part xmlns:q24="http://services.altasoft.ge/common/v1.0" name="ResponseHeaders" element="q24:ResponseHeaders" />
+  </wsdl:message>
+  <wsdl:message name="LoansService_PostCollateralLink_ApiFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFault" />
+  </wsdl:message>
+  <wsdl:message name="ListCollateralsRequest">
+    <wsdl:part name="parameters" element="tns:ListCollaterals" />
+  </wsdl:message>
+  <wsdl:message name="ListCollateralsRequest_Headers">
+    <wsdl:part xmlns:q25="http://services.altasoft.ge/common/v1.0" name="RequestHeaders" element="q25:RequestHeaders" />
+  </wsdl:message>
+  <wsdl:message name="ListCollateralsResponse">
+    <wsdl:part name="parameters" element="tns:ListCollateralsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListCollateralsResponse_Headers">
+    <wsdl:part xmlns:q26="http://services.altasoft.ge/common/v1.0" name="ResponseHeaders" element="q26:ResponseHeaders" />
+  </wsdl:message>
+  <wsdl:message name="LoansService_ListCollaterals_ApiFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFault" />
+  </wsdl:message>
+  <wsdl:message name="ListLinkedCollateralsRequest">
+    <wsdl:part name="parameters" element="tns:ListLinkedCollaterals" />
+  </wsdl:message>
+  <wsdl:message name="ListLinkedCollateralsRequest_Headers">
+    <wsdl:part xmlns:q27="http://services.altasoft.ge/common/v1.0" name="RequestHeaders" element="q27:RequestHeaders" />
+  </wsdl:message>
+  <wsdl:message name="ListLinkedCollateralsResponse">
+    <wsdl:part name="parameters" element="tns:ListLinkedCollateralsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListLinkedCollateralsResponse_Headers">
+    <wsdl:part xmlns:q28="http://services.altasoft.ge/common/v1.0" name="ResponseHeaders" element="q28:ResponseHeaders" />
+  </wsdl:message>
+  <wsdl:message name="LoansService_ListLinkedCollaterals_ApiFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFault" />
+  </wsdl:message>
+  <wsdl:message name="DeleteCollateralRequest">
+    <wsdl:part name="parameters" element="tns:DeleteCollateral" />
+  </wsdl:message>
+  <wsdl:message name="DeleteCollateralRequest_Headers">
+    <wsdl:part xmlns:q29="http://services.altasoft.ge/common/v1.0" name="RequestHeaders" element="q29:RequestHeaders" />
+  </wsdl:message>
+  <wsdl:message name="DeleteCollateralResponse">
+    <wsdl:part name="parameters" element="tns:DeleteCollateralResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteCollateralResponse_Headers">
+    <wsdl:part xmlns:q30="http://services.altasoft.ge/common/v1.0" name="ResponseHeaders" element="q30:ResponseHeaders" />
+  </wsdl:message>
+  <wsdl:message name="LoansService_DeleteCollateral_ApiFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFault" />
+  </wsdl:message>
+  <wsdl:message name="DeleteCollateralLinkRequest">
+    <wsdl:part name="parameters" element="tns:DeleteCollateralLink" />
+  </wsdl:message>
+  <wsdl:message name="DeleteCollateralLinkRequest_Headers">
+    <wsdl:part xmlns:q31="http://services.altasoft.ge/common/v1.0" name="RequestHeaders" element="q31:RequestHeaders" />
+  </wsdl:message>
+  <wsdl:message name="DeleteLinkCollateralResponse">
+    <wsdl:part name="parameters" element="tns:DeleteLinkCollateralResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteLinkCollateralResponse_Headers">
+    <wsdl:part xmlns:q32="http://services.altasoft.ge/common/v1.0" name="ResponseHeaders" element="q32:ResponseHeaders" />
+  </wsdl:message>
+  <wsdl:message name="LoansService_DeleteCollateralLink_ApiFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFault" />
+  </wsdl:message>
+  <wsdl:message name="DisburseApplicationRequest">
+    <wsdl:part name="parameters" element="tns:DisburseApplication" />
+  </wsdl:message>
+  <wsdl:message name="DisburseApplicationRequest_Headers">
+    <wsdl:part xmlns:q33="http://services.altasoft.ge/common/v1.0" name="RequestHeaders" element="q33:RequestHeaders" />
+  </wsdl:message>
+  <wsdl:message name="DisburseApplicationResponse">
+    <wsdl:part name="parameters" element="tns:DisburseApplicationResponse" />
+  </wsdl:message>
+  <wsdl:message name="DisburseApplicationResponse_Headers">
+    <wsdl:part xmlns:q34="http://services.altasoft.ge/common/v1.0" name="ResponseHeaders" element="q34:ResponseHeaders" />
+  </wsdl:message>
+  <wsdl:message name="LoansService_DisburseApplication_ApiFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFault" />
+  </wsdl:message>
+  <wsdl:message name="WriteoffLoanRequest">
+    <wsdl:part name="parameters" element="tns:WriteoffLoanRequest" />
+  </wsdl:message>
+  <wsdl:message name="WriteoffLoanRequest_Headers">
+    <wsdl:part xmlns:q35="http://services.altasoft.ge/common/v1.0" name="RequestHeaders" element="q35:RequestHeaders" />
+  </wsdl:message>
+  <wsdl:message name="WriteoffLoanResponse">
+    <wsdl:part name="parameters" element="tns:WriteoffLoanResponse" />
+  </wsdl:message>
+  <wsdl:message name="WriteoffLoanResponse_Headers">
+    <wsdl:part xmlns:q36="http://services.altasoft.ge/common/v1.0" name="ResponseHeaders" element="q36:ResponseHeaders" />
+  </wsdl:message>
+  <wsdl:message name="LoansService_WriteoffLoan_ApiFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFault" />
+  </wsdl:message>
+  <wsdl:message name="ChangeLoanAmountRequest">
+    <wsdl:part name="parameters" element="tns:ChangeLoanAmountRequest" />
+  </wsdl:message>
+  <wsdl:message name="ChangeLoanAmountRequest_Headers">
+    <wsdl:part xmlns:q37="http://services.altasoft.ge/common/v1.0" name="RequestHeaders" element="q37:RequestHeaders" />
+  </wsdl:message>
+  <wsdl:message name="ChangeLoanAmountResponse">
+    <wsdl:part name="parameters" element="tns:ChangeLoanAmountResponse" />
+  </wsdl:message>
+  <wsdl:message name="ChangeLoanAmountResponse_Headers">
+    <wsdl:part xmlns:q38="http://services.altasoft.ge/common/v1.0" name="ResponseHeaders" element="q38:ResponseHeaders" />
+  </wsdl:message>
+  <wsdl:message name="LoansService_ChangeLoanAmount_ApiFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFault" />
+  </wsdl:message>
+  <wsdl:message name="SetLoanProblemStatusRequest">
+    <wsdl:part name="parameters" element="tns:SetLoanProblemStatus" />
+  </wsdl:message>
+  <wsdl:message name="SetLoanProblemStatusRequest_Headers">
+    <wsdl:part xmlns:q39="http://services.altasoft.ge/common/v1.0" name="RequestHeaders" element="q39:RequestHeaders" />
+  </wsdl:message>
+  <wsdl:message name="SetLoanProblemStatusResponse">
+    <wsdl:part name="parameters" element="tns:SetLoanProblemStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetLoanProblemStatusResponse_Headers">
+    <wsdl:part xmlns:q40="http://services.altasoft.ge/common/v1.0" name="ResponseHeaders" element="q40:ResponseHeaders" />
+  </wsdl:message>
+  <wsdl:message name="LoansService_SetLoanProblemStatus_ApiFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFault" />
+  </wsdl:message>
+  <wsdl:message name="PostLoanDebtsRequest">
+    <wsdl:part name="parameters" element="tns:PostLoanDebts" />
+  </wsdl:message>
+  <wsdl:message name="PostLoanDebtsRequest_Headers">
+    <wsdl:part xmlns:q41="http://services.altasoft.ge/common/v1.0" name="RequestHeaders" element="q41:RequestHeaders" />
+  </wsdl:message>
+  <wsdl:message name="PostLoanDebtsResponse">
+    <wsdl:part name="parameters" element="tns:PostLoanDebtsResponse" />
+  </wsdl:message>
+  <wsdl:message name="PostLoanDebtsResponse_Headers">
+    <wsdl:part xmlns:q42="http://services.altasoft.ge/common/v1.0" name="ResponseHeaders" element="q42:ResponseHeaders" />
+  </wsdl:message>
+  <wsdl:message name="LoansService_PostLoanDebts_ApiFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFault" />
+  </wsdl:message>
+  <wsdl:message name="DefaultOperationActionRequest">
+    <wsdl:part name="parameters" element="tns:ExecuteOperationAction" />
+  </wsdl:message>
+  <wsdl:message name="DefaultOperationActionRequest_Headers">
+    <wsdl:part xmlns:q43="http://services.altasoft.ge/common/v1.0" name="RequestHeaders" element="q43:RequestHeaders" />
+  </wsdl:message>
+  <wsdl:message name="ExecuteOperationActionResponse">
+    <wsdl:part name="parameters" element="tns:ExecuteOperationActionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExecuteOperationActionResponse_Headers">
+    <wsdl:part xmlns:q44="http://services.altasoft.ge/common/v1.0" name="ResponseHeaders" element="q44:ResponseHeaders" />
+  </wsdl:message>
+  <wsdl:message name="LoansService_ExecuteOperationAction_ApiFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFault" />
+  </wsdl:message>
+  <wsdl:message name="CalculatePaymentDebtsRequest">
+    <wsdl:part name="parameters" element="tns:CalculatePaymentDebtsRequest" />
+  </wsdl:message>
+  <wsdl:message name="CalculatePaymentDebtsRequest_Headers">
+    <wsdl:part xmlns:q45="http://services.altasoft.ge/common/v1.0" name="RequestHeaders" element="q45:RequestHeaders" />
+  </wsdl:message>
+  <wsdl:message name="CalculatePaymentDebtsResponse">
+    <wsdl:part name="parameters" element="tns:CalculatePaymentDebtsResponse" />
+  </wsdl:message>
+  <wsdl:message name="CalculatePaymentDebtsResponse_Headers">
+    <wsdl:part xmlns:q46="http://services.altasoft.ge/common/v1.0" name="ResponseHeaders" element="q46:ResponseHeaders" />
+  </wsdl:message>
+  <wsdl:message name="LoansService_CalculatePaymentDebts_ApiFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFault" />
+  </wsdl:message>
+  <wsdl:message name="LoanPaymentRequest">
+    <wsdl:part name="parameters" element="tns:LoanPaymentRequest" />
+  </wsdl:message>
+  <wsdl:message name="LoanPaymentRequest_Headers">
+    <wsdl:part xmlns:q47="http://services.altasoft.ge/common/v1.0" name="RequestHeaders" element="q47:RequestHeaders" />
+  </wsdl:message>
+  <wsdl:message name="LoanPaymentResponse">
+    <wsdl:part name="parameters" element="tns:LoanPaymentResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoanPaymentResponse_Headers">
+    <wsdl:part xmlns:q48="http://services.altasoft.ge/common/v1.0" name="ResponseHeaders" element="q48:ResponseHeaders" />
+  </wsdl:message>
+  <wsdl:message name="LoansService_LoanPayment_ApiFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFault" />
+  </wsdl:message>
+  <wsdl:message name="PutLoanAttributesRequest">
+    <wsdl:part name="parameters" element="tns:PutLoanAttributes" />
+  </wsdl:message>
+  <wsdl:message name="PutLoanAttributesRequest_Headers">
+    <wsdl:part xmlns:q49="http://services.altasoft.ge/common/v1.0" name="RequestHeaders" element="q49:RequestHeaders" />
+  </wsdl:message>
+  <wsdl:message name="PutLoanAttributesResponse">
+    <wsdl:part name="parameters" element="tns:PutLoanAttributesResponse" />
+  </wsdl:message>
+  <wsdl:message name="PutLoanAttributesResponse_Headers">
+    <wsdl:part xmlns:q50="http://services.altasoft.ge/common/v1.0" name="ResponseHeaders" element="q50:ResponseHeaders" />
+  </wsdl:message>
+  <wsdl:message name="LoansService_PutLoanAttributes_ApiFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFault" />
+  </wsdl:message>
+  <wsdl:message name="ListUsersRequest">
+    <wsdl:part name="parameters" element="tns:ListUsers" />
+  </wsdl:message>
+  <wsdl:message name="ListUsersRequest_Headers">
+    <wsdl:part xmlns:q51="http://services.altasoft.ge/common/v1.0" name="RequestHeaders" element="q51:RequestHeaders" />
+  </wsdl:message>
+  <wsdl:message name="ListUsersResponse">
+    <wsdl:part name="parameters" element="tns:ListUsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListUsersResponse_Headers">
+    <wsdl:part xmlns:q52="http://services.altasoft.ge/common/v1.0" name="ResponseHeaders" element="q52:ResponseHeaders" />
+  </wsdl:message>
+  <wsdl:message name="LoansService_ListUsers_ApiFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFault" />
+  </wsdl:message>
+  <wsdl:message name="GenerateScheduleDatesRequest">
+    <wsdl:part name="parameters" element="tns:GenerateScheduleDates" />
+  </wsdl:message>
+  <wsdl:message name="GenerateScheduleDatesRequest_Headers">
+    <wsdl:part xmlns:q53="http://services.altasoft.ge/common/v1.0" name="RequestHeaders" element="q53:RequestHeaders" />
+  </wsdl:message>
+  <wsdl:message name="GenerateScheduleDatesResponse">
+    <wsdl:part name="parameters" element="tns:GenerateScheduleDatesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GenerateScheduleDatesResponse_Headers">
+    <wsdl:part xmlns:q54="http://services.altasoft.ge/common/v1.0" name="ResponseHeaders" element="q54:ResponseHeaders" />
+  </wsdl:message>
+  <wsdl:message name="LoansService_GenerateScheduleDates_ApiFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFault" />
+  </wsdl:message>
+  <wsdl:message name="FillScheduleRequest">
+    <wsdl:part name="parameters" element="tns:FillSchedule" />
+  </wsdl:message>
+  <wsdl:message name="FillScheduleRequest_Headers">
+    <wsdl:part xmlns:q55="http://services.altasoft.ge/common/v1.0" name="RequestHeaders" element="q55:RequestHeaders" />
+  </wsdl:message>
+  <wsdl:message name="FillScheduleResponse">
+    <wsdl:part name="parameters" element="tns:FillScheduleResponse" />
+  </wsdl:message>
+  <wsdl:message name="FillScheduleResponse_Headers">
+    <wsdl:part xmlns:q56="http://services.altasoft.ge/common/v1.0" name="ResponseHeaders" element="q56:ResponseHeaders" />
+  </wsdl:message>
+  <wsdl:message name="LoansService_FillSchedule_ApiFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFault" />
+  </wsdl:message>
+  <wsdl:message name="GetApplicationRequest">
+    <wsdl:part name="parameters" element="tns:GetApplication" />
+  </wsdl:message>
+  <wsdl:message name="GetApplicationRequest_Headers">
+    <wsdl:part xmlns:q57="http://services.altasoft.ge/common/v1.0" name="RequestHeaders" element="q57:RequestHeaders" />
+  </wsdl:message>
+  <wsdl:message name="GetApplicationResponse">
+    <wsdl:part name="parameters" element="tns:GetApplicationResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetApplicationResponse_Headers">
+    <wsdl:part xmlns:q58="http://services.altasoft.ge/common/v1.0" name="ResponseHeaders" element="q58:ResponseHeaders" />
+  </wsdl:message>
+  <wsdl:message name="LoansService_GetApplication_ApiFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFault" />
+  </wsdl:message>
+  <wsdl:message name="ListApplicationsRequest">
+    <wsdl:part name="parameters" element="tns:ListApplications" />
+  </wsdl:message>
+  <wsdl:message name="ListApplicationsRequest_Headers">
+    <wsdl:part xmlns:q59="http://services.altasoft.ge/common/v1.0" name="RequestHeaders" element="q59:RequestHeaders" />
+  </wsdl:message>
+  <wsdl:message name="ListApplicationsResponse">
+    <wsdl:part name="parameters" element="tns:ListApplicationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListApplicationsResponse_Headers">
+    <wsdl:part xmlns:q60="http://services.altasoft.ge/common/v1.0" name="ResponseHeaders" element="q60:ResponseHeaders" />
+  </wsdl:message>
+  <wsdl:message name="LoansService_ListApplications_ApiFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFault" />
+  </wsdl:message>
+  <wsdl:message name="PatchLoanAttributesRequest">
+    <wsdl:part name="parameters" element="tns:PatchLoanAttributes" />
+  </wsdl:message>
+  <wsdl:message name="PatchLoanAttributesRequest_Headers">
+    <wsdl:part xmlns:q61="http://services.altasoft.ge/common/v1.0" name="RequestHeaders" element="q61:RequestHeaders" />
+  </wsdl:message>
+  <wsdl:message name="PatchLoanAttributesResponse">
+    <wsdl:part name="parameters" element="tns:PatchLoanAttributesResponse" />
+  </wsdl:message>
+  <wsdl:message name="PatchLoanAttributesResponse_Headers">
+    <wsdl:part xmlns:q62="http://services.altasoft.ge/common/v1.0" name="ResponseHeaders" element="q62:ResponseHeaders" />
+  </wsdl:message>
+  <wsdl:message name="LoansService_PatchLoanAttributes_ApiFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFault" />
+  </wsdl:message>
+  <wsdl:message name="GetLoanScheduleRequest">
+    <wsdl:part name="parameters" element="tns:GetLoanSchedule" />
+  </wsdl:message>
+  <wsdl:message name="GetLoanScheduleRequest_Headers">
+    <wsdl:part xmlns:q63="http://services.altasoft.ge/common/v1.0" name="RequestHeaders" element="q63:RequestHeaders" />
+  </wsdl:message>
+  <wsdl:message name="GetLoanScheduleResponse">
+    <wsdl:part name="parameters" element="tns:GetLoanScheduleResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetLoanScheduleResponse_Headers">
+    <wsdl:part xmlns:q64="http://services.altasoft.ge/common/v1.0" name="ResponseHeaders" element="q64:ResponseHeaders" />
+  </wsdl:message>
+  <wsdl:message name="LoansService_GetLoanSchedule_ApiFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFault" />
+  </wsdl:message>
+  <wsdl:message name="GetLoanOperationDetailsRequest">
+    <wsdl:part name="parameters" element="tns:GetLoanOperationDetailsRequest" />
+  </wsdl:message>
+  <wsdl:message name="GetLoanOperationDetailsRequest_Headers">
+    <wsdl:part xmlns:q65="http://services.altasoft.ge/common/v1.0" name="RequestHeaders" element="q65:RequestHeaders" />
+  </wsdl:message>
+  <wsdl:message name="GetLoanOperationDetailsResponse">
+    <wsdl:part name="parameters" element="tns:GetLoanOperationDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetLoanOperationDetailsResponse_Headers">
+    <wsdl:part xmlns:q66="http://services.altasoft.ge/common/v1.0" name="ResponseHeaders" element="q66:ResponseHeaders" />
+  </wsdl:message>
+  <wsdl:message name="LoansService_GetLoanOperationDetails_ApiFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFault" />
+  </wsdl:message>
+  <wsdl:message name="GetEnvironmentVariablesRequest">
+    <wsdl:part name="parameters" element="tns:GetEnvironmentVariables" />
+  </wsdl:message>
+  <wsdl:message name="GetEnvironmentVariablesRequest_Headers">
+    <wsdl:part xmlns:q67="http://services.altasoft.ge/common/v1.0" name="RequestHeaders" element="q67:RequestHeaders" />
+  </wsdl:message>
+  <wsdl:message name="GetEnvironmentVariablesResponse">
+    <wsdl:part name="parameters" element="tns:GetEnvironmentVariablesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetEnvironmentVariablesResponse_Headers">
+    <wsdl:part xmlns:q68="http://services.altasoft.ge/common/v1.0" name="ResponseHeaders" element="q68:ResponseHeaders" />
+  </wsdl:message>
+  <wsdl:message name="LoansService_GetEnvironmentVariables_ApiFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFault" />
+  </wsdl:message>
+  <wsdl:message name="CalculateEffectiveRateForApplicationRequest">
+    <wsdl:part name="parameters" element="tns:CalculateEffectiveRateForApplication" />
+  </wsdl:message>
+  <wsdl:message name="CalculateEffectiveRateForApplicationRequest_Headers">
+    <wsdl:part xmlns:q69="http://services.altasoft.ge/common/v1.0" name="RequestHeaders" element="q69:RequestHeaders" />
+  </wsdl:message>
+  <wsdl:message name="CalculateEffectiveRateForApplicationResponse">
+    <wsdl:part name="parameters" element="tns:CalculateEffectiveRateForApplicationResponse" />
+  </wsdl:message>
+  <wsdl:message name="CalculateEffectiveRateForApplicationResponse_Headers">
+    <wsdl:part xmlns:q70="http://services.altasoft.ge/common/v1.0" name="ResponseHeaders" element="q70:ResponseHeaders" />
+  </wsdl:message>
+  <wsdl:message name="LoansService_CalculateEffectiveRateForApplication_ApiFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFault" />
+  </wsdl:message>
+  <wsdl:message name="GetApplicationShcheduleRequest">
+    <wsdl:part name="parameters" element="tns:GetApplicationShcheduleRequest" />
+  </wsdl:message>
+  <wsdl:message name="GetApplicationShcheduleRequest_Headers">
+    <wsdl:part xmlns:q71="http://services.altasoft.ge/common/v1.0" name="RequestHeaders" element="q71:RequestHeaders" />
+  </wsdl:message>
+  <wsdl:message name="GetApplicationShcheduleResponse">
+    <wsdl:part name="parameters" element="tns:GetApplicationShcheduleResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetApplicationShcheduleResponse_Headers">
+    <wsdl:part xmlns:q72="http://services.altasoft.ge/common/v1.0" name="ResponseHeaders" element="q72:ResponseHeaders" />
+  </wsdl:message>
+  <wsdl:message name="LoansService_GetApplicationSchedule_ApiFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFault" />
+  </wsdl:message>
+  <wsdl:message name="PostCollateralRequest">
+    <wsdl:part name="parameters" element="tns:PostCollateral" />
+  </wsdl:message>
+  <wsdl:message name="PostCollateralRequest_Headers">
+    <wsdl:part xmlns:q73="http://services.altasoft.ge/common/v1.0" name="RequestHeaders" element="q73:RequestHeaders" />
+  </wsdl:message>
+  <wsdl:message name="PostCollateralResponse">
+    <wsdl:part name="parameters" element="tns:PostCollateralResponse" />
+  </wsdl:message>
+  <wsdl:message name="PostCollateralResponse_Headers">
+    <wsdl:part xmlns:q74="http://services.altasoft.ge/common/v1.0" name="ResponseHeaders" element="q74:ResponseHeaders" />
+  </wsdl:message>
+  <wsdl:message name="LoansService_PostCollateral_ApiFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFault" />
+  </wsdl:message>
+  <wsdl:message name="ListOpsRequest">
+    <wsdl:part name="parameters" element="tns:ListOps" />
+  </wsdl:message>
+  <wsdl:message name="ListOpsRequest_Headers">
+    <wsdl:part xmlns:q75="http://services.altasoft.ge/common/v1.0" name="RequestHeaders" element="q75:RequestHeaders" />
+  </wsdl:message>
+  <wsdl:message name="ListOpsResponse">
+    <wsdl:part name="parameters" element="tns:ListOpsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListOpsResponse_Headers">
+    <wsdl:part xmlns:q76="http://services.altasoft.ge/common/v1.0" name="ResponseHeaders" element="q76:ResponseHeaders" />
+  </wsdl:message>
+  <wsdl:message name="LoansService_ListOps_ApiFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFault" />
+  </wsdl:message>
+  <wsdl:message name="PutCreditLineRequest">
+    <wsdl:part name="parameters" element="tns:PutCreditLine" />
+  </wsdl:message>
+  <wsdl:message name="PutCreditLineRequest_Headers">
+    <wsdl:part xmlns:q77="http://services.altasoft.ge/common/v1.0" name="RequestHeaders" element="q77:RequestHeaders" />
+  </wsdl:message>
+  <wsdl:message name="PutCreditLineResponse">
+    <wsdl:part name="parameters" element="tns:PutCreditLineResponse" />
+  </wsdl:message>
+  <wsdl:message name="PutCreditLineResponse_Headers">
+    <wsdl:part xmlns:q78="http://services.altasoft.ge/common/v1.0" name="ResponseHeaders" element="q78:ResponseHeaders" />
+  </wsdl:message>
+  <wsdl:message name="LoansService_PutCreditLine_ApiFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFault" />
+  </wsdl:message>
+  <wsdl:message name="PostCreditLineRequest">
+    <wsdl:part name="parameters" element="tns:PostCreditLine" />
+  </wsdl:message>
+  <wsdl:message name="PostCreditLineRequest_Headers">
+    <wsdl:part xmlns:q79="http://services.altasoft.ge/common/v1.0" name="RequestHeaders" element="q79:RequestHeaders" />
+  </wsdl:message>
+  <wsdl:message name="PostCreditLineResponse">
+    <wsdl:part name="parameters" element="tns:PostCreditLineResponse" />
+  </wsdl:message>
+  <wsdl:message name="PostCreditLineResponse_Headers">
+    <wsdl:part xmlns:q80="http://services.altasoft.ge/common/v1.0" name="ResponseHeaders" element="q80:ResponseHeaders" />
+  </wsdl:message>
+  <wsdl:message name="LoansService_PostCreditLine_ApiFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFault" />
+  </wsdl:message>
+  <wsdl:message name="ListCreditLinesRequest">
+    <wsdl:part name="parameters" element="tns:ListCreditLines" />
+  </wsdl:message>
+  <wsdl:message name="ListCreditLinesRequest_Headers">
+    <wsdl:part xmlns:q81="http://services.altasoft.ge/common/v1.0" name="RequestHeaders" element="q81:RequestHeaders" />
+  </wsdl:message>
+  <wsdl:message name="ListCreditLinesResponse">
+    <wsdl:part name="parameters" element="tns:ListCreditLinesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListCreditLinesResponse_Headers">
+    <wsdl:part xmlns:q82="http://services.altasoft.ge/common/v1.0" name="ResponseHeaders" element="q82:ResponseHeaders" />
+  </wsdl:message>
+  <wsdl:message name="LoansService_ListCreditLines_ApiFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFault" />
+  </wsdl:message>
+  <wsdl:message name="ListCollateralTypesRequest">
+    <wsdl:part name="parameters" element="tns:ListCollateralTypes" />
+  </wsdl:message>
+  <wsdl:message name="ListCollateralTypesRequest_Headers">
+    <wsdl:part xmlns:q83="http://services.altasoft.ge/common/v1.0" name="RequestHeaders" element="q83:RequestHeaders" />
+  </wsdl:message>
+  <wsdl:message name="ListCollateralTypesResponse">
+    <wsdl:part name="parameters" element="tns:ListCollateralTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListCollateralTypesResponse_Headers">
+    <wsdl:part xmlns:q84="http://services.altasoft.ge/common/v1.0" name="ResponseHeaders" element="q84:ResponseHeaders" />
+  </wsdl:message>
+  <wsdl:message name="LoansService_ListCollateralTypes_ApiFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFault" />
+  </wsdl:message>
+  <wsdl:message name="PutDebtAbatementRequest">
+    <wsdl:part name="parameters" element="tns:PutDebtAbatement" />
+  </wsdl:message>
+  <wsdl:message name="PutDebtAbatementRequest_Headers">
+    <wsdl:part xmlns:q85="http://services.altasoft.ge/common/v1.0" name="RequestHeaders" element="q85:RequestHeaders" />
+  </wsdl:message>
+  <wsdl:message name="PutDebtAbatementResponse">
+    <wsdl:part name="parameters" element="tns:PutDebtAbatementResponse" />
+  </wsdl:message>
+  <wsdl:message name="PutDebtAbatementResponse_Headers">
+    <wsdl:part xmlns:q86="http://services.altasoft.ge/common/v1.0" name="ResponseHeaders" element="q86:ResponseHeaders" />
+  </wsdl:message>
+  <wsdl:message name="LoansService_PutDebtAbatement_ApiFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFault" />
+  </wsdl:message>
+  <wsdl:message name="PutAdministrationDebtRequest">
+    <wsdl:part name="parameters" element="tns:PutAdministrationDebt" />
+  </wsdl:message>
+  <wsdl:message name="PutAdministrationDebtRequest_Headers">
+    <wsdl:part xmlns:q87="http://services.altasoft.ge/common/v1.0" name="RequestHeaders" element="q87:RequestHeaders" />
+  </wsdl:message>
+  <wsdl:message name="PutAdministrationDebtResponse">
+    <wsdl:part name="parameters" element="tns:PutAdministrationDebtResponse" />
+  </wsdl:message>
+  <wsdl:message name="PutAdministrationDebtResponse_Headers">
+    <wsdl:part xmlns:q88="http://services.altasoft.ge/common/v1.0" name="ResponseHeaders" element="q88:ResponseHeaders" />
+  </wsdl:message>
+  <wsdl:message name="LoansService_PutAdministrationDebt_ApiFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFault" />
+  </wsdl:message>
+  <wsdl:message name="PostAdministrationDebtRequest">
+    <wsdl:part name="parameters" element="tns:PostAdministrationDebt" />
+  </wsdl:message>
+  <wsdl:message name="PostAdministrationDebtRequest_Headers">
+    <wsdl:part xmlns:q89="http://services.altasoft.ge/common/v1.0" name="RequestHeaders" element="q89:RequestHeaders" />
+  </wsdl:message>
+  <wsdl:message name="PostAdministrationDebtResponse">
+    <wsdl:part name="parameters" element="tns:PostAdministrationDebtResponse" />
+  </wsdl:message>
+  <wsdl:message name="PostAdministrationDebtResponse_Headers">
+    <wsdl:part xmlns:q90="http://services.altasoft.ge/common/v1.0" name="ResponseHeaders" element="q90:ResponseHeaders" />
+  </wsdl:message>
+  <wsdl:message name="LoansService_PostAdministrationDebt_ApiFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFault" />
+  </wsdl:message>
+  <wsdl:message name="DeleteAdministrationDebtRequest">
+    <wsdl:part name="parameters" element="tns:DeleteAdministrationDebt" />
+  </wsdl:message>
+  <wsdl:message name="DeleteAdministrationDebtRequest_Headers">
+    <wsdl:part xmlns:q91="http://services.altasoft.ge/common/v1.0" name="RequestHeaders" element="q91:RequestHeaders" />
+  </wsdl:message>
+  <wsdl:message name="DeleteAdministrationDebtResponse">
+    <wsdl:part name="parameters" element="tns:DeleteAdministrationDebtResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteAdministrationDebtResponse_Headers">
+    <wsdl:part xmlns:q92="http://services.altasoft.ge/common/v1.0" name="ResponseHeaders" element="q92:ResponseHeaders" />
+  </wsdl:message>
+  <wsdl:message name="LoansService_DeleteAdministrationDebt_ApiFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFault" />
+  </wsdl:message>
+  <wsdl:message name="ListAdministrationDebtsRequest">
+    <wsdl:part name="parameters" element="tns:ListAdministrationDebts" />
+  </wsdl:message>
+  <wsdl:message name="ListAdministrationDebtsRequest_Headers">
+    <wsdl:part xmlns:q93="http://services.altasoft.ge/common/v1.0" name="RequestHeaders" element="q93:RequestHeaders" />
+  </wsdl:message>
+  <wsdl:message name="ListAdministrationDebtsResponse">
+    <wsdl:part name="parameters" element="tns:ListAdministrationDebtsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListAdministrationDebtsResponse_Headers">
+    <wsdl:part xmlns:q94="http://services.altasoft.ge/common/v1.0" name="ResponseHeaders" element="q94:ResponseHeaders" />
+  </wsdl:message>
+  <wsdl:message name="LoansService_ListAdministrationDebts_ApiFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFault" />
+  </wsdl:message>
+  <wsdl:message name="ChangeLoanConditionsRequest">
+    <wsdl:part name="parameters" element="tns:ChangeLoanConditions" />
+  </wsdl:message>
+  <wsdl:message name="ChangeLoanConditionsRequest_Headers">
+    <wsdl:part xmlns:q95="http://services.altasoft.ge/common/v1.0" name="RequestHeaders" element="q95:RequestHeaders" />
+  </wsdl:message>
+  <wsdl:message name="ChangeLoanConditionsResponse">
+    <wsdl:part name="parameters" element="tns:ChangeLoanConditionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ChangeLoanConditionsResponse_Headers">
+    <wsdl:part xmlns:q96="http://services.altasoft.ge/common/v1.0" name="ResponseHeaders" element="q96:ResponseHeaders" />
+  </wsdl:message>
+  <wsdl:message name="LoansService_ChangeLoanConditions_ApiFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFault" />
+  </wsdl:message>
+  <wsdl:message name="GetAdministrationDebtRequest">
+    <wsdl:part name="parameters" element="tns:GetAdministrationDebt" />
+  </wsdl:message>
+  <wsdl:message name="GetAdministrationDebtRequest_Headers">
+    <wsdl:part xmlns:q97="http://services.altasoft.ge/common/v1.0" name="RequestHeaders" element="q97:RequestHeaders" />
+  </wsdl:message>
+  <wsdl:message name="GetAdministrationDebtResponse">
+    <wsdl:part name="parameters" element="tns:GetAdministrationDebtResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAdministrationDebtResponse_Headers">
+    <wsdl:part xmlns:q98="http://services.altasoft.ge/common/v1.0" name="ResponseHeaders" element="q98:ResponseHeaders" />
+  </wsdl:message>
+  <wsdl:message name="LoansService_GetAdministrationDebt_ApiFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFault" />
+  </wsdl:message>
+  <wsdl:message name="GetOperationRequest">
+    <wsdl:part name="parameters" element="tns:GetOperation" />
+  </wsdl:message>
+  <wsdl:message name="GetOperationRequest_Headers">
+    <wsdl:part xmlns:q99="http://services.altasoft.ge/common/v1.0" name="RequestHeaders" element="q99:RequestHeaders" />
+  </wsdl:message>
+  <wsdl:message name="GetOperationResponse">
+    <wsdl:part name="parameters" element="tns:GetOperationResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetOperationResponse_Headers">
+    <wsdl:part xmlns:q100="http://services.altasoft.ge/common/v1.0" name="ResponseHeaders" element="q100:ResponseHeaders" />
+  </wsdl:message>
+  <wsdl:message name="LoansService_GetOperation_ApiFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFault" />
+  </wsdl:message>
+  <wsdl:message name="RejectApplicationRequest">
+    <wsdl:part name="parameters" element="tns:RejectApplication" />
+  </wsdl:message>
+  <wsdl:message name="RejectApplicationRequest_Headers">
+    <wsdl:part xmlns:q101="http://services.altasoft.ge/common/v1.0" name="RequestHeaders" element="q101:RequestHeaders" />
+  </wsdl:message>
+  <wsdl:message name="RejectApplicationResponse">
+    <wsdl:part name="parameters" element="tns:RejectApplicationResponse" />
+  </wsdl:message>
+  <wsdl:message name="RejectApplicationResponse_Headers">
+    <wsdl:part xmlns:q102="http://services.altasoft.ge/common/v1.0" name="ResponseHeaders" element="q102:ResponseHeaders" />
+  </wsdl:message>
+  <wsdl:message name="LoansService_RejectApplication_ApiFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFault" />
+  </wsdl:message>
+  <wsdl:message name="ListApplicationRejectReasonsRequest">
+    <wsdl:part name="parameters" element="tns:ListApplicationRejectReasons" />
+  </wsdl:message>
+  <wsdl:message name="ListApplicationRejectReasonsRequest_Headers">
+    <wsdl:part xmlns:q103="http://services.altasoft.ge/common/v1.0" name="RequestHeaders" element="q103:RequestHeaders" />
+  </wsdl:message>
+  <wsdl:message name="ListApplicationRejectReasonsResponse">
+    <wsdl:part name="parameters" element="tns:ListApplicationRejectReasonsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListApplicationRejectReasonsResponse_Headers">
+    <wsdl:part xmlns:q104="http://services.altasoft.ge/common/v1.0" name="ResponseHeaders" element="q104:ResponseHeaders" />
+  </wsdl:message>
+  <wsdl:message name="LoansService_ListApplicationRejectReasons_ApiFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFault" />
+  </wsdl:message>
+  <wsdl:message name="ListLiborIndexesRequest">
+    <wsdl:part name="parameters" element="tns:ListLiborIndexes" />
+  </wsdl:message>
+  <wsdl:message name="ListLiborIndexesRequest_Headers">
+    <wsdl:part xmlns:q105="http://services.altasoft.ge/common/v1.0" name="RequestHeaders" element="q105:RequestHeaders" />
+  </wsdl:message>
+  <wsdl:message name="ListLiborIndexesResponse">
+    <wsdl:part name="parameters" element="tns:ListLiborIndexesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListLiborIndexesResponse_Headers">
+    <wsdl:part xmlns:q106="http://services.altasoft.ge/common/v1.0" name="ResponseHeaders" element="q106:ResponseHeaders" />
+  </wsdl:message>
+  <wsdl:message name="LoansService_ListLiborIndexes_ApiFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFault" />
+  </wsdl:message>
+  <wsdl:message name="ListVariablePercentValuesRequest">
+    <wsdl:part name="parameters" element="tns:ListVariablePercentValues" />
+  </wsdl:message>
+  <wsdl:message name="ListVariablePercentValuesRequest_Headers">
+    <wsdl:part xmlns:q107="http://services.altasoft.ge/common/v1.0" name="RequestHeaders" element="q107:RequestHeaders" />
+  </wsdl:message>
+  <wsdl:message name="ListVariablePercentValuesResponse">
+    <wsdl:part name="parameters" element="tns:ListVariablePercentValuesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListVariablePercentValuesResponse_Headers">
+    <wsdl:part xmlns:q108="http://services.altasoft.ge/common/v1.0" name="ResponseHeaders" element="q108:ResponseHeaders" />
+  </wsdl:message>
+  <wsdl:message name="LoansService_ListVariablePercentValues_ApiFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFault" />
+  </wsdl:message>
+  <wsdl:message name="ListCreditLineAttributeCodesRequest">
+    <wsdl:part name="parameters" element="tns:ListCreditLineAttributeCodes" />
+  </wsdl:message>
+  <wsdl:message name="ListCreditLineAttributeCodesRequest_Headers">
+    <wsdl:part xmlns:q109="http://services.altasoft.ge/common/v1.0" name="RequestHeaders" element="q109:RequestHeaders" />
+  </wsdl:message>
+  <wsdl:message name="ListCreditLineAttributeCodesResponse">
+    <wsdl:part name="parameters" element="tns:ListCreditLineAttributeCodesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListCreditLineAttributeCodesResponse_Headers">
+    <wsdl:part xmlns:q110="http://services.altasoft.ge/common/v1.0" name="ResponseHeaders" element="q110:ResponseHeaders" />
+  </wsdl:message>
+  <wsdl:message name="LoansService_ListCreditLineAttributeCodes_ApiFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFault" />
+  </wsdl:message>
+  <wsdl:message name="ListProvisioningsRequest">
+    <wsdl:part name="parameters" element="tns:ListProvisionings" />
+  </wsdl:message>
+  <wsdl:message name="ListProvisioningsRequest_Headers">
+    <wsdl:part xmlns:q111="http://services.altasoft.ge/common/v1.0" name="RequestHeaders" element="q111:RequestHeaders" />
+  </wsdl:message>
+  <wsdl:message name="ListProvisioningsResponse">
+    <wsdl:part name="parameters" element="tns:ListProvisioningsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListProvisioningsResponse_Headers">
+    <wsdl:part xmlns:q112="http://services.altasoft.ge/common/v1.0" name="ResponseHeaders" element="q112:ResponseHeaders" />
+  </wsdl:message>
+  <wsdl:message name="LoansService_ListProvisionings_ApiFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFault" />
+  </wsdl:message>
+  <wsdl:message name="ChangeLoanProvisionRequest">
+    <wsdl:part name="parameters" element="tns:ChangeLoanProvision" />
+  </wsdl:message>
+  <wsdl:message name="ChangeLoanProvisionRequest_Headers">
+    <wsdl:part xmlns:q113="http://services.altasoft.ge/common/v1.0" name="RequestHeaders" element="q113:RequestHeaders" />
+  </wsdl:message>
+  <wsdl:message name="ChangeLoanProvisionResponse">
+    <wsdl:part name="parameters" element="tns:ChangeLoanProvisionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ChangeLoanProvisionResponse_Headers">
+    <wsdl:part xmlns:q114="http://services.altasoft.ge/common/v1.0" name="ResponseHeaders" element="q114:ResponseHeaders" />
+  </wsdl:message>
+  <wsdl:message name="LoansService_ChangeLoanProvision_ApiFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFault" />
+  </wsdl:message>
+  <wsdl:message name="DisburseTrancheRequest">
+    <wsdl:part name="parameters" element="tns:DisburseTranche" />
+  </wsdl:message>
+  <wsdl:message name="DisburseTrancheRequest_Headers">
+    <wsdl:part xmlns:q115="http://services.altasoft.ge/common/v1.0" name="RequestHeaders" element="q115:RequestHeaders" />
+  </wsdl:message>
+  <wsdl:message name="DisburseTrancheResponse">
+    <wsdl:part name="parameters" element="tns:DisburseTrancheResponse" />
+  </wsdl:message>
+  <wsdl:message name="DisburseTrancheResponse_Headers">
+    <wsdl:part xmlns:q116="http://services.altasoft.ge/common/v1.0" name="ResponseHeaders" element="q116:ResponseHeaders" />
+  </wsdl:message>
+  <wsdl:message name="LoansService_DisburseTranche_ApiFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFault" />
+  </wsdl:message>
+  <wsdl:message name="CalculateEffectiveRateRequest">
+    <wsdl:part name="parameters" element="tns:CalculateEffectiveRate" />
+  </wsdl:message>
+  <wsdl:message name="CalculateEffectiveRateRequest_Headers">
+    <wsdl:part xmlns:q117="http://services.altasoft.ge/common/v1.0" name="RequestHeaders" element="q117:RequestHeaders" />
+  </wsdl:message>
+  <wsdl:message name="CalculateEffectiveRateResponse">
+    <wsdl:part name="parameters" element="tns:CalculateEffectiveRateResponse" />
+  </wsdl:message>
+  <wsdl:message name="CalculateEffectiveRateResponse_Headers">
+    <wsdl:part xmlns:q118="http://services.altasoft.ge/common/v1.0" name="ResponseHeaders" element="q118:ResponseHeaders" />
+  </wsdl:message>
+  <wsdl:message name="LoansService_CalculateEffectiveRate_ApiFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFault" />
+  </wsdl:message>
+  <wsdl:message name="ListLoanOffersRequest">
+    <wsdl:part name="parameters" element="tns:ListLoanOffers" />
+  </wsdl:message>
+  <wsdl:message name="ListLoanOffersRequest_Headers">
+    <wsdl:part xmlns:q119="http://services.altasoft.ge/common/v1.0" name="RequestHeaders" element="q119:RequestHeaders" />
+  </wsdl:message>
+  <wsdl:message name="ListLoanOffersResponse">
+    <wsdl:part name="parameters" element="tns:ListLoanOffersResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListLoanOffersResponse_Headers">
+    <wsdl:part xmlns:q120="http://services.altasoft.ge/common/v1.0" name="ResponseHeaders" element="q120:ResponseHeaders" />
+  </wsdl:message>
+  <wsdl:message name="LoansService_ListLoanOffers_ApiFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFault" />
+  </wsdl:message>
+  <wsdl:portType name="LoansService">
+    <wsdl:operation name="GetLoan">
+      <wsdl:input wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/GetLoan" name="GetLoanRequest" message="tns:GetLoanRequest" />
+      <wsdl:output wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/GetLoanResponse" name="GetLoanResponse" message="tns:GetLoanResponse" />
+      <wsdl:fault wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/GetLoanApiFault" name="ApiFault" message="tns:LoansService_GetLoan_ApiFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListLoans">
+      <wsdl:input wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/ListLoans" name="ListLoansRequest" message="tns:ListLoansRequest" />
+      <wsdl:output wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/ListLoansResponse" name="ListLoansResponse" message="tns:ListLoansResponse" />
+      <wsdl:fault wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/ListLoansApiFault" name="ApiFault" message="tns:LoansService_ListLoans_ApiFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLoanProduct">
+      <wsdl:input wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/GetLoanProduct" name="GetLoanProductRequest" message="tns:GetLoanProductRequest" />
+      <wsdl:output wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/GetLoanProductResponse" name="GetLoanProductResponse" message="tns:GetLoanProductResponse" />
+      <wsdl:fault wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/GetLoanProductApiFault" name="ApiFault" message="tns:LoansService_GetLoanProduct_ApiFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListLoanProducts">
+      <wsdl:input wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/ListLoanProducts" name="ListLoanProductsRequest" message="tns:ListLoanProductsRequest" />
+      <wsdl:output wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/ListLoanProductsResponse" name="ListLoanProductsResponse" message="tns:ListLoanProductsResponse" />
+      <wsdl:fault wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/ListLoanProductsApiFault" name="ApiFault" message="tns:LoansService_ListLoanProducts_ApiFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PutApplication">
+      <wsdl:input wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/PutApplication" name="PutApplicationRequest" message="tns:PutApplicationRequest" />
+      <wsdl:output wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/PutApplicationResponse" name="PutApplicationResponse" message="tns:PutApplicationResponse" />
+      <wsdl:fault wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/PutApplicationApiFault" name="ApiFault" message="tns:LoansService_PutApplication_ApiFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PostApplication">
+      <wsdl:input wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/PostApplication" name="PostApplicationRequest" message="tns:PostApplicationRequest" />
+      <wsdl:output wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/PostApplicationResponse" name="PostApplicationResponse" message="tns:PostApplicationResponse" />
+      <wsdl:fault wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/PostApplicationApiFault" name="ApiFault" message="tns:LoansService_PostApplication_ApiFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PutApplicationAttachment">
+      <wsdl:input wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/PutApplicationAttachment" name="PutApplicationAttachmentRequest" message="tns:PutApplicationAttachmentRequest" />
+      <wsdl:output wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/PutApplicationAttachmentResponse" name="PutApplicationAttachmentResponse" message="tns:PutApplicationAttachmentResponse" />
+      <wsdl:fault wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/PutApplicationAttachmentApiFault" name="ApiFault" message="tns:LoansService_PutApplicationAttachment_ApiFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PostApplicationAttachment">
+      <wsdl:input wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/PostApplicationAttachment" name="PostApplicationAttachmentRequest" message="tns:PostApplicationAttachmentRequest" />
+      <wsdl:output wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/PostApplicationAttachmentResponse" name="PostApplicationAttachmentResponse" message="tns:PostApplicationAttachmentResponse" />
+      <wsdl:fault wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/PostApplicationAttachmentApiFault" name="ApiFault" message="tns:LoansService_PostApplicationAttachment_ApiFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteApplicationAttachment">
+      <wsdl:input wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/DeleteApplicationAttachment" name="DeleteApplicationAttachmentRequest" message="tns:DeleteApplicationAttachmentRequest" />
+      <wsdl:output wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/DeleteApplicationAttachmentResponse" name="DeleteApplicationAttachmentResponse" message="tns:DeleteApplicationAttachmentResponse" />
+      <wsdl:fault wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/DeleteApplicationAttachmentApiFault" name="ApiFault" message="tns:LoansService_DeleteApplicationAttachment_ApiFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PutCollateral">
+      <wsdl:input wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/PutCollateral" name="PutCollateralRequest" message="tns:PutCollateralRequest" />
+      <wsdl:output wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/PutCollateralResponse" name="PutCollateralResponse" message="tns:PutCollateralResponse" />
+      <wsdl:fault wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/PutCollateralApiFault" name="ApiFault" message="tns:LoansService_PutCollateral_ApiFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PutCollateralLink">
+      <wsdl:input wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/PutCollateralLink" name="PutCollateralLinkRequest" message="tns:PutCollateralLinkRequest" />
+      <wsdl:output wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/PutCollateralLinkResponse" name="PutCollateralLinkResponse" message="tns:PutCollateralLinkResponse" />
+      <wsdl:fault wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/PutCollateralLinkApiFault" name="ApiFault" message="tns:LoansService_PutCollateralLink_ApiFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PostCollateralLink">
+      <wsdl:input wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/PostCollateralLink" name="PostCollateralLinkRequest" message="tns:PostCollateralLinkRequest" />
+      <wsdl:output wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/PostCollateralLinkResponse" name="PostCollateralLinkResponse" message="tns:PostCollateralLinkResponse" />
+      <wsdl:fault wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/PostCollateralLinkApiFault" name="ApiFault" message="tns:LoansService_PostCollateralLink_ApiFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListCollaterals">
+      <wsdl:input wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/ListCollaterals" name="ListCollateralsRequest" message="tns:ListCollateralsRequest" />
+      <wsdl:output wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/ListCollateralsResponse" name="ListCollateralsResponse" message="tns:ListCollateralsResponse" />
+      <wsdl:fault wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/ListCollateralsApiFault" name="ApiFault" message="tns:LoansService_ListCollaterals_ApiFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListLinkedCollaterals">
+      <wsdl:input wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/ListLinkedCollaterals" name="ListLinkedCollateralsRequest" message="tns:ListLinkedCollateralsRequest" />
+      <wsdl:output wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/ListLinkedCollateralsResponse" name="ListLinkedCollateralsResponse" message="tns:ListLinkedCollateralsResponse" />
+      <wsdl:fault wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/ListLinkedCollateralsApiFault" name="ApiFault" message="tns:LoansService_ListLinkedCollaterals_ApiFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCollateral">
+      <wsdl:input wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/DeleteCollateral" name="DeleteCollateralRequest" message="tns:DeleteCollateralRequest" />
+      <wsdl:output wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/DeleteCollateralResponse" name="DeleteCollateralResponse" message="tns:DeleteCollateralResponse" />
+      <wsdl:fault wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/DeleteCollateralApiFault" name="ApiFault" message="tns:LoansService_DeleteCollateral_ApiFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCollateralLink">
+      <wsdl:input wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/DeleteCollateralLink" name="DeleteCollateralLinkRequest" message="tns:DeleteCollateralLinkRequest" />
+      <wsdl:output wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/DeleteCollateralLinkResponse" name="DeleteLinkCollateralResponse" message="tns:DeleteLinkCollateralResponse" />
+      <wsdl:fault wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/DeleteCollateralLinkApiFault" name="ApiFault" message="tns:LoansService_DeleteCollateralLink_ApiFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DisburseApplication">
+      <wsdl:input wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/DisburseApplication" name="DisburseApplicationRequest" message="tns:DisburseApplicationRequest" />
+      <wsdl:output wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/DisburseApplicationResponse" name="DisburseApplicationResponse" message="tns:DisburseApplicationResponse" />
+      <wsdl:fault wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/DisburseApplicationApiFault" name="ApiFault" message="tns:LoansService_DisburseApplication_ApiFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="WriteoffLoan">
+      <wsdl:input wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/WriteoffLoan" name="WriteoffLoanRequest" message="tns:WriteoffLoanRequest" />
+      <wsdl:output wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/WriteoffLoanResponse" name="WriteoffLoanResponse" message="tns:WriteoffLoanResponse" />
+      <wsdl:fault wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/WriteoffLoanApiFault" name="ApiFault" message="tns:LoansService_WriteoffLoan_ApiFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeLoanAmount">
+      <wsdl:input wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/ChangeLoanAmount" name="ChangeLoanAmountRequest" message="tns:ChangeLoanAmountRequest" />
+      <wsdl:output wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/ChangeLoanAmountResponse" name="ChangeLoanAmountResponse" message="tns:ChangeLoanAmountResponse" />
+      <wsdl:fault wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/ChangeLoanAmountApiFault" name="ApiFault" message="tns:LoansService_ChangeLoanAmount_ApiFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetLoanProblemStatus">
+      <wsdl:input wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/SetLoanProblemStatus" name="SetLoanProblemStatusRequest" message="tns:SetLoanProblemStatusRequest" />
+      <wsdl:output wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/SetLoanProblemStatusResponse" name="SetLoanProblemStatusResponse" message="tns:SetLoanProblemStatusResponse" />
+      <wsdl:fault wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/SetLoanProblemStatusApiFault" name="ApiFault" message="tns:LoansService_SetLoanProblemStatus_ApiFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PostLoanDebts">
+      <wsdl:input wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/PostLoanDebts" name="PostLoanDebtsRequest" message="tns:PostLoanDebtsRequest" />
+      <wsdl:output wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/PostLoanDebtsResponse" name="PostLoanDebtsResponse" message="tns:PostLoanDebtsResponse" />
+      <wsdl:fault wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/PostLoanDebtsApiFault" name="ApiFault" message="tns:LoansService_PostLoanDebts_ApiFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteOperationAction">
+      <wsdl:input wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/ExecuteOperationAction" name="DefaultOperationActionRequest" message="tns:DefaultOperationActionRequest" />
+      <wsdl:output wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/ExecuteOperationActionResponse" name="ExecuteOperationActionResponse" message="tns:ExecuteOperationActionResponse" />
+      <wsdl:fault wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/ExecuteOperationActionApiFault" name="ApiFault" message="tns:LoansService_ExecuteOperationAction_ApiFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CalculatePaymentDebts">
+      <wsdl:input wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/CalculatePaymentDebts" name="CalculatePaymentDebtsRequest" message="tns:CalculatePaymentDebtsRequest" />
+      <wsdl:output wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/CalculatePaymentDebtsResponse" name="CalculatePaymentDebtsResponse" message="tns:CalculatePaymentDebtsResponse" />
+      <wsdl:fault wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/CalculatePaymentDebtsApiFault" name="ApiFault" message="tns:LoansService_CalculatePaymentDebts_ApiFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LoanPayment">
+      <wsdl:input wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/LoanPayment" name="LoanPaymentRequest" message="tns:LoanPaymentRequest" />
+      <wsdl:output wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/LoanPaymentResponse" name="LoanPaymentResponse" message="tns:LoanPaymentResponse" />
+      <wsdl:fault wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/LoanPaymentApiFault" name="ApiFault" message="tns:LoansService_LoanPayment_ApiFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PutLoanAttributes">
+      <wsdl:input wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/PutLoanAttributes" name="PutLoanAttributesRequest" message="tns:PutLoanAttributesRequest" />
+      <wsdl:output wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/PutLoanAttributesResponse" name="PutLoanAttributesResponse" message="tns:PutLoanAttributesResponse" />
+      <wsdl:fault wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/PutLoanAttributesApiFault" name="ApiFault" message="tns:LoansService_PutLoanAttributes_ApiFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListUsers">
+      <wsdl:input wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/ListUsers" name="ListUsersRequest" message="tns:ListUsersRequest" />
+      <wsdl:output wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/ListUsersResponse" name="ListUsersResponse" message="tns:ListUsersResponse" />
+      <wsdl:fault wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/ListUsersApiFault" name="ApiFault" message="tns:LoansService_ListUsers_ApiFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GenerateScheduleDates">
+      <wsdl:input wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/GenerateScheduleDates" name="GenerateScheduleDatesRequest" message="tns:GenerateScheduleDatesRequest" />
+      <wsdl:output wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/GenerateScheduleDatesResponse" name="GenerateScheduleDatesResponse" message="tns:GenerateScheduleDatesResponse" />
+      <wsdl:fault wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/GenerateScheduleDatesApiFault" name="ApiFault" message="tns:LoansService_GenerateScheduleDates_ApiFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FillSchedule">
+      <wsdl:input wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/FillSchedule" name="FillScheduleRequest" message="tns:FillScheduleRequest" />
+      <wsdl:output wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/FillScheduleResponse" name="FillScheduleResponse" message="tns:FillScheduleResponse" />
+      <wsdl:fault wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/FillScheduleApiFault" name="ApiFault" message="tns:LoansService_FillSchedule_ApiFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetApplication">
+      <wsdl:input wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/GetApplication" name="GetApplicationRequest" message="tns:GetApplicationRequest" />
+      <wsdl:output wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/GetApplicationResponse" name="GetApplicationResponse" message="tns:GetApplicationResponse" />
+      <wsdl:fault wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/GetApplicationApiFault" name="ApiFault" message="tns:LoansService_GetApplication_ApiFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListApplications">
+      <wsdl:input wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/ListApplications" name="ListApplicationsRequest" message="tns:ListApplicationsRequest" />
+      <wsdl:output wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/ListApplicationsResponse" name="ListApplicationsResponse" message="tns:ListApplicationsResponse" />
+      <wsdl:fault wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/ListApplicationsApiFault" name="ApiFault" message="tns:LoansService_ListApplications_ApiFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PatchLoanAttributes">
+      <wsdl:input wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/PatchLoanAttributes" name="PatchLoanAttributesRequest" message="tns:PatchLoanAttributesRequest" />
+      <wsdl:output wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/PatchLoanAttributesResponse" name="PatchLoanAttributesResponse" message="tns:PatchLoanAttributesResponse" />
+      <wsdl:fault wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/PatchLoanAttributesApiFault" name="ApiFault" message="tns:LoansService_PatchLoanAttributes_ApiFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLoanSchedule">
+      <wsdl:input wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/GetLoanSchedule" name="GetLoanScheduleRequest" message="tns:GetLoanScheduleRequest" />
+      <wsdl:output wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/GetLoanScheduleResponse" name="GetLoanScheduleResponse" message="tns:GetLoanScheduleResponse" />
+      <wsdl:fault wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/GetLoanScheduleApiFault" name="ApiFault" message="tns:LoansService_GetLoanSchedule_ApiFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLoanOperationDetails">
+      <wsdl:input wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/GetLoanOperationDetails" name="GetLoanOperationDetailsRequest" message="tns:GetLoanOperationDetailsRequest" />
+      <wsdl:output wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/GetLoanOperationDetailsResponse" name="GetLoanOperationDetailsResponse" message="tns:GetLoanOperationDetailsResponse" />
+      <wsdl:fault wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/GetLoanOperationDetailsApiFault" name="ApiFault" message="tns:LoansService_GetLoanOperationDetails_ApiFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEnvironmentVariables">
+      <wsdl:input wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/GetEnvironmentVariables" name="GetEnvironmentVariablesRequest" message="tns:GetEnvironmentVariablesRequest" />
+      <wsdl:output wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/GetEnvironmentVariablesResponse" name="GetEnvironmentVariablesResponse" message="tns:GetEnvironmentVariablesResponse" />
+      <wsdl:fault wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/GetEnvironmentVariablesApiFault" name="ApiFault" message="tns:LoansService_GetEnvironmentVariables_ApiFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CalculateEffectiveRateForApplication">
+      <wsdl:input wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/CalculateEffectiveRateForApplication" name="CalculateEffectiveRateForApplicationRequest" message="tns:CalculateEffectiveRateForApplicationRequest" />
+      <wsdl:output wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/CalculateEffectiveRateForApplicationResponse" name="CalculateEffectiveRateForApplicationResponse" message="tns:CalculateEffectiveRateForApplicationResponse" />
+      <wsdl:fault wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/CalculateEffectiveRateForApplicationApiFault" name="ApiFault" message="tns:LoansService_CalculateEffectiveRateForApplication_ApiFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetApplicationSchedule">
+      <wsdl:input wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/GetApplicationSchedule" name="GetApplicationShcheduleRequest" message="tns:GetApplicationShcheduleRequest" />
+      <wsdl:output wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/GetApplicationScheduleResponse" name="GetApplicationShcheduleResponse" message="tns:GetApplicationShcheduleResponse" />
+      <wsdl:fault wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/GetApplicationScheduleApiFault" name="ApiFault" message="tns:LoansService_GetApplicationSchedule_ApiFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PostCollateral">
+      <wsdl:input wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/PostCollateral" name="PostCollateralRequest" message="tns:PostCollateralRequest" />
+      <wsdl:output wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/PostCollateralResponse" name="PostCollateralResponse" message="tns:PostCollateralResponse" />
+      <wsdl:fault wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/PostCollateralApiFault" name="ApiFault" message="tns:LoansService_PostCollateral_ApiFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListOps">
+      <wsdl:input wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/ListOps" name="ListOpsRequest" message="tns:ListOpsRequest" />
+      <wsdl:output wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/ListOpsResponse" name="ListOpsResponse" message="tns:ListOpsResponse" />
+      <wsdl:fault wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/ListOpsApiFault" name="ApiFault" message="tns:LoansService_ListOps_ApiFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PutCreditLine">
+      <wsdl:input wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/PutCreditLine" name="PutCreditLineRequest" message="tns:PutCreditLineRequest" />
+      <wsdl:output wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/PutCreditLineResponse" name="PutCreditLineResponse" message="tns:PutCreditLineResponse" />
+      <wsdl:fault wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/PutCreditLineApiFault" name="ApiFault" message="tns:LoansService_PutCreditLine_ApiFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PostCreditLine">
+      <wsdl:input wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/PostCreditLine" name="PostCreditLineRequest" message="tns:PostCreditLineRequest" />
+      <wsdl:output wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/PostCreditLineResponse" name="PostCreditLineResponse" message="tns:PostCreditLineResponse" />
+      <wsdl:fault wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/PostCreditLineApiFault" name="ApiFault" message="tns:LoansService_PostCreditLine_ApiFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListCreditLines">
+      <wsdl:input wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/ListCreditLines" name="ListCreditLinesRequest" message="tns:ListCreditLinesRequest" />
+      <wsdl:output wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/ListCreditLinesResponse" name="ListCreditLinesResponse" message="tns:ListCreditLinesResponse" />
+      <wsdl:fault wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/ListCreditLinesApiFault" name="ApiFault" message="tns:LoansService_ListCreditLines_ApiFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListCollateralTypes">
+      <wsdl:input wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/ListCollateralTypes" name="ListCollateralTypesRequest" message="tns:ListCollateralTypesRequest" />
+      <wsdl:output wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/ListCollateralTypesResponse" name="ListCollateralTypesResponse" message="tns:ListCollateralTypesResponse" />
+      <wsdl:fault wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/ListCollateralTypesApiFault" name="ApiFault" message="tns:LoansService_ListCollateralTypes_ApiFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PutDebtAbatement">
+      <wsdl:input wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/PutDebtAbatement" name="PutDebtAbatementRequest" message="tns:PutDebtAbatementRequest" />
+      <wsdl:output wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/PutDebtAbatementResponse" name="PutDebtAbatementResponse" message="tns:PutDebtAbatementResponse" />
+      <wsdl:fault wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/PutDebtAbatementApiFault" name="ApiFault" message="tns:LoansService_PutDebtAbatement_ApiFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PutAdministrationDebt">
+      <wsdl:input wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/PutAdministrationDebt" name="PutAdministrationDebtRequest" message="tns:PutAdministrationDebtRequest" />
+      <wsdl:output wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/PutAdministrationDebtResponse" name="PutAdministrationDebtResponse" message="tns:PutAdministrationDebtResponse" />
+      <wsdl:fault wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/PutAdministrationDebtApiFault" name="ApiFault" message="tns:LoansService_PutAdministrationDebt_ApiFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PostAdministrationDebt">
+      <wsdl:input wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/PostAdministrationDebt" name="PostAdministrationDebtRequest" message="tns:PostAdministrationDebtRequest" />
+      <wsdl:output wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/PostAdministrationDebtResponse" name="PostAdministrationDebtResponse" message="tns:PostAdministrationDebtResponse" />
+      <wsdl:fault wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/PostAdministrationDebtApiFault" name="ApiFault" message="tns:LoansService_PostAdministrationDebt_ApiFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAdministrationDebt">
+      <wsdl:input wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/DeleteAdministrationDebt" name="DeleteAdministrationDebtRequest" message="tns:DeleteAdministrationDebtRequest" />
+      <wsdl:output wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/DeleteAdministrationDebtResponse" name="DeleteAdministrationDebtResponse" message="tns:DeleteAdministrationDebtResponse" />
+      <wsdl:fault wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/DeleteAdministrationDebtApiFault" name="ApiFault" message="tns:LoansService_DeleteAdministrationDebt_ApiFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListAdministrationDebts">
+      <wsdl:input wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/ListAdministrationDebts" name="ListAdministrationDebtsRequest" message="tns:ListAdministrationDebtsRequest" />
+      <wsdl:output wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/ListAdministrationDebtsResponse" name="ListAdministrationDebtsResponse" message="tns:ListAdministrationDebtsResponse" />
+      <wsdl:fault wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/ListAdministrationDebtsApiFault" name="ApiFault" message="tns:LoansService_ListAdministrationDebts_ApiFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeLoanConditions">
+      <wsdl:input wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/ChangeLoanConditions" name="ChangeLoanConditionsRequest" message="tns:ChangeLoanConditionsRequest" />
+      <wsdl:output wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/ChangeLoanConditionsResponse" name="ChangeLoanConditionsResponse" message="tns:ChangeLoanConditionsResponse" />
+      <wsdl:fault wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/ChangeLoanConditionsApiFault" name="ApiFault" message="tns:LoansService_ChangeLoanConditions_ApiFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAdministrationDebt">
+      <wsdl:input wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/GetAdministrationDebt" name="GetAdministrationDebtRequest" message="tns:GetAdministrationDebtRequest" />
+      <wsdl:output wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/GetAdministrationDebtResponse" name="GetAdministrationDebtResponse" message="tns:GetAdministrationDebtResponse" />
+      <wsdl:fault wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/GetAdministrationDebtApiFault" name="ApiFault" message="tns:LoansService_GetAdministrationDebt_ApiFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOperation">
+      <wsdl:input wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/GetOperation" name="GetOperationRequest" message="tns:GetOperationRequest" />
+      <wsdl:output wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/GetOperationResponse" name="GetOperationResponse" message="tns:GetOperationResponse" />
+      <wsdl:fault wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/GetOperationApiFault" name="ApiFault" message="tns:LoansService_GetOperation_ApiFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RejectApplication">
+      <wsdl:input wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/RejectApplication" name="RejectApplicationRequest" message="tns:RejectApplicationRequest" />
+      <wsdl:output wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/RejectApplicationResponse" name="RejectApplicationResponse" message="tns:RejectApplicationResponse" />
+      <wsdl:fault wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/RejectApplicationApiFault" name="ApiFault" message="tns:LoansService_RejectApplication_ApiFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListApplicationRejectReasons">
+      <wsdl:input wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/ListApplicationRejectReasons" name="ListApplicationRejectReasonsRequest" message="tns:ListApplicationRejectReasonsRequest" />
+      <wsdl:output wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/ListApplicationRejectReasonsResponse" name="ListApplicationRejectReasonsResponse" message="tns:ListApplicationRejectReasonsResponse" />
+      <wsdl:fault wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/ListApplicationRejectReasonsApiFault" name="ApiFault" message="tns:LoansService_ListApplicationRejectReasons_ApiFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListLiborIndexes">
+      <wsdl:input wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/ListLiborIndexes" name="ListLiborIndexesRequest" message="tns:ListLiborIndexesRequest" />
+      <wsdl:output wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/ListLiborIndexesResponse" name="ListLiborIndexesResponse" message="tns:ListLiborIndexesResponse" />
+      <wsdl:fault wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/ListLiborIndexesApiFault" name="ApiFault" message="tns:LoansService_ListLiborIndexes_ApiFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListVariablePercentValues">
+      <wsdl:input wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/ListVariablePercentValues" name="ListVariablePercentValuesRequest" message="tns:ListVariablePercentValuesRequest" />
+      <wsdl:output wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/ListVariablePercentValuesResponse" name="ListVariablePercentValuesResponse" message="tns:ListVariablePercentValuesResponse" />
+      <wsdl:fault wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/ListVariablePercentValuesApiFault" name="ApiFault" message="tns:LoansService_ListVariablePercentValues_ApiFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListCreditLineAttributeCodes">
+      <wsdl:input wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/ListCreditLineAttributeCodes" name="ListCreditLineAttributeCodesRequest" message="tns:ListCreditLineAttributeCodesRequest" />
+      <wsdl:output wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/ListCreditLineAttributeCodesResponse" name="ListCreditLineAttributeCodesResponse" message="tns:ListCreditLineAttributeCodesResponse" />
+      <wsdl:fault wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/ListCreditLineAttributeCodesApiFault" name="ApiFault" message="tns:LoansService_ListCreditLineAttributeCodes_ApiFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListProvisionings">
+      <wsdl:input wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/ListProvisionings" name="ListProvisioningsRequest" message="tns:ListProvisioningsRequest" />
+      <wsdl:output wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/ListProvisioningsResponse" name="ListProvisioningsResponse" message="tns:ListProvisioningsResponse" />
+      <wsdl:fault wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/ListProvisioningsApiFault" name="ApiFault" message="tns:LoansService_ListProvisionings_ApiFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeLoanProvision">
+      <wsdl:input wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/ChangeLoanProvision" name="ChangeLoanProvisionRequest" message="tns:ChangeLoanProvisionRequest" />
+      <wsdl:output wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/ChangeLoanProvisionResponse" name="ChangeLoanProvisionResponse" message="tns:ChangeLoanProvisionResponse" />
+      <wsdl:fault wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/ChangeLoanProvisionApiFault" name="ApiFault" message="tns:LoansService_ChangeLoanProvision_ApiFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DisburseTranche">
+      <wsdl:input wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/DisburseTranche" name="DisburseTrancheRequest" message="tns:DisburseTrancheRequest" />
+      <wsdl:output wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/DisburseTrancheResponse" name="DisburseTrancheResponse" message="tns:DisburseTrancheResponse" />
+      <wsdl:fault wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/DisburseTrancheApiFault" name="ApiFault" message="tns:LoansService_DisburseTranche_ApiFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CalculateEffectiveRate">
+      <wsdl:input wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/CalculateEffectiveRate" name="CalculateEffectiveRateRequest" message="tns:CalculateEffectiveRateRequest" />
+      <wsdl:output wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/CalculateEffectiveRateResponse" name="CalculateEffectiveRateResponse" message="tns:CalculateEffectiveRateResponse" />
+      <wsdl:fault wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/CalculateEffectiveRateApiFault" name="ApiFault" message="tns:LoansService_CalculateEffectiveRate_ApiFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListLoanOffers">
+      <wsdl:input wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/ListLoanOffers" name="ListLoanOffersRequest" message="tns:ListLoanOffersRequest" />
+      <wsdl:output wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/ListLoanOffersResponse" name="ListLoanOffersResponse" message="tns:ListLoanOffersResponse" />
+      <wsdl:fault wsaw:Action="http://services.altasoft.ge/loans/v1.0/LoansService/ListLoanOffersApiFault" name="ApiFault" message="tns:LoansService_ListLoanOffers_ApiFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

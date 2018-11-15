@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="CRAService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://intranet.bank/WebServices/WcfCRAService/CRAService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://intranet.bank/WebServices/WcfCRAService/CRAService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://intranet.bank/WebServices/WcfCRAService/CRAService.svc?xsd=xsd2" namespace="http://stateinstitution.cra.ge/" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ICRAService_GetListDataByID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListDataByID" />
+  </wsdl:message>
+  <wsdl:message name="ICRAService_GetListDataByID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListDataByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICRAService_GetDataByID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataByID" />
+  </wsdl:message>
+  <wsdl:message name="ICRAService_GetDataByID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICRAService_GetDataByIDAndYear_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataByIDAndYear" />
+  </wsdl:message>
+  <wsdl:message name="ICRAService_GetDataByIDAndYear_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataByIDAndYearResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICRAService_GetDataByIDAndYearAlta_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataByIDAndYearAlta" />
+  </wsdl:message>
+  <wsdl:message name="ICRAService_GetDataByIDAndYearAlta_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataByIDAndYearAltaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICRAService_Hello_InputMessage">
+    <wsdl:part name="parameters" element="tns:Hello" />
+  </wsdl:message>
+  <wsdl:message name="ICRAService_Hello_OutputMessage">
+    <wsdl:part name="parameters" element="tns:HelloResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ICRAService">
+    <wsdl:operation name="GetListDataByID">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICRAService/GetListDataByID" message="tns:ICRAService_GetListDataByID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICRAService/GetListDataByIDResponse" message="tns:ICRAService_GetListDataByID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDataByID">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICRAService/GetDataByID" message="tns:ICRAService_GetDataByID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICRAService/GetDataByIDResponse" message="tns:ICRAService_GetDataByID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDataByIDAndYear">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICRAService/GetDataByIDAndYear" message="tns:ICRAService_GetDataByIDAndYear_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICRAService/GetDataByIDAndYearResponse" message="tns:ICRAService_GetDataByIDAndYear_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDataByIDAndYearAlta">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICRAService/GetDataByIDAndYearAlta" message="tns:ICRAService_GetDataByIDAndYearAlta_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICRAService/GetDataByIDAndYearAltaResponse" message="tns:ICRAService_GetDataByIDAndYearAlta_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Hello">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICRAService/Hello" message="tns:ICRAService_Hello_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICRAService/HelloResponse" message="tns:ICRAService_Hello_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_ICRAService" type="tns:ICRAService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetListDataByID">
+      <soap:operation soapAction="http://tempuri.org/ICRAService/GetListDataByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataByID">
+      <soap:operation soapAction="http://tempuri.org/ICRAService/GetDataByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataByIDAndYear">
+      <soap:operation soapAction="http://tempuri.org/ICRAService/GetDataByIDAndYear" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataByIDAndYearAlta">
+      <soap:operation soapAction="http://tempuri.org/ICRAService/GetDataByIDAndYearAlta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Hello">
+      <soap:operation soapAction="http://tempuri.org/ICRAService/Hello" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CRAService">
+    <wsdl:port name="BasicHttpBinding_ICRAService" binding="tns:BasicHttpBinding_ICRAService">
+      <soap:address location="http://intranet.bank/WebServices/WcfCRAService/CRAService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="PipelineWS.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="PipelineWS_CraService_CRAService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://intranet.bank/WebServices/WcfCRAService/CRAService.svc</Value>
+    </Setting>
+    <Setting Name="PipelineWS_OdbService_UTFODBService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://192.168.200.1/webservices/TestODBWebService2.0/UTFODBService.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

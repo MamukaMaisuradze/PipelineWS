@@ -1,0 +1,2118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://services.altasoft.ge/loans/v1.0" elementFormDefault="qualified" targetNamespace="http://services.altasoft.ge/loans/v1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://abs.vtb.com.ge/lapi/LoansService.svc?xsd=xsd3" namespace="http://models.altasoft.ge/loans/v1.0" />
+  <xs:import schemaLocation="http://abs.vtb.com.ge/lapi/LoansService.svc?xsd=xsd6" namespace="http://services.altasoft.ge/faults/v1.0" />
+  <xs:import schemaLocation="http://abs.vtb.com.ge/lapi/LoansService.svc?xsd=xsd5" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://abs.vtb.com.ge/lapi/LoansService.svc?xsd=xsd4" namespace="http://models.altasoft.ge/common/v1.0" />
+  <xs:import schemaLocation="http://abs.vtb.com.ge/lapi/LoansService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="http://abs.vtb.com.ge/lapi/LoansService.svc?xsd=xsd7" namespace="http://models.altasoft.ge/catalogs/v1.0" />
+  <xs:element name="GetLoan">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ControlFlags" type="tns:LoanControlFlags" />
+        <xs:element minOccurs="0" name="LoanId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:simpleType name="LoanControlFlags">
+    <xs:list>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Basic" />
+          <xs:enumeration value="Attributes" />
+          <xs:enumeration value="Debts" />
+          <xs:enumeration value="FeesAndPenaltiesPolicy" />
+          <xs:enumeration value="CashflowParameters" />
+          <xs:enumeration value="Authorities" />
+          <xs:enumeration value="PrepaymentPolicy" />
+          <xs:enumeration value="Markers" />
+          <xs:enumeration value="Coborrowers" />
+          <xs:enumeration value="ProvisioningDetails" />
+          <xs:enumeration value="EffectiveRates" />
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:list>
+  </xs:simpleType>
+  <xs:element name="LoanControlFlags" nillable="true" type="tns:LoanControlFlags" />
+  <xs:element name="GetLoanResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://models.altasoft.ge/loans/v1.0" minOccurs="0" name="Result" nillable="true" type="q1:Loan" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element xmlns:q2="http://services.altasoft.ge/faults/v1.0" name="ApiFault" nillable="true" type="q2:ApiFault" />
+  <xs:element name="ListLoans">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Query" nillable="true" type="tns:ListLoansQuery" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ListLoansQuery">
+    <xs:sequence>
+      <xs:element name="ControlFlags" type="tns:LoanControlFlags" />
+      <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Ids" nillable="true" type="q3:ArrayOfint">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="BorrowerId" nillable="true" type="xs:int">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="BorrowerOrCoBorrowerId" nillable="true" type="xs:int">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ProductIds" nillable="true" type="q4:ArrayOfint">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element xmlns:q5="http://models.altasoft.ge/loans/v1.0" minOccurs="0" name="Status" nillable="true" type="q5:ArrayOfLoanStatus">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element xmlns:q6="http://models.altasoft.ge/loans/v1.0" minOccurs="0" name="DisburseDate" nillable="true" type="q6:DateTimeRange">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element xmlns:q7="http://models.altasoft.ge/loans/v1.0" minOccurs="0" name="EndDate" nillable="true" type="q7:DateTimeRange">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element xmlns:q8="http://models.altasoft.ge/loans/v1.0" minOccurs="0" name="CloseDate" nillable="true" type="q8:DateTimeRange">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element xmlns:q9="http://models.altasoft.ge/loans/v1.0" minOccurs="0" name="NextBillDate" nillable="true" type="q9:DateTimeRange">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element xmlns:q10="http://models.altasoft.ge/loans/v1.0" minOccurs="0" name="PrevBillDate" nillable="true" type="q10:DateTimeRange">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element xmlns:q11="http://models.altasoft.ge/loans/v1.0" minOccurs="0" name="WriteOffDate" nillable="true" type="q11:DateTimeRange">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element xmlns:q12="http://models.altasoft.ge/loans/v1.0" minOccurs="0" name="OverdueDate" nillable="true" type="q12:DateTimeRange">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="CreditLineId" nillable="true" type="xs:int">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element xmlns:q13="http://models.altasoft.ge/loans/v1.0" minOccurs="0" name="Kind" nillable="true" type="q13:LoanKind">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="IsCard" nillable="true" type="xs:boolean">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="BranchId" nillable="true" type="xs:int">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element xmlns:q14="http://models.altasoft.ge/common/v1.0" minOccurs="0" name="BorrowerIds" nillable="true" type="q14:IntList">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="Attributes" nillable="true" type="tns:ListAttributesSearchValuesCriterias">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ListLoansQuery" nillable="true" type="tns:ListLoansQuery" />
+  <xs:complexType name="ListAttributesSearchValuesCriterias">
+    <xs:sequence>
+      <xs:element xmlns:q15="http://models.altasoft.ge/loans/v1.0" minOccurs="0" maxOccurs="unbounded" name="AttributeSearchValueCriteria" nillable="true" type="q15:AttributeSearchValueCriteria" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ListAttributesSearchValuesCriterias" nillable="true" type="tns:ListAttributesSearchValuesCriterias" />
+  <xs:element name="ListLoansResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://models.altasoft.ge/loans/v1.0" minOccurs="0" name="Result" nillable="true" type="q16:LoansList" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLoanProduct">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="LoanProductId" type="xs:int" />
+        <xs:element minOccurs="0" name="ControlFlags" nillable="true" type="tns:LoanProductControlFlags" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:simpleType name="LoanProductControlFlags">
+    <xs:list>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Basic" />
+          <xs:enumeration value="Attributes" />
+          <xs:enumeration value="LoanRangeConditions" />
+          <xs:enumeration value="ApplicationAttributes" />
+          <xs:enumeration value="ExtraExpanses" />
+          <xs:enumeration value="Resources" />
+          <xs:enumeration value="ScheduleTypes" />
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:list>
+  </xs:simpleType>
+  <xs:element name="LoanProductControlFlags" nillable="true" type="tns:LoanProductControlFlags" />
+  <xs:element name="GetLoanProductResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://models.altasoft.ge/loans/v1.0" minOccurs="0" name="Result" nillable="true" type="q17:LoanProduct" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListLoanProducts">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Active" nillable="true" type="xs:boolean" />
+        <xs:element minOccurs="0" name="ControlFlags" nillable="true" type="tns:LoanProductControlFlags" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListLoanProductsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://models.altasoft.ge/loans/v1.0" minOccurs="0" name="Result" nillable="true" type="q18:LoanProductsList" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PutApplication">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://models.altasoft.ge/loans/v1.0" minOccurs="0" name="Application" nillable="true" type="q19:Application" />
+        <xs:element xmlns:q20="http://models.altasoft.ge/common/v1.0" minOccurs="0" name="Creator" nillable="true" type="q20:UserAndDeptId" />
+        <xs:element xmlns:q21="http://models.altasoft.ge/loans/v1.0" minOccurs="0" name="ExtraExpanses" nillable="true" type="q21:ArrayOfExtraExpanse" />
+        <xs:element xmlns:q22="http://models.altasoft.ge/loans/v1.0" minOccurs="0" name="Purposes" nillable="true" type="q22:ArrayOfPurpose" />
+        <xs:element xmlns:q23="http://models.altasoft.ge/loans/v1.0" minOccurs="0" name="Schedule" nillable="true" type="q23:LoanSchedule" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PutApplicationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ApplicationId" type="xs:int" />
+        <xs:element minOccurs="0" name="Version" type="xs:unsignedLong" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PostApplication">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://models.altasoft.ge/loans/v1.0" minOccurs="0" name="Application" nillable="true" type="q24:Application" />
+        <xs:element xmlns:q25="http://models.altasoft.ge/common/v1.0" minOccurs="0" name="Creator" nillable="true" type="q25:UserAndDeptId" />
+        <xs:element xmlns:q26="http://models.altasoft.ge/loans/v1.0" minOccurs="0" name="ExtraExpanses" nillable="true" type="q26:ArrayOfExtraExpanse" />
+        <xs:element xmlns:q27="http://models.altasoft.ge/loans/v1.0" minOccurs="0" name="Purposes" nillable="true" type="q27:ArrayOfPurpose" />
+        <xs:element xmlns:q28="http://models.altasoft.ge/loans/v1.0" minOccurs="0" name="Schedule" nillable="true" type="q28:LoanSchedule" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PostApplicationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ApplicationId" type="xs:int" />
+        <xs:element minOccurs="0" name="Version" type="xs:unsignedLong" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PutApplicationAttachment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ApplicationId" type="xs:int" />
+        <xs:element xmlns:q29="http://models.altasoft.ge/loans/v1.0" minOccurs="0" name="Attachment" nillable="true" type="q29:Attachment" />
+        <xs:element xmlns:q30="http://models.altasoft.ge/common/v1.0" minOccurs="0" name="Creator" nillable="true" type="q30:UserAndDeptId" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PutApplicationAttachmentResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PostApplicationAttachment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ApplicationId" type="xs:int" />
+        <xs:element xmlns:q31="http://models.altasoft.ge/loans/v1.0" minOccurs="0" name="Attachment" nillable="true" type="q31:Attachment" />
+        <xs:element xmlns:q32="http://models.altasoft.ge/common/v1.0" minOccurs="0" name="Creator" nillable="true" type="q32:UserAndDeptId" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PostApplicationAttachmentResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteApplicationAttachment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ApplicationId" type="xs:int" />
+        <xs:element xmlns:q33="http://models.altasoft.ge/common/v1.0" minOccurs="0" name="Creator" nillable="true" type="q33:UserAndDeptId" />
+        <xs:element minOccurs="0" name="FileName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteApplicationAttachmentResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PutCollateral">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q34="http://models.altasoft.ge/loans/v1.0" minOccurs="0" name="Collateral" nillable="true" type="q34:Collateral" />
+        <xs:element xmlns:q35="http://models.altasoft.ge/common/v1.0" minOccurs="0" name="Creator" nillable="true" type="q35:UserAndDeptId" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PutCollateralResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CollateralId" type="xs:int" />
+        <xs:element minOccurs="0" name="Version" type="xs:unsignedLong" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PutCollateralLink">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q36="http://models.altasoft.ge/loans/v1.0" minOccurs="0" name="Collateral" nillable="true" type="q36:CollateralLink" />
+        <xs:element xmlns:q37="http://models.altasoft.ge/common/v1.0" minOccurs="0" name="Creator" nillable="true" type="q37:UserAndDeptId" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PutCollateralLinkResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CollateralLinkId" type="xs:int" />
+        <xs:element minOccurs="0" name="Version" type="xs:unsignedLong" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PostCollateralLink">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q38="http://models.altasoft.ge/loans/v1.0" minOccurs="0" name="Collateral" nillable="true" type="q38:CollateralLink" />
+        <xs:element xmlns:q39="http://models.altasoft.ge/common/v1.0" minOccurs="0" name="Creator" nillable="true" type="q39:UserAndDeptId" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PostCollateralLinkResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CollateralLinkId" type="xs:int" />
+        <xs:element minOccurs="0" name="Version" type="xs:unsignedLong" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListCollaterals">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Query" nillable="true" type="tns:ListCollateralsQuery" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ListCollateralsQuery">
+    <xs:sequence>
+      <xs:element name="ControlFlags" type="tns:CollateralControlFlags" />
+      <xs:element xmlns:q40="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Ids" nillable="true" type="q40:ArrayOfint">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="OwnerId" nillable="true" type="xs:int">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="OwnerOrCoOwnerId" nillable="true" type="xs:int">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="CollateralType" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="CadastreCode" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="VINCode" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="AccountId" nillable="true" type="xs:int">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="DepositId" nillable="true" type="xs:int">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element xmlns:q41="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="AttributesCodes" nillable="true" type="q41:ArrayOfstring">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="Attributes" nillable="true" type="tns:ListAttributesSearchValuesCriterias">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ListCollateralsQuery" nillable="true" type="tns:ListCollateralsQuery" />
+  <xs:simpleType name="CollateralControlFlags">
+    <xs:list>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Basic" />
+          <xs:enumeration value="Attributes" />
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:list>
+  </xs:simpleType>
+  <xs:element name="CollateralControlFlags" nillable="true" type="tns:CollateralControlFlags" />
+  <xs:element name="ListCollateralsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q42="http://models.altasoft.ge/loans/v1.0" minOccurs="0" name="Result" nillable="true" type="q42:CollateralsList" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListLinkedCollaterals">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Query" nillable="true" type="tns:ListLinkedCollateralsQuery" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ListLinkedCollateralsQuery">
+    <xs:sequence>
+      <xs:element name="ControlFlags" type="tns:LinkedCollateralControlFlags" />
+      <xs:element xmlns:q43="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Ids" nillable="true" type="q43:ArrayOfint">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element xmlns:q44="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="CollateralIds" nillable="true" type="q44:ArrayOfint">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="ApplicationId" nillable="true" type="xs:int">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="CreditLineId" nillable="true" type="xs:int">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="Attributes" nillable="true" type="tns:ListAttributesSearchValuesCriterias">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ListLinkedCollateralsQuery" nillable="true" type="tns:ListLinkedCollateralsQuery" />
+  <xs:simpleType name="LinkedCollateralControlFlags">
+    <xs:list>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Basic" />
+          <xs:enumeration value="Attributes" />
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:list>
+  </xs:simpleType>
+  <xs:element name="LinkedCollateralControlFlags" nillable="true" type="tns:LinkedCollateralControlFlags" />
+  <xs:element name="ListLinkedCollateralsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q45="http://models.altasoft.ge/loans/v1.0" minOccurs="0" name="Result" nillable="true" type="q45:CollateralLinkList" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteCollateral">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CollateralId" type="xs:int" />
+        <xs:element xmlns:q46="http://models.altasoft.ge/common/v1.0" minOccurs="0" name="User" nillable="true" type="q46:UserAndDeptId" />
+        <xs:element minOccurs="0" name="Version" nillable="true" type="xs:unsignedLong" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteCollateralResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteCollateralLink">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="LinkId" type="xs:int" />
+        <xs:element xmlns:q47="http://models.altasoft.ge/common/v1.0" minOccurs="0" name="User" nillable="true" type="q47:UserAndDeptId" />
+        <xs:element minOccurs="0" name="Version" nillable="true" type="xs:unsignedLong" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteLinkCollateralResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DisburseApplication">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AccId" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" name="ApplicationId" type="xs:int" />
+        <xs:element xmlns:q48="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ConfirmedFeeIds" nillable="true" type="q48:ArrayOfint" />
+        <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Flags" type="tns:LoanOperationFlags" />
+        <xs:element xmlns:q49="http://models.altasoft.ge/common/v1.0" minOccurs="0" name="User" nillable="true" type="q49:UserAndDeptId" />
+        <xs:element minOccurs="0" name="Version" type="xs:unsignedLong" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:simpleType name="LoanOperationFlags">
+    <xs:list>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="None">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">0</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="ChangeDebts">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="ExecuteAccounting">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="LogOperation">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="Default">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">7</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:list>
+  </xs:simpleType>
+  <xs:element name="LoanOperationFlags" nillable="true" type="tns:LoanOperationFlags" />
+  <xs:element name="DisburseApplicationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ETag" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="OperationId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="WriteoffLoanRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Flags" type="tns:LoanOperationFlags" />
+        <xs:element minOccurs="0" name="LoanId" type="xs:int" />
+        <xs:element xmlns:q50="http://models.altasoft.ge/loans/v1.0" minOccurs="0" name="Mode" type="q50:LoanWriteoffMode" />
+        <xs:element xmlns:q51="http://models.altasoft.ge/common/v1.0" minOccurs="0" name="User" nillable="true" type="q51:UserAndDeptId" />
+        <xs:element minOccurs="0" name="Version" type="xs:unsignedLong" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="WriteoffLoanResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ETag" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="OperationId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChangeLoanAmountRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ChangeUnusedPrincipal" type="xs:boolean" />
+        <xs:element xmlns:q52="http://models.altasoft.ge/common/v1.0" minOccurs="0" name="Creator" nillable="true" type="q52:UserAndDeptId" />
+        <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Flags" type="tns:LoanOperationFlags" />
+        <xs:element minOccurs="0" name="LoanAmount" type="xs:decimal" />
+        <xs:element minOccurs="0" name="LoanId" type="xs:int" />
+        <xs:element minOccurs="0" name="Version" type="xs:unsignedLong" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChangeLoanAmountResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ETag" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="OperationId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetLoanProblemStatus">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q53="http://models.altasoft.ge/common/v1.0" minOccurs="0" name="Creator" nillable="true" type="q53:UserAndDeptId" />
+        <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="LoanId" type="xs:int" />
+        <xs:element minOccurs="0" name="ProblemManagerUserId" nillable="true" type="xs:int" />
+        <xs:element xmlns:q54="http://models.altasoft.ge/loans/v1.0" minOccurs="0" name="Status" type="q54:LoanProblemStatus" />
+        <xs:element minOccurs="0" name="Version" type="xs:unsignedLong" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetLoanProblemStatusResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ETag" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="OperationId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PostLoanDebts">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q55="http://models.altasoft.ge/common/v1.0" minOccurs="0" name="Creator" nillable="true" type="q55:UserAndDeptId" />
+        <xs:element xmlns:q56="http://models.altasoft.ge/loans/v1.0" minOccurs="0" name="DebtDetails" nillable="true" type="q56:DebtDetails" />
+        <xs:element xmlns:q57="http://models.altasoft.ge/loans/v1.0" minOccurs="0" name="Debts" nillable="true" type="q57:NameAmountCollection" />
+        <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Flags" type="tns:LoanOperationFlags" />
+        <xs:element minOccurs="0" name="LoanId" type="xs:int" />
+        <xs:element minOccurs="0" name="Version" type="xs:unsignedLong" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PostLoanDebtsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ETag" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="OperationId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExecuteOperationAction">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q58="http://models.altasoft.ge/loans/v1.0" minOccurs="0" name="Action" type="q58:LoanOperationAction" />
+        <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ETag" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="OperationId" nillable="true" type="xs:string" />
+        <xs:element xmlns:q59="http://models.altasoft.ge/common/v1.0" minOccurs="0" name="User" nillable="true" type="q59:UserAndDeptId" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExecuteOperationActionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ETag" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="OperationId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CalculatePaymentDebtsRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q60="http://models.altasoft.ge/loans/v1.0" minOccurs="0" name="Args" nillable="true" type="q60:NameObjectCollection" />
+        <xs:element minOccurs="0" name="CalculationDate" nillable="true" type="xs:dateTime" />
+        <xs:element xmlns:q61="http://models.altasoft.ge/loans/v1.0" minOccurs="0" name="CalculationType" type="q61:PaymentCalculationType" />
+        <xs:element xmlns:q62="http://models.altasoft.ge/loans/v1.0" minOccurs="0" name="DebtDetalizationType" type="q62:DebtComponentDetalization" />
+        <xs:element xmlns:q63="http://models.altasoft.ge/loans/v1.0" minOccurs="0" name="DebtPayments" nillable="true" type="q63:NameAmountCollection" />
+        <xs:element minOccurs="0" name="LoanControlFlags" type="tns:LoanControlFlags" />
+        <xs:element minOccurs="0" name="LoanId" type="xs:int" />
+        <xs:element xmlns:q64="http://models.altasoft.ge/loans/v1.0" minOccurs="0" name="Source" type="q64:PaymentSource" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CalculatePaymentDebtsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q65="http://models.altasoft.ge/loans/v1.0" minOccurs="0" name="DebtDetails" nillable="true" type="q65:DebtDetails" />
+        <xs:element xmlns:q66="http://models.altasoft.ge/loans/v1.0" minOccurs="0" name="Debts" nillable="true" type="q66:NameAmountCollection" />
+        <xs:element xmlns:q67="http://models.altasoft.ge/loans/v1.0" minOccurs="0" name="Loan" nillable="true" type="q67:Loan" />
+        <xs:element minOccurs="0" name="NextPaymentCanBeDeferred" nillable="true" type="xs:boolean" />
+        <xs:element minOccurs="0" name="Version" nillable="true" type="xs:unsignedLong" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoanPaymentRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q68="http://models.altasoft.ge/loans/v1.0" minOccurs="0" name="Args" nillable="true" type="q68:NameObjectCollection" />
+        <xs:element xmlns:q69="http://models.altasoft.ge/common/v1.0" minOccurs="0" name="Attributes" nillable="true" type="q69:Attributes" />
+        <xs:element xmlns:q70="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ConfirmedFeeIdentifiers" nillable="true" type="q70:ArrayOfint" />
+        <xs:element xmlns:q71="http://models.altasoft.ge/common/v1.0" minOccurs="0" name="Creator" nillable="true" type="q71:UserAndDeptId" />
+        <xs:element xmlns:q72="http://models.altasoft.ge/loans/v1.0" minOccurs="0" name="DebtsToPay" nillable="true" type="q72:NameAmountCollection" />
+        <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="LoanId" type="xs:int" />
+        <xs:element xmlns:q73="http://models.altasoft.ge/loans/v1.0" minOccurs="0" name="PayerDetails" nillable="true" type="q73:PayerDetails" />
+        <xs:element minOccurs="0" name="PaymentAccId" nillable="true" type="xs:int" />
+        <xs:element xmlns:q74="http://models.altasoft.ge/loans/v1.0" minOccurs="0" name="PaymentType" type="q74:PaymentType" />
+        <xs:element xmlns:q75="http://models.altasoft.ge/loans/v1.0" minOccurs="0" name="RescheduleStrategy" nillable="true" type="q75:PrepaymentRescheduleStrategy" />
+        <xs:element xmlns:q76="http://models.altasoft.ge/loans/v1.0" minOccurs="0" name="Source" type="q76:PaymentSource" />
+        <xs:element minOccurs="0" name="TryDeferNextPayment" nillable="true" type="xs:boolean" />
+        <xs:element minOccurs="0" name="UseCollection" type="xs:boolean" />
+        <xs:element minOccurs="0" name="Version" type="xs:unsignedLong" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoanPaymentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ETag" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="OperationId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="PaymentWasDeferred" nillable="true" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PutLoanAttributes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q77="http://models.altasoft.ge/common/v1.0" minOccurs="0" name="Attributes" nillable="true" type="q77:Attributes" />
+        <xs:element xmlns:q78="http://models.altasoft.ge/common/v1.0" minOccurs="0" name="Creator" nillable="true" type="q78:UserAndDeptId" />
+        <xs:element minOccurs="0" name="LoanId" type="xs:int" />
+        <xs:element minOccurs="0" name="Version" type="xs:unsignedLong" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PutLoanAttributesResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListUsers">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Query" nillable="true" type="tns:ListUsersQuery" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ListUsersQuery">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" nillable="true" type="xs:int">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="DeptId" nillable="true" type="xs:int">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="IsActive" nillable="true" type="xs:boolean">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="RoleId" nillable="true" type="xs:int">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ListUsersQuery" nillable="true" type="tns:ListUsersQuery" />
+  <xs:element name="ListUsersResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q79="http://models.altasoft.ge/catalogs/v1.0" minOccurs="0" name="Result" nillable="true" type="q79:UsersList" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GenerateScheduleDates">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="EndDate" nillable="true" type="xs:dateTime" />
+        <xs:element xmlns:q80="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ExtraDates" nillable="true" type="q80:ArrayOfdateTime" />
+        <xs:element minOccurs="0" name="FirstPaymentDate" nillable="true" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="LastPaymentDate" nillable="true" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="PaymentCount" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" name="ScheduleTypeId" type="xs:int" />
+        <xs:element xmlns:q81="http://models.altasoft.ge/loans/v1.0" minOccurs="0" name="Segments" nillable="true" type="q81:ArrayOfRepaymentScheduleSegment" />
+        <xs:element minOccurs="0" name="StartDate" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GenerateScheduleDatesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q82="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Result" nillable="true" type="q82:ArrayOfdateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FillSchedule">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q83="http://models.altasoft.ge/loans/v1.0" minOccurs="0" name="DistributedInterests" nillable="true" type="q83:DistributedInterestList" />
+        <xs:element xmlns:q84="http://models.altasoft.ge/loans/v1.0" minOccurs="0" name="Elements" type="q84:ScheduleElementType" />
+        <xs:element minOccurs="0" name="ExtraInterestPayment" type="xs:decimal" />
+        <xs:element xmlns:q85="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GiftedInterests" nillable="true" type="q85:ArrayOfdateTime" />
+        <xs:element xmlns:q86="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GraceDates" nillable="true" type="q86:ArrayOfKeyValueOfScheduleElementTypeGraceSettingsjydhKdyE" />
+        <xs:element minOccurs="0" name="InterestRate" type="xs:decimal" />
+        <xs:element xmlns:q87="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Payment" nillable="true" type="q87:ArrayOfKeyValueOfdateTimedecimal" />
+        <xs:element minOccurs="0" name="RegularPayment" nillable="true" type="xs:decimal" />
+        <xs:element xmlns:q88="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ScheduleDates" nillable="true" type="q88:ArrayOfdateTime" />
+        <xs:element minOccurs="0" name="ScheduleTypeId" type="xs:int" />
+        <xs:element xmlns:q89="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ScheduledDisbursements" nillable="true" type="q89:ArrayOfKeyValueOfdateTimedecimal" />
+        <xs:element xmlns:q90="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ScheduledPrincipalPayments" nillable="true" type="q90:ArrayOfKeyValueOfdateTimedecimal" />
+        <xs:element xmlns:q91="http://models.altasoft.ge/loans/v1.0" minOccurs="0" name="Segments" nillable="true" type="q91:ArrayOfRepaymentScheduleSegment" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FillScheduleResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Pmt" nillable="true" type="xs:decimal" />
+        <xs:element xmlns:q92="http://models.altasoft.ge/loans/v1.0" minOccurs="0" name="Result" nillable="true" type="q92:LoanSchedule" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetApplication">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ControlFlags" type="tns:ApplicationControlFlags" />
+        <xs:element minOccurs="0" name="ApplicationId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:simpleType name="ApplicationControlFlags">
+    <xs:list>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Basic" />
+          <xs:enumeration value="Attributes" />
+          <xs:enumeration value="FeesAndPenaltiesPolicy">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">8</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="CashflowParameters">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">16</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="Authorities">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">32</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="PrepaymentPolicy">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">64</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="Markers">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">128</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="Extensions">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">256</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="ExtraFields">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1024</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="Coborrowers">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2048</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="Extended">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3576</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:list>
+  </xs:simpleType>
+  <xs:element name="ApplicationControlFlags" nillable="true" type="tns:ApplicationControlFlags" />
+  <xs:element name="GetApplicationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="NotModified" nillable="true" type="xs:boolean" />
+        <xs:element xmlns:q93="http://models.altasoft.ge/loans/v1.0" minOccurs="0" name="Result" nillable="true" type="q93:Application" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListApplications">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Query" nillable="true" type="tns:ListApplicationsQuery" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ListApplicationsQuery">
+    <xs:sequence>
+      <xs:element name="ControlFlags" type="tns:ApplicationControlFlags" />
+      <xs:element xmlns:q94="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Ids" nillable="true" type="q94:ArrayOfint">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="BorrowerId" nillable="true" type="xs:int">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="BorrowerOrCoBorrowerId" nillable="true" type="xs:int">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element xmlns:q95="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ProductIds" nillable="true" type="q95:ArrayOfint">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element xmlns:q96="http://models.altasoft.ge/loans/v1.0" minOccurs="0" name="Status" nillable="true" type="q96:ArrayOfApplicationStatus">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element xmlns:q97="http://models.altasoft.ge/loans/v1.0" minOccurs="0" name="DisburseDate" nillable="true" type="q97:DateTimeRange">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element xmlns:q98="http://models.altasoft.ge/loans/v1.0" minOccurs="0" name="EndDate" nillable="true" type="q98:DateTimeRange">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="CreditLineId" nillable="true" type="xs:int">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="Attributes" nillable="true" type="tns:ListAttributesSearchValuesCriterias">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ListApplicationsQuery" nillable="true" type="tns:ListApplicationsQuery" />
+  <xs:element name="ListApplicationsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q99="http://models.altasoft.ge/loans/v1.0" minOccurs="0" name="Result" nillable="true" type="q99:ApplicationsList" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PatchLoanAttributes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q100="http://models.altasoft.ge/common/v1.0" minOccurs="0" name="Creator" nillable="true" type="q100:UserAndDeptId" />
+        <xs:element minOccurs="0" name="LoanId" type="xs:int" />
+        <xs:element xmlns:q101="http://models.altasoft.ge/common/v1.0" minOccurs="0" name="Set" nillable="true" type="q101:Attributes" />
+        <xs:element xmlns:q102="http://models.altasoft.ge/common/v1.0" minOccurs="0" name="Unset" nillable="true" type="q102:StringList" />
+        <xs:element minOccurs="0" name="Version" type="xs:unsignedLong" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PatchLoanAttributesResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLoanSchedule">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q103="http://models.altasoft.ge/loans/v1.0" minOccurs="0" name="ComponentDetalization" type="q103:DebtComponentDetalization" />
+        <xs:element minOccurs="0" name="ControlFlags" type="tns:GetLoanScheduleControlFlags" />
+        <xs:element minOccurs="0" name="LoanId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:simpleType name="GetLoanScheduleControlFlags">
+    <xs:list>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Past" />
+          <xs:enumeration value="Future" />
+          <xs:enumeration value="IncludeEmptyDates" />
+          <xs:enumeration value="LoanBaseDebts" />
+          <xs:enumeration value="InsuranceDebts" />
+          <xs:enumeration value="Fees" />
+          <xs:enumeration value="Disbursements" />
+          <xs:enumeration value="Limits" />
+          <xs:enumeration value="ExtraScheduledDebts">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4096</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="FullPeriod">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="Full">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4347</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:list>
+  </xs:simpleType>
+  <xs:element name="GetLoanScheduleControlFlags" nillable="true" type="tns:GetLoanScheduleControlFlags" />
+  <xs:element name="GetLoanScheduleResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q104="http://models.altasoft.ge/loans/v1.0" minOccurs="0" name="Schedule" nillable="true" type="q104:LoanSchedule" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLoanOperationDetailsRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="OperationId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLoanOperationDetailsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ETag" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="OperationId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEnvironmentVariables">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEnvironmentVariablesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Result" nillable="true" type="tns:EnvironmentVariables" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="EnvironmentVariables">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="OpenDay" nillable="true" type="xs:dateTime">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EnvironmentVariables" nillable="true" type="tns:EnvironmentVariables" />
+  <xs:element name="CalculateEffectiveRateForApplication">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ApplicationId" type="xs:int" />
+        <xs:element minOccurs="0" name="EffectiveRateFlags" type="tns:EffectiveRateControlFlags" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:simpleType name="EffectiveRateControlFlags">
+    <xs:list>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Basic">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">0</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="CashFlow">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:list>
+  </xs:simpleType>
+  <xs:element name="EffectiveRateControlFlags" nillable="true" type="tns:EffectiveRateControlFlags" />
+  <xs:element name="CalculateEffectiveRateForApplicationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q105="http://models.altasoft.ge/loans/v1.0" minOccurs="0" name="EffectiveRates" nillable="true" type="q105:ArrayOfEffectiveRate" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetApplicationShcheduleRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ApplicationId" type="xs:int" />
+        <xs:element xmlns:q106="http://models.altasoft.ge/loans/v1.0" minOccurs="0" name="ComponentDetalization" type="q106:DebtComponentDetalization" />
+        <xs:element minOccurs="0" name="Flags" type="tns:GetApplicationScheduleControlFlags" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:simpleType name="GetApplicationScheduleControlFlags">
+    <xs:list>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="IncludeEmptyDates">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="LoanBaseDebts">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">8</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="InsuranceDebts">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">16</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="Disbursements">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">256</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="Full">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">280</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:list>
+  </xs:simpleType>
+  <xs:element name="GetApplicationScheduleControlFlags" nillable="true" type="tns:GetApplicationScheduleControlFlags" />
+  <xs:element name="GetApplicationShcheduleResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q107="http://models.altasoft.ge/loans/v1.0" minOccurs="0" name="Result" nillable="true" type="q107:LoanSchedule" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PostCollateral">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q108="http://models.altasoft.ge/loans/v1.0" minOccurs="0" name="Collateral" nillable="true" type="q108:Collateral" />
+        <xs:element xmlns:q109="http://models.altasoft.ge/common/v1.0" minOccurs="0" name="Creator" nillable="true" type="q109:UserAndDeptId" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PostCollateralResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CollateralId" type="xs:int" />
+        <xs:element minOccurs="0" name="Version" type="xs:unsignedLong" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListOps">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Query" nillable="true" type="tns:ListOpsQuery" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ListOpsQuery">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ControlFlags" nillable="true" type="tns:OperationControlFlags">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="ExclusiveStartId" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="Limit" nillable="true" type="xs:int">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="LoanId" nillable="true" type="xs:int">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="After" nillable="true" type="xs:dateTime">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="Before" nillable="true" type="xs:dateTime">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element xmlns:q110="http://models.altasoft.ge/common/v1.0" minOccurs="0" name="TypeCodes" nillable="true" type="q110:StringList">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element xmlns:q111="http://models.altasoft.ge/common/v1.0" minOccurs="0" name="Ids" nillable="true" type="q111:StringList">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ListOpsQuery" nillable="true" type="tns:ListOpsQuery" />
+  <xs:simpleType name="OperationControlFlags">
+    <xs:list>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Basic" />
+          <xs:enumeration value="Extensions" />
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:list>
+  </xs:simpleType>
+  <xs:element name="OperationControlFlags" nillable="true" type="tns:OperationControlFlags" />
+  <xs:element name="ListOpsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q112="http://models.altasoft.ge/loans/v1.0" minOccurs="0" name="Result" nillable="true" type="q112:OperationsList" />
+        <xs:element minOccurs="0" name="LastIdEvaluated" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PutCreditLine">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q113="http://models.altasoft.ge/common/v1.0" minOccurs="0" name="Creator" nillable="true" type="q113:UserAndDeptId" />
+        <xs:element xmlns:q114="http://models.altasoft.ge/loans/v1.0" minOccurs="0" name="CreditLine" nillable="true" type="q114:CreditLine" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PutCreditLineResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CreditLineId" type="xs:int" />
+        <xs:element minOccurs="0" name="AgreementNumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ETag" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PostCreditLine">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q115="http://models.altasoft.ge/common/v1.0" minOccurs="0" name="Creator" nillable="true" type="q115:UserAndDeptId" />
+        <xs:element xmlns:q116="http://models.altasoft.ge/loans/v1.0" minOccurs="0" name="CreditLine" nillable="true" type="q116:CreditLine" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PostCreditLineResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ETag" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListCreditLines">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Query" nillable="true" type="tns:ListCreditLinesQuery" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ListCreditLinesQuery">
+    <xs:sequence>
+      <xs:element xmlns:q117="http://models.altasoft.ge/common/v1.0" minOccurs="0" name="Ids" nillable="true" type="q117:IntList">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="ControlFlags" nillable="true" type="tns:CreditLineControlFlags">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="BorrowerId" nillable="true" type="xs:int">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="BorrowerOrCoBorrowerId" nillable="true" type="xs:int">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element xmlns:q118="http://models.altasoft.ge/loans/v1.0" minOccurs="0" name="MinStatus" nillable="true" type="q118:CreditLineStatus">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element xmlns:q119="http://models.altasoft.ge/loans/v1.0" minOccurs="0" name="MaxStatus" nillable="true" type="q119:CreditLineStatus">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ListCreditLinesQuery" nillable="true" type="tns:ListCreditLinesQuery" />
+  <xs:simpleType name="CreditLineControlFlags">
+    <xs:list>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Basic" />
+          <xs:enumeration value="Attributes" />
+          <xs:enumeration value="Coborrowers" />
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:list>
+  </xs:simpleType>
+  <xs:element name="CreditLineControlFlags" nillable="true" type="tns:CreditLineControlFlags" />
+  <xs:element name="ListCreditLinesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q120="http://models.altasoft.ge/loans/v1.0" minOccurs="0" name="Result" nillable="true" type="q120:CreditLinesList" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListCollateralTypes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ControlFlags" nillable="true" type="tns:CollateralTypeControlFlags" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:simpleType name="CollateralTypeControlFlags">
+    <xs:list>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Basic" />
+          <xs:enumeration value="AttributeCodes" />
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:list>
+  </xs:simpleType>
+  <xs:element name="CollateralTypeControlFlags" nillable="true" type="tns:CollateralTypeControlFlags" />
+  <xs:element name="ListCollateralTypesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q121="http://models.altasoft.ge/loans/v1.0" minOccurs="0" name="Result" nillable="true" type="q121:CollateralTypeList" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PutDebtAbatement">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q122="http://models.altasoft.ge/common/v1.0" minOccurs="0" name="Creator" nillable="true" type="q122:UserAndDeptId" />
+        <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="LoanId" type="xs:int" />
+        <xs:element minOccurs="0" name="Version" type="xs:unsignedLong" />
+        <xs:element xmlns:q123="http://models.altasoft.ge/loans/v1.0" minOccurs="0" name="Debts" nillable="true" type="q123:NameAmountCollection" />
+        <xs:element xmlns:q124="http://models.altasoft.ge/loans/v1.0" minOccurs="0" name="Args" nillable="true" type="q124:OperationArgs" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PutDebtAbatementResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ETag" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="OperationId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PutAdministrationDebt">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q125="http://models.altasoft.ge/common/v1.0" minOccurs="0" name="Creator" nillable="true" type="q125:UserAndDeptId" />
+        <xs:element xmlns:q126="http://models.altasoft.ge/loans/v1.0" minOccurs="0" name="Debt" nillable="true" type="q126:AdministrationDebt" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PutAdministrationDebtResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DebtId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PostAdministrationDebt">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q127="http://models.altasoft.ge/common/v1.0" minOccurs="0" name="Creator" nillable="true" type="q127:UserAndDeptId" />
+        <xs:element xmlns:q128="http://models.altasoft.ge/loans/v1.0" minOccurs="0" name="Debt" nillable="true" type="q128:AdministrationDebt" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PostAdministrationDebtResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DebtId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteAdministrationDebt">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q129="http://models.altasoft.ge/common/v1.0" minOccurs="0" name="Creator" nillable="true" type="q129:UserAndDeptId" />
+        <xs:element minOccurs="0" name="DebtId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteAdministrationDebtResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListAdministrationDebts">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Query" nillable="true" type="tns:ListAdministrationDebtsQuery" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ListAdministrationDebtsQuery">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CustomerId" nillable="true" type="xs:int">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="ObjectId" nillable="true" type="xs:int">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element xmlns:q130="http://models.altasoft.ge/loans/v1.0" minOccurs="0" name="ObjectType" nillable="true" type="q130:AdministrationDebt.DebtObjectType">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="TypeId" nillable="true" type="xs:int">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="KindId" nillable="true" type="xs:int">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="RegisteredAfter" nillable="true" type="xs:dateTime">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="RegisteredBefore" nillable="true" type="xs:dateTime">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="DueAfter" nillable="true" type="xs:dateTime">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="DueBefore" nillable="true" type="xs:dateTime">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element xmlns:q131="http://models.altasoft.ge/loans/v1.0" minOccurs="0" name="MinState" nillable="true" type="q131:AdministrationDebt.DebtState">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element xmlns:q132="http://models.altasoft.ge/loans/v1.0" minOccurs="0" name="MaxState" nillable="true" type="q132:AdministrationDebt.DebtState">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element xmlns:q133="http://models.altasoft.ge/common/v1.0" minOccurs="0" name="Ids" nillable="true" type="q133:IntList">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="ControlFlags" nillable="true" type="tns:AdministrationDebtsControlFlags">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ListAdministrationDebtsQuery" nillable="true" type="tns:ListAdministrationDebtsQuery" />
+  <xs:simpleType name="AdministrationDebtsControlFlags">
+    <xs:list>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Basic" />
+          <xs:enumeration value="Attributes" />
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:list>
+  </xs:simpleType>
+  <xs:element name="AdministrationDebtsControlFlags" nillable="true" type="tns:AdministrationDebtsControlFlags" />
+  <xs:element name="ListAdministrationDebtsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q134="http://models.altasoft.ge/loans/v1.0" minOccurs="0" name="Result" nillable="true" type="q134:AdministrationDebtsList" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChangeLoanConditions">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q135="http://models.altasoft.ge/common/v1.0" minOccurs="0" name="Creator" nillable="true" type="q135:UserAndDeptId" />
+        <xs:element minOccurs="0" name="LoanId" type="xs:int" />
+        <xs:element minOccurs="0" name="Version" type="xs:unsignedLong" />
+        <xs:element xmlns:q136="http://models.altasoft.ge/loans/v1.0" minOccurs="0" name="UsageType" nillable="true" type="q136:LoanUsageType" />
+        <xs:element xmlns:q137="http://models.altasoft.ge/loans/v1.0" minOccurs="0" name="FeeAndPenaltyAccrualPolicy" nillable="true" type="q137:FeeAndPenaltyAccrualPolicy" />
+        <xs:element xmlns:q138="http://models.altasoft.ge/loans/v1.0" minOccurs="0" name="PrepaymentPolicy" nillable="true" type="q138:PrepaymentPolicy" />
+        <xs:element minOccurs="0" name="AccountIdentifier" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" name="SetAsRestructured" nillable="true" type="xs:boolean" />
+        <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChangeLoanConditionsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ETag" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="OperationId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAdministrationDebt">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ControlFlags" nillable="true" type="tns:AdministrationDebtsControlFlags" />
+        <xs:element minOccurs="0" name="DebtId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAdministrationDebtResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q139="http://models.altasoft.ge/loans/v1.0" minOccurs="0" name="Result" nillable="true" type="q139:AdministrationDebt" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOperation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="OperationId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ControlFlags" nillable="true" type="tns:OperationControlFlags" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOperationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q140="http://models.altasoft.ge/loans/v1.0" minOccurs="0" name="Result" nillable="true" type="q140:Operation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RejectApplication">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q141="http://models.altasoft.ge/common/v1.0" minOccurs="0" name="Creator" nillable="true" type="q141:UserAndDeptId" />
+        <xs:element minOccurs="0" name="ApplicationId" type="xs:int" />
+        <xs:element minOccurs="0" name="Version" type="xs:unsignedLong" />
+        <xs:element minOccurs="0" name="Note" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ReasonId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RejectApplicationResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListApplicationRejectReasons">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListApplicationRejectReasonsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q142="http://models.altasoft.ge/loans/v1.0" minOccurs="0" name="Result" nillable="true" type="q142:ArrayOfApplicationRejectReason" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListLiborIndexes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Query" nillable="true" type="tns:ListLiborIndexesQuery" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ListLiborIndexesQuery">
+    <xs:sequence>
+      <xs:element xmlns:q143="http://models.altasoft.ge/loans/v1.0" minOccurs="0" name="Type" nillable="true" type="q143:LiborIndexType">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="Currency" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="DateFrom" nillable="true" type="xs:dateTime">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="DateTo" nillable="true" type="xs:dateTime">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="MinInterestRate" nillable="true" type="xs:decimal">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="IsAuthorized" nillable="true" type="xs:boolean">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="MaxInterestRate" nillable="true" type="xs:decimal">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ListLiborIndexesQuery" nillable="true" type="tns:ListLiborIndexesQuery" />
+  <xs:element name="ListLiborIndexesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q144="http://models.altasoft.ge/loans/v1.0" minOccurs="0" name="Result" nillable="true" type="q144:LiborIndexesList" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListVariablePercentValues">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Query" nillable="true" type="tns:ListVariablePercentValuesQuery" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ListVariablePercentValuesQuery">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Currency" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="DateFrom" nillable="true" type="xs:dateTime">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="DateTo" nillable="true" type="xs:dateTime">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="MinPercent" nillable="true" type="xs:decimal">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="IsAuthorized" nillable="true" type="xs:boolean">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="MaxPercent" nillable="true" type="xs:decimal">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ListVariablePercentValuesQuery" nillable="true" type="tns:ListVariablePercentValuesQuery" />
+  <xs:element name="ListVariablePercentValuesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q145="http://models.altasoft.ge/loans/v1.0" minOccurs="0" name="Result" nillable="true" type="q145:VariablePercentValuesList" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListCreditLineAttributeCodes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Query" nillable="true" type="tns:ListCreditLineAttributeCodesQuery" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ListCreditLineAttributeCodesQuery">
+    <xs:sequence>
+      <xs:element xmlns:q146="http://models.altasoft.ge/common/v1.0" minOccurs="0" name="Codes" nillable="true" type="q146:StringList">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="IsRequired" nillable="true" type="xs:boolean">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ListCreditLineAttributeCodesQuery" nillable="true" type="tns:ListCreditLineAttributeCodesQuery" />
+  <xs:element name="ListCreditLineAttributeCodesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q147="http://models.altasoft.ge/loans/v1.0" minOccurs="0" name="Result" nillable="true" type="q147:CreditLineAttributeCodesList" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListProvisionings">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListProvisioningsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q148="http://models.altasoft.ge/loans/v1.0" minOccurs="0" name="Result" nillable="true" type="q148:ProvisioningList" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChangeLoanProvision">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q149="http://models.altasoft.ge/common/v1.0" minOccurs="0" name="Creator" nillable="true" type="q149:UserAndDeptId" />
+        <xs:element minOccurs="0" name="LoanId" type="xs:int" />
+        <xs:element minOccurs="0" name="Version" type="xs:unsignedLong" />
+        <xs:element minOccurs="0" name="ProvisioningId" nillable="true" type="xs:int" />
+        <xs:element xmlns:q150="http://models.altasoft.ge/loans/v1.0" minOccurs="0" name="EnsureType" type="q150:EnsureType" />
+        <xs:element minOccurs="0" name="CategoryLevel" type="xs:int" />
+        <xs:element minOccurs="0" name="ProvisionRate" nillable="true" type="xs:decimal" />
+        <xs:element minOccurs="0" name="IsRestructured" nillable="true" type="xs:boolean" />
+        <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChangeLoanProvisionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ETag" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="OperationId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DisburseTranche">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AccountIdentifier" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" name="Amount" type="xs:decimal" />
+        <xs:element minOccurs="0" name="BranchId" nillable="true" type="xs:int" />
+        <xs:element xmlns:q151="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ConfirmedFeeIdentifiers" nillable="true" type="q151:ArrayOfint" />
+        <xs:element xmlns:q152="http://models.altasoft.ge/common/v1.0" minOccurs="0" name="Creator" nillable="true" type="q152:UserAndDeptId" />
+        <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+        <xs:element xmlns:q153="http://models.altasoft.ge/loans/v1.0" minOccurs="0" name="EndOfMonth" nillable="true" type="q153:EndOfMonthMode" />
+        <xs:element xmlns:q154="http://models.altasoft.ge/loans/v1.0" minOccurs="0" name="ExtraScheduleParamteters" nillable="true" type="q154:ExtraScheduleBuildParamteters" />
+        <xs:element minOccurs="0" name="FirstPaymentDate" nillable="true" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="Flags" type="tns:LoanOperationFlags" />
+        <xs:element minOccurs="0" name="LastPaymentDate" nillable="true" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="LoanId" type="xs:int" />
+        <xs:element minOccurs="0" name="PaymentDay" nillable="true" type="xs:unsignedByte" />
+        <xs:element minOccurs="0" name="PmtAmountRegular" nillable="true" type="xs:decimal" />
+        <xs:element minOccurs="0" name="PmtCount" nillable="true" type="xs:int" />
+        <xs:element xmlns:q155="http://models.altasoft.ge/loans/v1.0" minOccurs="0" name="Schedule" nillable="true" type="q155:LoanSchedule" />
+        <xs:element xmlns:q156="http://models.altasoft.ge/loans/v1.0" minOccurs="0" name="ScheduleBuildMode" type="q156:ScheduleBuildMode" />
+        <xs:element minOccurs="0" name="ScheduleTypeId" type="xs:int" />
+        <xs:element minOccurs="0" name="SecondPaymentDay" nillable="true" type="xs:unsignedByte" />
+        <xs:element xmlns:q157="http://models.altasoft.ge/loans/v1.0" minOccurs="0" name="Type" type="q157:PaymentIntervalType" />
+        <xs:element minOccurs="0" name="Version" type="xs:unsignedLong" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DisburseTrancheResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ETag" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="IsValid" type="xs:boolean" />
+        <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="OperationId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CalculateEffectiveRate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q158="http://models.altasoft.ge/loans/v1.0" minOccurs="0" name="Application" nillable="true" type="q158:Application" />
+        <xs:element xmlns:q159="http://models.altasoft.ge/loans/v1.0" minOccurs="0" name="Args" nillable="true" type="q159:NameObjectCollection" />
+        <xs:element minOccurs="0" name="CalculationDate" nillable="true" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="EffectiveRateFlags" type="tns:EffectiveRateControlFlags" />
+        <xs:element xmlns:q160="http://models.altasoft.ge/loans/v1.0" minOccurs="0" name="ExtraExpanses" nillable="true" type="q160:ArrayOfExtraExpanse" />
+        <xs:element xmlns:q161="http://models.altasoft.ge/loans/v1.0" minOccurs="0" name="Insurances" nillable="true" type="q161:InsurancesList" />
+        <xs:element xmlns:q162="http://models.altasoft.ge/loans/v1.0" minOccurs="0" name="Schedule" nillable="true" type="q162:LoanSchedule" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CalculateEffectiveRateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q163="http://models.altasoft.ge/loans/v1.0" minOccurs="0" name="EffectiveRates" nillable="true" type="q163:ArrayOfEffectiveRate" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListLoanOffers">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Query" nillable="true" type="tns:ListLoanOffersQuery" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ListLoanOffersQuery">
+    <xs:sequence>
+      <xs:element xmlns:q164="http://models.altasoft.ge/common/v1.0" minOccurs="0" name="Ids" nillable="true" type="q164:IntList">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="Amount" nillable="true" type="xs:decimal">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="Term" nillable="true" type="xs:int">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="Ccy" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="ChannelId" nillable="true" type="xs:int">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="ProductlId" nillable="true" type="xs:int">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="ClientType" nillable="true" type="xs:int">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="Payment" nillable="true" type="xs:decimal">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="InterestRate" nillable="true" type="xs:decimal">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ListLoanOffersQuery" nillable="true" type="tns:ListLoanOffersQuery" />
+  <xs:element name="ListLoanOffersResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q165="http://models.altasoft.ge/loans/v1.0" minOccurs="0" name="LoanOffers" nillable="true" type="q165:LoanOffersList" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

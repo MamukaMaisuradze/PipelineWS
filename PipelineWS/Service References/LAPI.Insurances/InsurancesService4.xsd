@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://services.altasoft.ge/common/v1.0" elementFormDefault="qualified" targetNamespace="http://services.altasoft.ge/common/v1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="RequestHeaders">
+    <xs:sequence>
+      <xs:element name="ApplicationKey" nillable="true" type="xs:string" />
+      <xs:element name="RequestId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="AcceptLanguage" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RequestHeaders" nillable="true" type="tns:RequestHeaders" />
+  <xs:complexType name="ResponseHeaders">
+    <xs:sequence>
+      <xs:element name="RequestId" nillable="true" type="xs:string" />
+      <xs:element name="Timestamp" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IsCopy" nillable="true" type="xs:boolean">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="ApiVersion" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ResponseHeaders" nillable="true" type="tns:ResponseHeaders" />
+</xs:schema>

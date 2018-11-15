@@ -1,0 +1,602 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C0B7C4F4-B252-43D3-8738-0BEA9EE89B37}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PipelineWS</RootNamespace>
+    <AssemblyName>PipelineWS</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <TargetFrameworkProfile />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MF_Wrapper, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>MFiles\MF_Wrapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>MFiles\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Stimulsoft.Base, Version=2015.1.0.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>StimulSoft\Stimulsoft.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Stimulsoft.Report, Version=2015.1.0.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>StimulSoft\Stimulsoft.Report.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>MFiles\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AltaLMS\AltaSoft.Lms.Core.dll" />
+    <Content Include="AltaLMS\AltaSoft.Lms.Repository.dll" />
+    <Content Include="AltaLMS\AltaSoft.Lms.Resources.dll" />
+    <Content Include="AltaLMS\Lms.Vtb.dll" />
+    <Content Include="clientaccesspolicy.xml" />
+    <Content Include="crossdomain.xml" />
+    <Content Include="MFilesService.asmx" />
+    <Content Include="MFiles\MF_Wrapper.dll" />
+    <Content Include="MFiles\MF_Wrapper.pdb" />
+    <Content Include="MFiles\Newtonsoft.Json.dll" />
+    <Content Include="MFiles\Newtonsoft.Json.xml" />
+    <Content Include="MFiles\System.Net.Http.Formatting.dll" />
+    <Content Include="MFiles\System.Net.Http.Formatting.xml" />
+    <Content Include="PipilineService.asmx" />
+    <Content Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </Content>
+    <None Include="Properties\PublishProfiles\Local Folder.pubxml" />
+    <None Include="Properties\PublishProfiles\Test 2 on 40.pubxml" />
+    <None Include="Properties\PublishProfiles\TestOn40.pubxml" />
+    <None Include="Service References\LAPI.Core\configuration91.svcinfo" />
+    <None Include="Service References\LAPI.Core\configuration.svcinfo" />
+    <None Include="Service References\LAPI.Core\InsurancesService2.wsdl" />
+    <None Include="Service References\LAPI.Core\InsurancesService21.wsdl" />
+    <None Include="Service References\LAPI.Core\InsurancesService7.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\LAPI.Core\InsurancesService71.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\LAPI.Core\InsurancesService72.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\LAPI.Core\InsurancesService73.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\LAPI.Core\InsurancesService74.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\LAPI.Core\InsurancesService75.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\LAPI.Core\InsurancesService76.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\LAPI.Core\LoansService1.disco" />
+    <None Include="Service References\LAPI.Core\InsurancesService1.disco" />
+    <Content Include="Service References\LAPI.Core\PipelineWS.LAPI.Core.CalculateEffectiveRateForApplicationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\LAPI.Core\PipelineWS.LAPI.Core.CalculatePaymentDebtsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\LAPI.Core\PipelineWS.LAPI.Core.ChangeLoanAmountResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\LAPI.Core\PipelineWS.LAPI.Core.ChangeLoanConditionsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\LAPI.Core\PipelineWS.LAPI.Core.DeleteAdministrationDebtResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\LAPI.Core\PipelineWS.LAPI.Core.DeleteApplicationAttachmentResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\LAPI.Core\PipelineWS.LAPI.Core.DeleteCollateralResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\LAPI.Core\PipelineWS.LAPI.Core.DeleteLinkCollateralResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\LAPI.Core\PipelineWS.LAPI.Core.DisburseApplicationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\LAPI.Core\PipelineWS.LAPI.Core.ExecuteOperationActionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\LAPI.Core\PipelineWS.LAPI.Core.FillScheduleResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\LAPI.Core\PipelineWS.LAPI.Core.GenerateScheduleDatesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\LAPI.Core\PipelineWS.LAPI.Core.GetApplicationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\LAPI.Core\PipelineWS.LAPI.Core.GetApplicationShcheduleResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\LAPI.Core\PipelineWS.LAPI.Core.GetEnvironmentVariablesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\LAPI.Core\PipelineWS.LAPI.Core.GetLoanOperationDetailsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\LAPI.Core\PipelineWS.LAPI.Core.GetLoanProductResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\LAPI.Core\PipelineWS.LAPI.Core.GetLoanResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\LAPI.Core\PipelineWS.LAPI.Core.GetLoanScheduleResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\LAPI.Core\PipelineWS.LAPI.Core.ListAdministrationDebtsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\LAPI.Core\PipelineWS.LAPI.Core.ListApplicationsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\LAPI.Core\PipelineWS.LAPI.Core.ListCollateralsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\LAPI.Core\PipelineWS.LAPI.Core.ListCollateralTypesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\LAPI.Core\PipelineWS.LAPI.Core.ListCreditLinesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\LAPI.Core\PipelineWS.LAPI.Core.ListLinkedCollateralsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\LAPI.Core\PipelineWS.LAPI.Core.ListLoanProductsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\LAPI.Core\PipelineWS.LAPI.Core.ListLoansResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\LAPI.Core\PipelineWS.LAPI.Core.ListOpsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\LAPI.Core\PipelineWS.LAPI.Core.ListUsersResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\LAPI.Core\PipelineWS.LAPI.Core.LoanPaymentResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\LAPI.Core\PipelineWS.LAPI.Core.PatchLoanAttributesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\LAPI.Core\PipelineWS.LAPI.Core.PostAdministrationDebtResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\LAPI.Core\PipelineWS.LAPI.Core.PostApplicationAttachmentResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\LAPI.Core\PipelineWS.LAPI.Core.PostApplicationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\LAPI.Core\PipelineWS.LAPI.Core.PostCollateralResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\LAPI.Core\PipelineWS.LAPI.Core.PostCreditLineResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\LAPI.Core\PipelineWS.LAPI.Core.PostLoanDebtsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\LAPI.Core\PipelineWS.LAPI.Core.PutAdministrationDebtResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\LAPI.Core\PipelineWS.LAPI.Core.PutApplicationAttachmentResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\LAPI.Core\PipelineWS.LAPI.Core.PutApplicationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\LAPI.Core\PipelineWS.LAPI.Core.PutCollateralLinkResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\LAPI.Core\PipelineWS.LAPI.Core.PutCollateralResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\LAPI.Core\PipelineWS.LAPI.Core.PutCreditLineResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\LAPI.Core\PipelineWS.LAPI.Core.PutDebtAbatementResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\LAPI.Core\PipelineWS.LAPI.Core.PutLoanAttributesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\LAPI.Core\PipelineWS.LAPI.Core.SetLoanProblemStatusResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\LAPI.Core\PipelineWS.LAPI.Core.WriteoffLoanResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\LAPI.Core\PipelineWS.LAPI.Core.GetAdministrationDebtResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\LAPI.Core\PipelineWS.LAPI.Core.GetOperationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\LAPI.Core\PipelineWS.LAPI.Core.ListApplicationRejectReasonsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\LAPI.Core\PipelineWS.LAPI.Core.ListCreditLineAttributeCodesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\LAPI.Core\PipelineWS.LAPI.Core.ListLiborIndexesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\LAPI.Core\PipelineWS.LAPI.Core.ListVariablePercentValuesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\LAPI.Core\PipelineWS.LAPI.Core.RejectApplicationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\LAPI.Core\PipelineWS.LAPI.Core.GetPolicyResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\LAPI.Core\PipelineWS.LAPI.Core.ListCompaniesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\LAPI.Core\PipelineWS.LAPI.Core.ListInsurancesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\LAPI.Core\PipelineWS.LAPI.Core.ListInsuranceTypesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\LAPI.Core\PipelineWS.LAPI.Core.ListPoliciesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\LAPI.Core\PipelineWS.LAPI.Core.ListProductsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\LAPI.Core\PipelineWS.LAPI.Core.PutPolicyResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\LAPI.Core\PipelineWS.LAPI.Core.CalculateEffectiveRateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\LAPI.Core\PipelineWS.LAPI.Core.ChangeLoanProvisionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\LAPI.Core\PipelineWS.LAPI.Core.DisburseTrancheResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\LAPI.Core\PipelineWS.LAPI.Core.GenerateScheduleResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\LAPI.Core\PipelineWS.LAPI.Core.ListLoanOffersResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\LAPI.Core\PipelineWS.LAPI.Core.ListProvisioningsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\LAPI.Core\PipelineWS.LAPI.Core.PostPolicyResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\LAPI.Core\LoansService2.wsdl" />
+    <None Include="Service References\LAPI.Core\LoansService21.wsdl" />
+    <None Include="Service References\LAPI.Core\LoansService8.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\LAPI.Core\LoansService81.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\LAPI.Core\LoansService82.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\LAPI.Core\LoansService83.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\LAPI.Core\LoansService84.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\LAPI.Core\LoansService85.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\LAPI.Core\LoansService86.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\LAPI.Core\LoansService87.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Service References\LAPI.Core\PipelineWS.LAPI.Core.PostCollateralLinkResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\LAPI.Core\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Service References\RSService\PipelineWS.RSService.GetMedianResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\RSService\PipelineWS.RSService.GetPayerSmsCodeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\RSService\PipelineWS.RSService.GetPayerInfoDataLocalResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\RSService\PipelineWS.RSService.GetPayerInfoDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\RSService\RSService.disco" />
+    <None Include="Service References\RSService\configuration91.svcinfo" />
+    <None Include="Service References\RSService\configuration.svcinfo" />
+    <None Include="Service References\RSService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="StimulSoft\Stimulsoft.Base.dll" />
+    <Content Include="StimulSoft\Stimulsoft.Report.dll" />
+    <Content Include="Web References\OdbService\ODBAnswer.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\OdbService\ODBAnswerCode.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="StimulSoft\Reports\RptMFiles_CheckList.mrt" />
+    <None Include="Service References\RSService\RSService.wsdl" />
+    <None Include="Service References\RSService\RSService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RSService\RSService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RSService\RSService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RSService\RSService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\CraService\CRAService.wsdl" />
+    <None Include="Properties\PublishProfiles\REAL.pubxml" />
+    <None Include="Properties\PublishProfiles\Real2.pubxml" />
+    <None Include="Properties\PublishProfiles\Test.pubxml" />
+    <None Include="Properties\PublishProfiles\Test2.pubxml" />
+    <None Include="Web References\CraService\CRAService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\CraService\CRAService0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\CraService\CRAService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Web References\CraService\PersonInfo.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <None Include="Web References\CraService\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Web References\OdbService\MofCheckClientAccount.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <None Include="Web References\OdbService\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\OdbService\UTFODBService.disco" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="LocalModel\ApplicationClasses.cs" />
+    <Compile Include="LocalModel\CollateralDEPODataTable.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="LocalModel\CreditInfoClasses.cs" />
+    <Compile Include="LocalModel\ReferencesClasses.cs" />
+    <Compile Include="LocalModel\ScoringClasses.cs" />
+    <Compile Include="MFilesService.asmx.cs">
+      <DependentUpon>MFilesService.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PipilineService.asmx.cs">
+      <DependentUpon>PipilineService.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\LAPI.Core\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\RSService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\CraService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\OdbService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="xsd\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\OdbService\UTFODBService.wsdl" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\..\Development\4.0\Libraries\BankLibrary\BankLibrary.Bank\BankLibrary.Bank.csproj">
+      <Project>{a3ef7f44-8a4d-4172-92ac-218e06b823c4}</Project>
+      <Name>BankLibrary.Bank</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\..\Development\4.0\Libraries\BankLibrary\BankLibrary.Communications\BankLibrary.Communications.csproj">
+      <Project>{3511261d-ab36-43c3-a08a-536b83b44150}</Project>
+      <Name>BankLibrary.Communications</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\..\Development\4.0\Libraries\BankLibrary\BankLibrary.Crypting\BankLibrary.Crypting.csproj">
+      <Project>{6f089d9e-e112-4833-a3ef-7a6866afd02c}</Project>
+      <Name>BankLibrary.Crypting</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\..\Development\4.0\Libraries\BankLibrary\BankLibrary.DataBase\BankLibrary.DataBase.csproj">
+      <Project>{480fdfbf-0d8f-4330-bcd4-c852f2dfb444}</Project>
+      <Name>BankLibrary.DataBase</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\..\Development\4.0\Libraries\BankLibrary\BankLibrary.Exceptions\BankLibrary.Exceptions.csproj">
+      <Project>{99f6a478-fec7-4702-b18d-edf0a7ef3962}</Project>
+      <Name>BankLibrary.Exceptions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\..\Development\4.0\Libraries\BankLibrary\BankLibrary.General\BankLibrary.General.csproj">
+      <Project>{ff6dd192-5ef4-4759-baed-dd332ad413fd}</Project>
+      <Name>BankLibrary.General</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\..\Development\4.0\Libraries\BankLibrary\BankLibrary.Tutis\BankLibrary.Tutis.csproj">
+      <Project>{4c864034-650c-48c8-b86b-4937d41a9ec6}</Project>
+      <Name>BankLibrary.Tutis</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\..\Development\4.0\Libraries\BankLibrary\BankLibrary.Utils\BankLibrary.Utils.csproj">
+      <Project>{51a297a5-b312-4ed0-8b30-c9899a5da3d5}</Project>
+      <Name>BankLibrary.Utils</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\..\Development\4.0\Libraries\BankLibrary\BankLibrary\BankLibrary.csproj">
+      <Project>{a67e6917-25f0-470e-a65f-1c1e0780a217}</Project>
+      <Name>BankLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://192.168.200.1/webservices/TestODBWebService2.0/UTFODBService.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\OdbService\</RelPath>
+      <UpdateFromURL>http://192.168.200.1/webservices/TestODBWebService2.0/UTFODBService.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>PipelineWS_OdbService_UTFODBService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://intranet.bank/WebServices/WcfCRAService/CRAService.svc%3fwsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\CraService\</RelPath>
+      <UpdateFromURL>http://intranet.bank/WebServices/WcfCRAService/CRAService.svc%3fwsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>PipelineWS_CraService_CRAService</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\LAPI.Core\" />
+    <WCFMetadataStorage Include="Service References\RSService\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:57726/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

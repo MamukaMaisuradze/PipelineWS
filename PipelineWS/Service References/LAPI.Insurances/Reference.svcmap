@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="80388f5b-b162-4420-8420-9c543e7e9764" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>true</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://pipeline.vtb.com.ge/LapiLastTest/InsurancesService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="InsurancesService.xsd" MetadataType="Schema" ID="f13c5a35-70c0-4c17-8fac-76b5b1d2da5d" SourceId="1" SourceUrl="http://pipeline.vtb.com.ge/LapiLastTest/InsurancesService.svc?xsd=xsd6" />
+    <MetadataFile FileName="InsurancesService.wsdl" MetadataType="Wsdl" ID="32e19fdc-dfe3-4aa0-b990-272ca2b75883" SourceId="1" SourceUrl="http://pipeline.vtb.com.ge/LapiLastTest/InsurancesService.svc?wsdl" />
+    <MetadataFile FileName="InsurancesService1.wsdl" MetadataType="Wsdl" ID="1fb3a002-10ce-44d1-8692-fb1fb22b4449" SourceId="1" SourceUrl="http://pipeline.vtb.com.ge/LapiLastTest/InsurancesService.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="InsurancesService.disco" MetadataType="Disco" ID="3c03bb23-f0a1-49dd-9e22-52d79aca3ff8" SourceId="1" SourceUrl="http://pipeline.vtb.com.ge/LapiLastTest/InsurancesService.svc?disco" />
+    <MetadataFile FileName="InsurancesService1.xsd" MetadataType="Schema" ID="9cae40d7-0c2e-4b86-8f94-a07f643063cf" SourceId="1" SourceUrl="http://pipeline.vtb.com.ge/LapiLastTest/InsurancesService.svc?xsd=xsd1" />
+    <MetadataFile FileName="InsurancesService2.xsd" MetadataType="Schema" ID="9bb86bff-465c-442b-9e49-51a705f12b36" SourceId="1" SourceUrl="http://pipeline.vtb.com.ge/LapiLastTest/InsurancesService.svc?xsd=xsd0" />
+    <MetadataFile FileName="InsurancesService3.xsd" MetadataType="Schema" ID="db0c9298-0024-407c-8a2b-fa9bbc359eb3" SourceId="1" SourceUrl="http://pipeline.vtb.com.ge/LapiLastTest/InsurancesService.svc?xsd=xsd3" />
+    <MetadataFile FileName="InsurancesService4.xsd" MetadataType="Schema" ID="f4bd6107-5bf6-4f65-89b3-2848c2ce192a" SourceId="1" SourceUrl="http://pipeline.vtb.com.ge/LapiLastTest/InsurancesService.svc?xsd=xsd2" />
+    <MetadataFile FileName="InsurancesService5.xsd" MetadataType="Schema" ID="3435f7e8-572e-49ea-b2ef-9aa9480ac93e" SourceId="1" SourceUrl="http://pipeline.vtb.com.ge/LapiLastTest/InsurancesService.svc?xsd=xsd5" />
+    <MetadataFile FileName="InsurancesService6.xsd" MetadataType="Schema" ID="4cfe0563-77ca-42d3-9169-d4f1e5ee5331" SourceId="1" SourceUrl="http://pipeline.vtb.com.ge/LapiLastTest/InsurancesService.svc?xsd=xsd4" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

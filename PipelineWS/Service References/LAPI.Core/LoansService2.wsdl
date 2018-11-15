@@ -1,0 +1,853 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:i0="http://services.altasoft.ge/loans/v1.0" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="LoansService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:import namespace="http://services.altasoft.ge/loans/v1.0" location="http://abs.vtb.com.ge/lapi/LoansService.svc?wsdl=wsdl0" />
+  <wsdl:types />
+  <wsdl:binding name="BasicHttpBinding_LoansService" type="i0:LoansService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetLoan">
+      <soap:operation soapAction="http://services.altasoft.ge/loans/v1.0/LoansService/GetLoan" style="document" />
+      <wsdl:input name="GetLoanRequest">
+        <soap:header message="i0:GetLoanRequest_Headers" part="RequestHeaders" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetLoanResponse">
+        <soap:header message="i0:GetLoanResponse_Headers" part="ResponseHeaders" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ApiFault">
+        <soap:fault use="literal" name="ApiFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListLoans">
+      <soap:operation soapAction="http://services.altasoft.ge/loans/v1.0/LoansService/ListLoans" style="document" />
+      <wsdl:input name="ListLoansRequest">
+        <soap:header message="i0:ListLoansRequest_Headers" part="RequestHeaders" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ListLoansResponse">
+        <soap:header message="i0:ListLoansResponse_Headers" part="ResponseHeaders" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ApiFault">
+        <soap:fault use="literal" name="ApiFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetLoanProduct">
+      <soap:operation soapAction="http://services.altasoft.ge/loans/v1.0/LoansService/GetLoanProduct" style="document" />
+      <wsdl:input name="GetLoanProductRequest">
+        <soap:header message="i0:GetLoanProductRequest_Headers" part="RequestHeaders" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetLoanProductResponse">
+        <soap:header message="i0:GetLoanProductResponse_Headers" part="ResponseHeaders" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ApiFault">
+        <soap:fault use="literal" name="ApiFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListLoanProducts">
+      <soap:operation soapAction="http://services.altasoft.ge/loans/v1.0/LoansService/ListLoanProducts" style="document" />
+      <wsdl:input name="ListLoanProductsRequest">
+        <soap:header message="i0:ListLoanProductsRequest_Headers" part="RequestHeaders" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ListLoanProductsResponse">
+        <soap:header message="i0:ListLoanProductsResponse_Headers" part="ResponseHeaders" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ApiFault">
+        <soap:fault use="literal" name="ApiFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="PutApplication">
+      <soap:operation soapAction="http://services.altasoft.ge/loans/v1.0/LoansService/PutApplication" style="document" />
+      <wsdl:input name="PutApplicationRequest">
+        <soap:header message="i0:PutApplicationRequest_Headers" part="RequestHeaders" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="PutApplicationResponse">
+        <soap:header message="i0:PutApplicationResponse_Headers" part="ResponseHeaders" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ApiFault">
+        <soap:fault use="literal" name="ApiFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="PostApplication">
+      <soap:operation soapAction="http://services.altasoft.ge/loans/v1.0/LoansService/PostApplication" style="document" />
+      <wsdl:input name="PostApplicationRequest">
+        <soap:header message="i0:PostApplicationRequest_Headers" part="RequestHeaders" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="PostApplicationResponse">
+        <soap:header message="i0:PostApplicationResponse_Headers" part="ResponseHeaders" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ApiFault">
+        <soap:fault use="literal" name="ApiFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="PutApplicationAttachment">
+      <soap:operation soapAction="http://services.altasoft.ge/loans/v1.0/LoansService/PutApplicationAttachment" style="document" />
+      <wsdl:input name="PutApplicationAttachmentRequest">
+        <soap:header message="i0:PutApplicationAttachmentRequest_Headers" part="RequestHeaders" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="PutApplicationAttachmentResponse">
+        <soap:header message="i0:PutApplicationAttachmentResponse_Headers" part="ResponseHeaders" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ApiFault">
+        <soap:fault use="literal" name="ApiFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="PostApplicationAttachment">
+      <soap:operation soapAction="http://services.altasoft.ge/loans/v1.0/LoansService/PostApplicationAttachment" style="document" />
+      <wsdl:input name="PostApplicationAttachmentRequest">
+        <soap:header message="i0:PostApplicationAttachmentRequest_Headers" part="RequestHeaders" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="PostApplicationAttachmentResponse">
+        <soap:header message="i0:PostApplicationAttachmentResponse_Headers" part="ResponseHeaders" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ApiFault">
+        <soap:fault use="literal" name="ApiFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteApplicationAttachment">
+      <soap:operation soapAction="http://services.altasoft.ge/loans/v1.0/LoansService/DeleteApplicationAttachment" style="document" />
+      <wsdl:input name="DeleteApplicationAttachmentRequest">
+        <soap:header message="i0:DeleteApplicationAttachmentRequest_Headers" part="RequestHeaders" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="DeleteApplicationAttachmentResponse">
+        <soap:header message="i0:DeleteApplicationAttachmentResponse_Headers" part="ResponseHeaders" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ApiFault">
+        <soap:fault use="literal" name="ApiFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="PutCollateral">
+      <soap:operation soapAction="http://services.altasoft.ge/loans/v1.0/LoansService/PutCollateral" style="document" />
+      <wsdl:input name="PutCollateralRequest">
+        <soap:header message="i0:PutCollateralRequest_Headers" part="RequestHeaders" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="PutCollateralResponse">
+        <soap:header message="i0:PutCollateralResponse_Headers" part="ResponseHeaders" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ApiFault">
+        <soap:fault use="literal" name="ApiFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="PutCollateralLink">
+      <soap:operation soapAction="http://services.altasoft.ge/loans/v1.0/LoansService/PutCollateralLink" style="document" />
+      <wsdl:input name="PutCollateralLinkRequest">
+        <soap:header message="i0:PutCollateralLinkRequest_Headers" part="RequestHeaders" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="PutCollateralLinkResponse">
+        <soap:header message="i0:PutCollateralLinkResponse_Headers" part="ResponseHeaders" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ApiFault">
+        <soap:fault use="literal" name="ApiFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="PostCollateralLink">
+      <soap:operation soapAction="http://services.altasoft.ge/loans/v1.0/LoansService/PostCollateralLink" style="document" />
+      <wsdl:input name="PostCollateralLinkRequest">
+        <soap:header message="i0:PostCollateralLinkRequest_Headers" part="RequestHeaders" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="PostCollateralLinkResponse">
+        <soap:header message="i0:PostCollateralLinkResponse_Headers" part="ResponseHeaders" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ApiFault">
+        <soap:fault use="literal" name="ApiFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListCollaterals">
+      <soap:operation soapAction="http://services.altasoft.ge/loans/v1.0/LoansService/ListCollaterals" style="document" />
+      <wsdl:input name="ListCollateralsRequest">
+        <soap:header message="i0:ListCollateralsRequest_Headers" part="RequestHeaders" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ListCollateralsResponse">
+        <soap:header message="i0:ListCollateralsResponse_Headers" part="ResponseHeaders" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ApiFault">
+        <soap:fault use="literal" name="ApiFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListLinkedCollaterals">
+      <soap:operation soapAction="http://services.altasoft.ge/loans/v1.0/LoansService/ListLinkedCollaterals" style="document" />
+      <wsdl:input name="ListLinkedCollateralsRequest">
+        <soap:header message="i0:ListLinkedCollateralsRequest_Headers" part="RequestHeaders" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ListLinkedCollateralsResponse">
+        <soap:header message="i0:ListLinkedCollateralsResponse_Headers" part="ResponseHeaders" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ApiFault">
+        <soap:fault use="literal" name="ApiFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCollateral">
+      <soap:operation soapAction="http://services.altasoft.ge/loans/v1.0/LoansService/DeleteCollateral" style="document" />
+      <wsdl:input name="DeleteCollateralRequest">
+        <soap:header message="i0:DeleteCollateralRequest_Headers" part="RequestHeaders" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="DeleteCollateralResponse">
+        <soap:header message="i0:DeleteCollateralResponse_Headers" part="ResponseHeaders" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ApiFault">
+        <soap:fault use="literal" name="ApiFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCollateralLink">
+      <soap:operation soapAction="http://services.altasoft.ge/loans/v1.0/LoansService/DeleteCollateralLink" style="document" />
+      <wsdl:input name="DeleteCollateralLinkRequest">
+        <soap:header message="i0:DeleteCollateralLinkRequest_Headers" part="RequestHeaders" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="DeleteLinkCollateralResponse">
+        <soap:header message="i0:DeleteLinkCollateralResponse_Headers" part="ResponseHeaders" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ApiFault">
+        <soap:fault use="literal" name="ApiFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DisburseApplication">
+      <soap:operation soapAction="http://services.altasoft.ge/loans/v1.0/LoansService/DisburseApplication" style="document" />
+      <wsdl:input name="DisburseApplicationRequest">
+        <soap:header message="i0:DisburseApplicationRequest_Headers" part="RequestHeaders" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="DisburseApplicationResponse">
+        <soap:header message="i0:DisburseApplicationResponse_Headers" part="ResponseHeaders" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ApiFault">
+        <soap:fault use="literal" name="ApiFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="WriteoffLoan">
+      <soap:operation soapAction="http://services.altasoft.ge/loans/v1.0/LoansService/WriteoffLoan" style="document" />
+      <wsdl:input name="WriteoffLoanRequest">
+        <soap:header message="i0:WriteoffLoanRequest_Headers" part="RequestHeaders" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="WriteoffLoanResponse">
+        <soap:header message="i0:WriteoffLoanResponse_Headers" part="ResponseHeaders" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ApiFault">
+        <soap:fault use="literal" name="ApiFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeLoanAmount">
+      <soap:operation soapAction="http://services.altasoft.ge/loans/v1.0/LoansService/ChangeLoanAmount" style="document" />
+      <wsdl:input name="ChangeLoanAmountRequest">
+        <soap:header message="i0:ChangeLoanAmountRequest_Headers" part="RequestHeaders" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ChangeLoanAmountResponse">
+        <soap:header message="i0:ChangeLoanAmountResponse_Headers" part="ResponseHeaders" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ApiFault">
+        <soap:fault use="literal" name="ApiFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SetLoanProblemStatus">
+      <soap:operation soapAction="http://services.altasoft.ge/loans/v1.0/LoansService/SetLoanProblemStatus" style="document" />
+      <wsdl:input name="SetLoanProblemStatusRequest">
+        <soap:header message="i0:SetLoanProblemStatusRequest_Headers" part="RequestHeaders" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SetLoanProblemStatusResponse">
+        <soap:header message="i0:SetLoanProblemStatusResponse_Headers" part="ResponseHeaders" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ApiFault">
+        <soap:fault use="literal" name="ApiFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="PostLoanDebts">
+      <soap:operation soapAction="http://services.altasoft.ge/loans/v1.0/LoansService/PostLoanDebts" style="document" />
+      <wsdl:input name="PostLoanDebtsRequest">
+        <soap:header message="i0:PostLoanDebtsRequest_Headers" part="RequestHeaders" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="PostLoanDebtsResponse">
+        <soap:header message="i0:PostLoanDebtsResponse_Headers" part="ResponseHeaders" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ApiFault">
+        <soap:fault use="literal" name="ApiFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteOperationAction">
+      <soap:operation soapAction="http://services.altasoft.ge/loans/v1.0/LoansService/ExecuteOperationAction" style="document" />
+      <wsdl:input name="DefaultOperationActionRequest">
+        <soap:header message="i0:DefaultOperationActionRequest_Headers" part="RequestHeaders" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ExecuteOperationActionResponse">
+        <soap:header message="i0:ExecuteOperationActionResponse_Headers" part="ResponseHeaders" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ApiFault">
+        <soap:fault use="literal" name="ApiFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CalculatePaymentDebts">
+      <soap:operation soapAction="http://services.altasoft.ge/loans/v1.0/LoansService/CalculatePaymentDebts" style="document" />
+      <wsdl:input name="CalculatePaymentDebtsRequest">
+        <soap:header message="i0:CalculatePaymentDebtsRequest_Headers" part="RequestHeaders" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="CalculatePaymentDebtsResponse">
+        <soap:header message="i0:CalculatePaymentDebtsResponse_Headers" part="ResponseHeaders" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ApiFault">
+        <soap:fault use="literal" name="ApiFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="LoanPayment">
+      <soap:operation soapAction="http://services.altasoft.ge/loans/v1.0/LoansService/LoanPayment" style="document" />
+      <wsdl:input name="LoanPaymentRequest">
+        <soap:header message="i0:LoanPaymentRequest_Headers" part="RequestHeaders" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="LoanPaymentResponse">
+        <soap:header message="i0:LoanPaymentResponse_Headers" part="ResponseHeaders" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ApiFault">
+        <soap:fault use="literal" name="ApiFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="PutLoanAttributes">
+      <soap:operation soapAction="http://services.altasoft.ge/loans/v1.0/LoansService/PutLoanAttributes" style="document" />
+      <wsdl:input name="PutLoanAttributesRequest">
+        <soap:header message="i0:PutLoanAttributesRequest_Headers" part="RequestHeaders" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="PutLoanAttributesResponse">
+        <soap:header message="i0:PutLoanAttributesResponse_Headers" part="ResponseHeaders" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ApiFault">
+        <soap:fault use="literal" name="ApiFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListUsers">
+      <soap:operation soapAction="http://services.altasoft.ge/loans/v1.0/LoansService/ListUsers" style="document" />
+      <wsdl:input name="ListUsersRequest">
+        <soap:header message="i0:ListUsersRequest_Headers" part="RequestHeaders" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ListUsersResponse">
+        <soap:header message="i0:ListUsersResponse_Headers" part="ResponseHeaders" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ApiFault">
+        <soap:fault use="literal" name="ApiFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GenerateScheduleDates">
+      <soap:operation soapAction="http://services.altasoft.ge/loans/v1.0/LoansService/GenerateScheduleDates" style="document" />
+      <wsdl:input name="GenerateScheduleDatesRequest">
+        <soap:header message="i0:GenerateScheduleDatesRequest_Headers" part="RequestHeaders" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GenerateScheduleDatesResponse">
+        <soap:header message="i0:GenerateScheduleDatesResponse_Headers" part="ResponseHeaders" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ApiFault">
+        <soap:fault use="literal" name="ApiFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="FillSchedule">
+      <soap:operation soapAction="http://services.altasoft.ge/loans/v1.0/LoansService/FillSchedule" style="document" />
+      <wsdl:input name="FillScheduleRequest">
+        <soap:header message="i0:FillScheduleRequest_Headers" part="RequestHeaders" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="FillScheduleResponse">
+        <soap:header message="i0:FillScheduleResponse_Headers" part="ResponseHeaders" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ApiFault">
+        <soap:fault use="literal" name="ApiFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetApplication">
+      <soap:operation soapAction="http://services.altasoft.ge/loans/v1.0/LoansService/GetApplication" style="document" />
+      <wsdl:input name="GetApplicationRequest">
+        <soap:header message="i0:GetApplicationRequest_Headers" part="RequestHeaders" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetApplicationResponse">
+        <soap:header message="i0:GetApplicationResponse_Headers" part="ResponseHeaders" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ApiFault">
+        <soap:fault use="literal" name="ApiFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListApplications">
+      <soap:operation soapAction="http://services.altasoft.ge/loans/v1.0/LoansService/ListApplications" style="document" />
+      <wsdl:input name="ListApplicationsRequest">
+        <soap:header message="i0:ListApplicationsRequest_Headers" part="RequestHeaders" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ListApplicationsResponse">
+        <soap:header message="i0:ListApplicationsResponse_Headers" part="ResponseHeaders" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ApiFault">
+        <soap:fault use="literal" name="ApiFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="PatchLoanAttributes">
+      <soap:operation soapAction="http://services.altasoft.ge/loans/v1.0/LoansService/PatchLoanAttributes" style="document" />
+      <wsdl:input name="PatchLoanAttributesRequest">
+        <soap:header message="i0:PatchLoanAttributesRequest_Headers" part="RequestHeaders" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="PatchLoanAttributesResponse">
+        <soap:header message="i0:PatchLoanAttributesResponse_Headers" part="ResponseHeaders" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ApiFault">
+        <soap:fault use="literal" name="ApiFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetLoanSchedule">
+      <soap:operation soapAction="http://services.altasoft.ge/loans/v1.0/LoansService/GetLoanSchedule" style="document" />
+      <wsdl:input name="GetLoanScheduleRequest">
+        <soap:header message="i0:GetLoanScheduleRequest_Headers" part="RequestHeaders" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetLoanScheduleResponse">
+        <soap:header message="i0:GetLoanScheduleResponse_Headers" part="ResponseHeaders" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ApiFault">
+        <soap:fault use="literal" name="ApiFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetLoanOperationDetails">
+      <soap:operation soapAction="http://services.altasoft.ge/loans/v1.0/LoansService/GetLoanOperationDetails" style="document" />
+      <wsdl:input name="GetLoanOperationDetailsRequest">
+        <soap:header message="i0:GetLoanOperationDetailsRequest_Headers" part="RequestHeaders" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetLoanOperationDetailsResponse">
+        <soap:header message="i0:GetLoanOperationDetailsResponse_Headers" part="ResponseHeaders" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ApiFault">
+        <soap:fault use="literal" name="ApiFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetEnvironmentVariables">
+      <soap:operation soapAction="http://services.altasoft.ge/loans/v1.0/LoansService/GetEnvironmentVariables" style="document" />
+      <wsdl:input name="GetEnvironmentVariablesRequest">
+        <soap:header message="i0:GetEnvironmentVariablesRequest_Headers" part="RequestHeaders" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetEnvironmentVariablesResponse">
+        <soap:header message="i0:GetEnvironmentVariablesResponse_Headers" part="ResponseHeaders" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ApiFault">
+        <soap:fault use="literal" name="ApiFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateEffectiveRateForApplication">
+      <soap:operation soapAction="http://services.altasoft.ge/loans/v1.0/LoansService/CalculateEffectiveRateForApplication" style="document" />
+      <wsdl:input name="CalculateEffectiveRateForApplicationRequest">
+        <soap:header message="i0:CalculateEffectiveRateForApplicationRequest_Headers" part="RequestHeaders" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="CalculateEffectiveRateForApplicationResponse">
+        <soap:header message="i0:CalculateEffectiveRateForApplicationResponse_Headers" part="ResponseHeaders" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ApiFault">
+        <soap:fault use="literal" name="ApiFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetApplicationSchedule">
+      <soap:operation soapAction="http://services.altasoft.ge/loans/v1.0/LoansService/GetApplicationSchedule" style="document" />
+      <wsdl:input name="GetApplicationShcheduleRequest">
+        <soap:header message="i0:GetApplicationShcheduleRequest_Headers" part="RequestHeaders" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetApplicationShcheduleResponse">
+        <soap:header message="i0:GetApplicationShcheduleResponse_Headers" part="ResponseHeaders" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ApiFault">
+        <soap:fault use="literal" name="ApiFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="PostCollateral">
+      <soap:operation soapAction="http://services.altasoft.ge/loans/v1.0/LoansService/PostCollateral" style="document" />
+      <wsdl:input name="PostCollateralRequest">
+        <soap:header message="i0:PostCollateralRequest_Headers" part="RequestHeaders" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="PostCollateralResponse">
+        <soap:header message="i0:PostCollateralResponse_Headers" part="ResponseHeaders" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ApiFault">
+        <soap:fault use="literal" name="ApiFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListOps">
+      <soap:operation soapAction="http://services.altasoft.ge/loans/v1.0/LoansService/ListOps" style="document" />
+      <wsdl:input name="ListOpsRequest">
+        <soap:header message="i0:ListOpsRequest_Headers" part="RequestHeaders" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ListOpsResponse">
+        <soap:header message="i0:ListOpsResponse_Headers" part="ResponseHeaders" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ApiFault">
+        <soap:fault use="literal" name="ApiFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="PutCreditLine">
+      <soap:operation soapAction="http://services.altasoft.ge/loans/v1.0/LoansService/PutCreditLine" style="document" />
+      <wsdl:input name="PutCreditLineRequest">
+        <soap:header message="i0:PutCreditLineRequest_Headers" part="RequestHeaders" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="PutCreditLineResponse">
+        <soap:header message="i0:PutCreditLineResponse_Headers" part="ResponseHeaders" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ApiFault">
+        <soap:fault use="literal" name="ApiFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="PostCreditLine">
+      <soap:operation soapAction="http://services.altasoft.ge/loans/v1.0/LoansService/PostCreditLine" style="document" />
+      <wsdl:input name="PostCreditLineRequest">
+        <soap:header message="i0:PostCreditLineRequest_Headers" part="RequestHeaders" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="PostCreditLineResponse">
+        <soap:header message="i0:PostCreditLineResponse_Headers" part="ResponseHeaders" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ApiFault">
+        <soap:fault use="literal" name="ApiFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListCreditLines">
+      <soap:operation soapAction="http://services.altasoft.ge/loans/v1.0/LoansService/ListCreditLines" style="document" />
+      <wsdl:input name="ListCreditLinesRequest">
+        <soap:header message="i0:ListCreditLinesRequest_Headers" part="RequestHeaders" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ListCreditLinesResponse">
+        <soap:header message="i0:ListCreditLinesResponse_Headers" part="ResponseHeaders" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ApiFault">
+        <soap:fault use="literal" name="ApiFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListCollateralTypes">
+      <soap:operation soapAction="http://services.altasoft.ge/loans/v1.0/LoansService/ListCollateralTypes" style="document" />
+      <wsdl:input name="ListCollateralTypesRequest">
+        <soap:header message="i0:ListCollateralTypesRequest_Headers" part="RequestHeaders" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ListCollateralTypesResponse">
+        <soap:header message="i0:ListCollateralTypesResponse_Headers" part="ResponseHeaders" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ApiFault">
+        <soap:fault use="literal" name="ApiFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="PutDebtAbatement">
+      <soap:operation soapAction="http://services.altasoft.ge/loans/v1.0/LoansService/PutDebtAbatement" style="document" />
+      <wsdl:input name="PutDebtAbatementRequest">
+        <soap:header message="i0:PutDebtAbatementRequest_Headers" part="RequestHeaders" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="PutDebtAbatementResponse">
+        <soap:header message="i0:PutDebtAbatementResponse_Headers" part="ResponseHeaders" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ApiFault">
+        <soap:fault use="literal" name="ApiFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="PutAdministrationDebt">
+      <soap:operation soapAction="http://services.altasoft.ge/loans/v1.0/LoansService/PutAdministrationDebt" style="document" />
+      <wsdl:input name="PutAdministrationDebtRequest">
+        <soap:header message="i0:PutAdministrationDebtRequest_Headers" part="RequestHeaders" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="PutAdministrationDebtResponse">
+        <soap:header message="i0:PutAdministrationDebtResponse_Headers" part="ResponseHeaders" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ApiFault">
+        <soap:fault use="literal" name="ApiFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="PostAdministrationDebt">
+      <soap:operation soapAction="http://services.altasoft.ge/loans/v1.0/LoansService/PostAdministrationDebt" style="document" />
+      <wsdl:input name="PostAdministrationDebtRequest">
+        <soap:header message="i0:PostAdministrationDebtRequest_Headers" part="RequestHeaders" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="PostAdministrationDebtResponse">
+        <soap:header message="i0:PostAdministrationDebtResponse_Headers" part="ResponseHeaders" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ApiFault">
+        <soap:fault use="literal" name="ApiFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAdministrationDebt">
+      <soap:operation soapAction="http://services.altasoft.ge/loans/v1.0/LoansService/DeleteAdministrationDebt" style="document" />
+      <wsdl:input name="DeleteAdministrationDebtRequest">
+        <soap:header message="i0:DeleteAdministrationDebtRequest_Headers" part="RequestHeaders" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="DeleteAdministrationDebtResponse">
+        <soap:header message="i0:DeleteAdministrationDebtResponse_Headers" part="ResponseHeaders" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ApiFault">
+        <soap:fault use="literal" name="ApiFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListAdministrationDebts">
+      <soap:operation soapAction="http://services.altasoft.ge/loans/v1.0/LoansService/ListAdministrationDebts" style="document" />
+      <wsdl:input name="ListAdministrationDebtsRequest">
+        <soap:header message="i0:ListAdministrationDebtsRequest_Headers" part="RequestHeaders" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ListAdministrationDebtsResponse">
+        <soap:header message="i0:ListAdministrationDebtsResponse_Headers" part="ResponseHeaders" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ApiFault">
+        <soap:fault use="literal" name="ApiFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeLoanConditions">
+      <soap:operation soapAction="http://services.altasoft.ge/loans/v1.0/LoansService/ChangeLoanConditions" style="document" />
+      <wsdl:input name="ChangeLoanConditionsRequest">
+        <soap:header message="i0:ChangeLoanConditionsRequest_Headers" part="RequestHeaders" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ChangeLoanConditionsResponse">
+        <soap:header message="i0:ChangeLoanConditionsResponse_Headers" part="ResponseHeaders" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ApiFault">
+        <soap:fault use="literal" name="ApiFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetAdministrationDebt">
+      <soap:operation soapAction="http://services.altasoft.ge/loans/v1.0/LoansService/GetAdministrationDebt" style="document" />
+      <wsdl:input name="GetAdministrationDebtRequest">
+        <soap:header message="i0:GetAdministrationDebtRequest_Headers" part="RequestHeaders" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetAdministrationDebtResponse">
+        <soap:header message="i0:GetAdministrationDebtResponse_Headers" part="ResponseHeaders" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ApiFault">
+        <soap:fault use="literal" name="ApiFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetOperation">
+      <soap:operation soapAction="http://services.altasoft.ge/loans/v1.0/LoansService/GetOperation" style="document" />
+      <wsdl:input name="GetOperationRequest">
+        <soap:header message="i0:GetOperationRequest_Headers" part="RequestHeaders" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetOperationResponse">
+        <soap:header message="i0:GetOperationResponse_Headers" part="ResponseHeaders" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ApiFault">
+        <soap:fault use="literal" name="ApiFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="RejectApplication">
+      <soap:operation soapAction="http://services.altasoft.ge/loans/v1.0/LoansService/RejectApplication" style="document" />
+      <wsdl:input name="RejectApplicationRequest">
+        <soap:header message="i0:RejectApplicationRequest_Headers" part="RequestHeaders" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="RejectApplicationResponse">
+        <soap:header message="i0:RejectApplicationResponse_Headers" part="ResponseHeaders" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ApiFault">
+        <soap:fault use="literal" name="ApiFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListApplicationRejectReasons">
+      <soap:operation soapAction="http://services.altasoft.ge/loans/v1.0/LoansService/ListApplicationRejectReasons" style="document" />
+      <wsdl:input name="ListApplicationRejectReasonsRequest">
+        <soap:header message="i0:ListApplicationRejectReasonsRequest_Headers" part="RequestHeaders" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ListApplicationRejectReasonsResponse">
+        <soap:header message="i0:ListApplicationRejectReasonsResponse_Headers" part="ResponseHeaders" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ApiFault">
+        <soap:fault use="literal" name="ApiFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListLiborIndexes">
+      <soap:operation soapAction="http://services.altasoft.ge/loans/v1.0/LoansService/ListLiborIndexes" style="document" />
+      <wsdl:input name="ListLiborIndexesRequest">
+        <soap:header message="i0:ListLiborIndexesRequest_Headers" part="RequestHeaders" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ListLiborIndexesResponse">
+        <soap:header message="i0:ListLiborIndexesResponse_Headers" part="ResponseHeaders" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ApiFault">
+        <soap:fault use="literal" name="ApiFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListVariablePercentValues">
+      <soap:operation soapAction="http://services.altasoft.ge/loans/v1.0/LoansService/ListVariablePercentValues" style="document" />
+      <wsdl:input name="ListVariablePercentValuesRequest">
+        <soap:header message="i0:ListVariablePercentValuesRequest_Headers" part="RequestHeaders" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ListVariablePercentValuesResponse">
+        <soap:header message="i0:ListVariablePercentValuesResponse_Headers" part="ResponseHeaders" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ApiFault">
+        <soap:fault use="literal" name="ApiFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListCreditLineAttributeCodes">
+      <soap:operation soapAction="http://services.altasoft.ge/loans/v1.0/LoansService/ListCreditLineAttributeCodes" style="document" />
+      <wsdl:input name="ListCreditLineAttributeCodesRequest">
+        <soap:header message="i0:ListCreditLineAttributeCodesRequest_Headers" part="RequestHeaders" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ListCreditLineAttributeCodesResponse">
+        <soap:header message="i0:ListCreditLineAttributeCodesResponse_Headers" part="ResponseHeaders" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ApiFault">
+        <soap:fault use="literal" name="ApiFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListProvisionings">
+      <soap:operation soapAction="http://services.altasoft.ge/loans/v1.0/LoansService/ListProvisionings" style="document" />
+      <wsdl:input name="ListProvisioningsRequest">
+        <soap:header message="i0:ListProvisioningsRequest_Headers" part="RequestHeaders" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ListProvisioningsResponse">
+        <soap:header message="i0:ListProvisioningsResponse_Headers" part="ResponseHeaders" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ApiFault">
+        <soap:fault use="literal" name="ApiFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeLoanProvision">
+      <soap:operation soapAction="http://services.altasoft.ge/loans/v1.0/LoansService/ChangeLoanProvision" style="document" />
+      <wsdl:input name="ChangeLoanProvisionRequest">
+        <soap:header message="i0:ChangeLoanProvisionRequest_Headers" part="RequestHeaders" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ChangeLoanProvisionResponse">
+        <soap:header message="i0:ChangeLoanProvisionResponse_Headers" part="ResponseHeaders" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ApiFault">
+        <soap:fault use="literal" name="ApiFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DisburseTranche">
+      <soap:operation soapAction="http://services.altasoft.ge/loans/v1.0/LoansService/DisburseTranche" style="document" />
+      <wsdl:input name="DisburseTrancheRequest">
+        <soap:header message="i0:DisburseTrancheRequest_Headers" part="RequestHeaders" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="DisburseTrancheResponse">
+        <soap:header message="i0:DisburseTrancheResponse_Headers" part="ResponseHeaders" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ApiFault">
+        <soap:fault use="literal" name="ApiFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateEffectiveRate">
+      <soap:operation soapAction="http://services.altasoft.ge/loans/v1.0/LoansService/CalculateEffectiveRate" style="document" />
+      <wsdl:input name="CalculateEffectiveRateRequest">
+        <soap:header message="i0:CalculateEffectiveRateRequest_Headers" part="RequestHeaders" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="CalculateEffectiveRateResponse">
+        <soap:header message="i0:CalculateEffectiveRateResponse_Headers" part="ResponseHeaders" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ApiFault">
+        <soap:fault use="literal" name="ApiFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListLoanOffers">
+      <soap:operation soapAction="http://services.altasoft.ge/loans/v1.0/LoansService/ListLoanOffers" style="document" />
+      <wsdl:input name="ListLoanOffersRequest">
+        <soap:header message="i0:ListLoanOffersRequest_Headers" part="RequestHeaders" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ListLoanOffersResponse">
+        <soap:header message="i0:ListLoanOffersResponse_Headers" part="ResponseHeaders" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ApiFault">
+        <soap:fault use="literal" name="ApiFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="LoansService">
+    <wsdl:port name="BasicHttpBinding_LoansService" binding="tns:BasicHttpBinding_LoansService">
+      <soap:address location="http://abs.vtb.com.ge/lapi/LoansService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

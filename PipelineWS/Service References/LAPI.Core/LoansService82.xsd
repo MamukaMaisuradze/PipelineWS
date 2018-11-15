@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://models.altasoft.ge/catalogs/v1.0" elementFormDefault="qualified" targetNamespace="http://models.altasoft.ge/catalogs/v1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://abs.vtb.com.ge/lapi/LoansService.svc?xsd=xsd4" namespace="http://models.altasoft.ge/common/v1.0" />
+  <xs:complexType name="UsersList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="User" nillable="true" type="tns:User" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UsersList" nillable="true" type="tns:UsersList" />
+  <xs:complexType name="User">
+    <xs:sequence>
+      <xs:element name="Id" type="xs:int" />
+      <xs:element name="DeptId" type="xs:int" />
+      <xs:element name="LoginName" nillable="true" type="xs:string" />
+      <xs:element name="DisplayName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CustomerId" nillable="true" type="xs:int">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="GroupId" type="xs:int" />
+      <xs:element name="IsActive" type="xs:boolean" />
+      <xs:element name="IsAuthorized" type="xs:boolean" />
+      <xs:element name="IsCancelled" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Note" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="Version" nillable="true" type="xs:unsignedLong">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element xmlns:q1="http://models.altasoft.ge/common/v1.0" minOccurs="0" name="Attributes" nillable="true" type="q1:Attributes">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="User" nillable="true" type="tns:User" />
+</xs:schema>

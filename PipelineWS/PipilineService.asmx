@@ -1,0 +1,1 @@
+﻿<%@ WebService Language="C#" CodeBehind="PipilineService.asmx.cs" Class="PipelineWS.PipelineService" %>

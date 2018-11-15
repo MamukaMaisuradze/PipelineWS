@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://services.altasoft.ge/loans/v1.0" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://services.altasoft.ge/loans/v1.0" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://services.altasoft.ge/loans/v1.0/Imports">
+      <xsd:import schemaLocation="http://abs.vtb.com.ge/lapi/InsurancesService.svc?xsd=xsd0" namespace="http://services.altasoft.ge/loans/v1.0" />
+      <xsd:import schemaLocation="http://abs.vtb.com.ge/lapi/InsurancesService.svc?xsd=xsd2" namespace="http://services.altasoft.ge/common/v1.0" />
+      <xsd:import schemaLocation="http://abs.vtb.com.ge/lapi/InsurancesService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://abs.vtb.com.ge/lapi/InsurancesService.svc?xsd=xsd3" namespace="http://models.altasoft.ge/loans/v1.0" />
+      <xsd:import schemaLocation="http://abs.vtb.com.ge/lapi/InsurancesService.svc?xsd=xsd4" namespace="http://models.altasoft.ge/common/v1.0" />
+      <xsd:import schemaLocation="http://abs.vtb.com.ge/lapi/InsurancesService.svc?xsd=xsd5" namespace="http://services.altasoft.ge/faults/v1.0" />
+      <xsd:import schemaLocation="http://abs.vtb.com.ge/lapi/InsurancesService.svc?xsd=xsd6" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="GetPolicyRequest">
+    <wsdl:part name="parameters" element="tns:GetPolicy" />
+  </wsdl:message>
+  <wsdl:message name="GetPolicyRequest_Headers">
+    <wsdl:part xmlns:q1="http://services.altasoft.ge/common/v1.0" name="RequestHeaders" element="q1:RequestHeaders" />
+  </wsdl:message>
+  <wsdl:message name="GetPolicyResponse">
+    <wsdl:part name="parameters" element="tns:GetPolicyResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPolicyResponse_Headers">
+    <wsdl:part xmlns:q2="http://services.altasoft.ge/common/v1.0" name="ResponseHeaders" element="q2:ResponseHeaders" />
+  </wsdl:message>
+  <wsdl:message name="InsurancesService_GetPolicy_ApiFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFault" />
+  </wsdl:message>
+  <wsdl:message name="ListPoliciesRequest">
+    <wsdl:part name="parameters" element="tns:ListPolicies" />
+  </wsdl:message>
+  <wsdl:message name="ListPoliciesRequest_Headers">
+    <wsdl:part xmlns:q3="http://services.altasoft.ge/common/v1.0" name="RequestHeaders" element="q3:RequestHeaders" />
+  </wsdl:message>
+  <wsdl:message name="ListPoliciesResponse">
+    <wsdl:part name="parameters" element="tns:ListPoliciesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListPoliciesResponse_Headers">
+    <wsdl:part xmlns:q4="http://services.altasoft.ge/common/v1.0" name="ResponseHeaders" element="q4:ResponseHeaders" />
+  </wsdl:message>
+  <wsdl:message name="InsurancesService_ListPolicies_ApiFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFault" />
+  </wsdl:message>
+  <wsdl:message name="PutPolicyRequest">
+    <wsdl:part name="parameters" element="tns:PutPolicy" />
+  </wsdl:message>
+  <wsdl:message name="PutPolicyRequest_Headers">
+    <wsdl:part xmlns:q5="http://services.altasoft.ge/common/v1.0" name="RequestHeaders" element="q5:RequestHeaders" />
+  </wsdl:message>
+  <wsdl:message name="PutPolicyResponse">
+    <wsdl:part name="parameters" element="tns:PutPolicyResponse" />
+  </wsdl:message>
+  <wsdl:message name="PutPolicyResponse_Headers">
+    <wsdl:part xmlns:q6="http://services.altasoft.ge/common/v1.0" name="ResponseHeaders" element="q6:ResponseHeaders" />
+  </wsdl:message>
+  <wsdl:message name="InsurancesService_PutPolicy_ApiFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFault" />
+  </wsdl:message>
+  <wsdl:message name="PostPolicyRequest">
+    <wsdl:part name="parameters" element="tns:PostPolicy" />
+  </wsdl:message>
+  <wsdl:message name="PostPolicyRequest_Headers">
+    <wsdl:part xmlns:q7="http://services.altasoft.ge/common/v1.0" name="RequestHeaders" element="q7:RequestHeaders" />
+  </wsdl:message>
+  <wsdl:message name="PostPolicyResponse">
+    <wsdl:part name="parameters" element="tns:PostPolicyResponse" />
+  </wsdl:message>
+  <wsdl:message name="PostPolicyResponse_Headers">
+    <wsdl:part xmlns:q8="http://services.altasoft.ge/common/v1.0" name="ResponseHeaders" element="q8:ResponseHeaders" />
+  </wsdl:message>
+  <wsdl:message name="InsurancesService_PostPolicy_ApiFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFault" />
+  </wsdl:message>
+  <wsdl:message name="ListInsurancesRequest">
+    <wsdl:part name="parameters" element="tns:ListInsurances" />
+  </wsdl:message>
+  <wsdl:message name="ListInsurancesRequest_Headers">
+    <wsdl:part xmlns:q9="http://services.altasoft.ge/common/v1.0" name="RequestHeaders" element="q9:RequestHeaders" />
+  </wsdl:message>
+  <wsdl:message name="ListInsurancesResponse">
+    <wsdl:part name="parameters" element="tns:ListInsurancesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListInsurancesResponse_Headers">
+    <wsdl:part xmlns:q10="http://services.altasoft.ge/common/v1.0" name="ResponseHeaders" element="q10:ResponseHeaders" />
+  </wsdl:message>
+  <wsdl:message name="InsurancesService_ListInsurances_ApiFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFault" />
+  </wsdl:message>
+  <wsdl:message name="ListInsuranceTypesRequest">
+    <wsdl:part name="parameters" element="tns:ListInsuranceTypes" />
+  </wsdl:message>
+  <wsdl:message name="ListInsuranceTypesRequest_Headers">
+    <wsdl:part xmlns:q11="http://services.altasoft.ge/common/v1.0" name="RequestHeaders" element="q11:RequestHeaders" />
+  </wsdl:message>
+  <wsdl:message name="ListInsuranceTypesResponse">
+    <wsdl:part name="parameters" element="tns:ListInsuranceTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListInsuranceTypesResponse_Headers">
+    <wsdl:part xmlns:q12="http://services.altasoft.ge/common/v1.0" name="ResponseHeaders" element="q12:ResponseHeaders" />
+  </wsdl:message>
+  <wsdl:message name="InsurancesService_ListInsuranceTypes_ApiFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFault" />
+  </wsdl:message>
+  <wsdl:message name="ListProductsRequest">
+    <wsdl:part name="parameters" element="tns:ListProducts" />
+  </wsdl:message>
+  <wsdl:message name="ListProductsRequest_Headers">
+    <wsdl:part xmlns:q13="http://services.altasoft.ge/common/v1.0" name="RequestHeaders" element="q13:RequestHeaders" />
+  </wsdl:message>
+  <wsdl:message name="ListProductsResponse">
+    <wsdl:part name="parameters" element="tns:ListProductsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListProductsResponse_Headers">
+    <wsdl:part xmlns:q14="http://services.altasoft.ge/common/v1.0" name="ResponseHeaders" element="q14:ResponseHeaders" />
+  </wsdl:message>
+  <wsdl:message name="InsurancesService_ListProducts_ApiFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFault" />
+  </wsdl:message>
+  <wsdl:message name="ListCompaniesRequest">
+    <wsdl:part name="parameters" element="tns:ListCompanies" />
+  </wsdl:message>
+  <wsdl:message name="ListCompaniesRequest_Headers">
+    <wsdl:part xmlns:q15="http://services.altasoft.ge/common/v1.0" name="RequestHeaders" element="q15:RequestHeaders" />
+  </wsdl:message>
+  <wsdl:message name="ListCompaniesResponse">
+    <wsdl:part name="parameters" element="tns:ListCompaniesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListCompaniesResponse_Headers">
+    <wsdl:part xmlns:q16="http://services.altasoft.ge/common/v1.0" name="ResponseHeaders" element="q16:ResponseHeaders" />
+  </wsdl:message>
+  <wsdl:message name="InsurancesService_ListCompanies_ApiFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFault" />
+  </wsdl:message>
+  <wsdl:message name="GenerateScheduleRequest">
+    <wsdl:part name="parameters" element="tns:GenerateInsuranceSchedule" />
+  </wsdl:message>
+  <wsdl:message name="GenerateScheduleRequest_Headers">
+    <wsdl:part xmlns:q17="http://services.altasoft.ge/common/v1.0" name="RequestHeaders" element="q17:RequestHeaders" />
+  </wsdl:message>
+  <wsdl:message name="GenerateScheduleResponse">
+    <wsdl:part name="parameters" element="tns:GenerateScheduleResponse" />
+  </wsdl:message>
+  <wsdl:message name="GenerateScheduleResponse_Headers">
+    <wsdl:part xmlns:q18="http://services.altasoft.ge/common/v1.0" name="ResponseHeaders" element="q18:ResponseHeaders" />
+  </wsdl:message>
+  <wsdl:message name="InsurancesService_GenerateInsuranceSchedule_ApiFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFault" />
+  </wsdl:message>
+  <wsdl:portType name="InsurancesService">
+    <wsdl:operation name="GetPolicy">
+      <wsdl:input wsaw:Action="http://services.altasoft.ge/loans/v1.0/InsurancesService/GetPolicy" name="GetPolicyRequest" message="tns:GetPolicyRequest" />
+      <wsdl:output wsaw:Action="http://services.altasoft.ge/loans/v1.0/InsurancesService/GetPolicyResponse" name="GetPolicyResponse" message="tns:GetPolicyResponse" />
+      <wsdl:fault wsaw:Action="http://services.altasoft.ge/loans/v1.0/InsurancesService/GetPolicyApiFault" name="ApiFault" message="tns:InsurancesService_GetPolicy_ApiFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListPolicies">
+      <wsdl:input wsaw:Action="http://services.altasoft.ge/loans/v1.0/InsurancesService/ListPolicies" name="ListPoliciesRequest" message="tns:ListPoliciesRequest" />
+      <wsdl:output wsaw:Action="http://services.altasoft.ge/loans/v1.0/InsurancesService/ListPoliciesResponse" name="ListPoliciesResponse" message="tns:ListPoliciesResponse" />
+      <wsdl:fault wsaw:Action="http://services.altasoft.ge/loans/v1.0/InsurancesService/ListPoliciesApiFault" name="ApiFault" message="tns:InsurancesService_ListPolicies_ApiFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PutPolicy">
+      <wsdl:input wsaw:Action="http://services.altasoft.ge/loans/v1.0/InsurancesService/PutPolicy" name="PutPolicyRequest" message="tns:PutPolicyRequest" />
+      <wsdl:output wsaw:Action="http://services.altasoft.ge/loans/v1.0/InsurancesService/PutPolicyResponse" name="PutPolicyResponse" message="tns:PutPolicyResponse" />
+      <wsdl:fault wsaw:Action="http://services.altasoft.ge/loans/v1.0/InsurancesService/PutPolicyApiFault" name="ApiFault" message="tns:InsurancesService_PutPolicy_ApiFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PostPolicy">
+      <wsdl:input wsaw:Action="http://services.altasoft.ge/loans/v1.0/InsurancesService/PostPolicy" name="PostPolicyRequest" message="tns:PostPolicyRequest" />
+      <wsdl:output wsaw:Action="http://services.altasoft.ge/loans/v1.0/InsurancesService/PostPolicyResponse" name="PostPolicyResponse" message="tns:PostPolicyResponse" />
+      <wsdl:fault wsaw:Action="http://services.altasoft.ge/loans/v1.0/InsurancesService/PostPolicyApiFault" name="ApiFault" message="tns:InsurancesService_PostPolicy_ApiFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListInsurances">
+      <wsdl:input wsaw:Action="http://services.altasoft.ge/loans/v1.0/InsurancesService/ListInsurances" name="ListInsurancesRequest" message="tns:ListInsurancesRequest" />
+      <wsdl:output wsaw:Action="http://services.altasoft.ge/loans/v1.0/InsurancesService/ListInsurancesResponse" name="ListInsurancesResponse" message="tns:ListInsurancesResponse" />
+      <wsdl:fault wsaw:Action="http://services.altasoft.ge/loans/v1.0/InsurancesService/ListInsurancesApiFault" name="ApiFault" message="tns:InsurancesService_ListInsurances_ApiFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListInsuranceTypes">
+      <wsdl:input wsaw:Action="http://services.altasoft.ge/loans/v1.0/InsurancesService/ListInsuranceTypes" name="ListInsuranceTypesRequest" message="tns:ListInsuranceTypesRequest" />
+      <wsdl:output wsaw:Action="http://services.altasoft.ge/loans/v1.0/InsurancesService/ListInsuranceTypesResponse" name="ListInsuranceTypesResponse" message="tns:ListInsuranceTypesResponse" />
+      <wsdl:fault wsaw:Action="http://services.altasoft.ge/loans/v1.0/InsurancesService/ListInsuranceTypesApiFault" name="ApiFault" message="tns:InsurancesService_ListInsuranceTypes_ApiFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListProducts">
+      <wsdl:input wsaw:Action="http://services.altasoft.ge/loans/v1.0/InsurancesService/ListProducts" name="ListProductsRequest" message="tns:ListProductsRequest" />
+      <wsdl:output wsaw:Action="http://services.altasoft.ge/loans/v1.0/InsurancesService/ListProductsResponse" name="ListProductsResponse" message="tns:ListProductsResponse" />
+      <wsdl:fault wsaw:Action="http://services.altasoft.ge/loans/v1.0/InsurancesService/ListProductsApiFault" name="ApiFault" message="tns:InsurancesService_ListProducts_ApiFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListCompanies">
+      <wsdl:input wsaw:Action="http://services.altasoft.ge/loans/v1.0/InsurancesService/ListCompanies" name="ListCompaniesRequest" message="tns:ListCompaniesRequest" />
+      <wsdl:output wsaw:Action="http://services.altasoft.ge/loans/v1.0/InsurancesService/ListCompaniesResponse" name="ListCompaniesResponse" message="tns:ListCompaniesResponse" />
+      <wsdl:fault wsaw:Action="http://services.altasoft.ge/loans/v1.0/InsurancesService/ListCompaniesApiFault" name="ApiFault" message="tns:InsurancesService_ListCompanies_ApiFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GenerateInsuranceSchedule">
+      <wsdl:input wsaw:Action="http://services.altasoft.ge/loans/v1.0/InsurancesService/GenerateInsuranceSchedule" name="GenerateScheduleRequest" message="tns:GenerateScheduleRequest" />
+      <wsdl:output wsaw:Action="http://services.altasoft.ge/loans/v1.0/InsurancesService/GenerateInsuranceScheduleResponse" name="GenerateScheduleResponse" message="tns:GenerateScheduleResponse" />
+      <wsdl:fault wsaw:Action="http://services.altasoft.ge/loans/v1.0/InsurancesService/GenerateInsuranceScheduleApiFault" name="ApiFault" message="tns:InsurancesService_GenerateInsuranceSchedule_ApiFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

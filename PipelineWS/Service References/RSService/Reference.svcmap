@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="cb558b59-a6d7-43c2-88b6-6cfeade9750e" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>true</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://outproxy.vtb.com.ge/test-rs/RSService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="RSService.xsd" MetadataType="Schema" ID="d8844b08-5994-4bea-bf8e-d5d9a482b459" SourceId="1" SourceUrl="http://outproxy.vtb.com.ge/test-rs/RSService.svc?xsd=xsd1" />
+    <MetadataFile FileName="RSService1.xsd" MetadataType="Schema" ID="265df273-d5f7-482c-8d75-62f0d4dd38f9" SourceId="1" SourceUrl="http://outproxy.vtb.com.ge/test-rs/RSService.svc?xsd=xsd0" />
+    <MetadataFile FileName="RSService2.xsd" MetadataType="Schema" ID="09f8992f-1edc-41c7-b99c-d236a98727e9" SourceId="1" SourceUrl="http://outproxy.vtb.com.ge/test-rs/RSService.svc?xsd=xsd3" />
+    <MetadataFile FileName="RSService3.xsd" MetadataType="Schema" ID="5f71a4ae-1423-4711-942c-fe573cc52e51" SourceId="1" SourceUrl="http://outproxy.vtb.com.ge/test-rs/RSService.svc?xsd=xsd2" />
+    <MetadataFile FileName="RSService.disco" MetadataType="Disco" ID="9de0f423-ada6-4d78-a3c7-98b029dfc0c1" SourceId="1" SourceUrl="http://outproxy.vtb.com.ge/test-rs/RSService.svc?disco" />
+    <MetadataFile FileName="RSService.wsdl" MetadataType="Wsdl" ID="4636e7f1-e4c5-493f-a45e-7713019f1157" SourceId="1" SourceUrl="http://outproxy.vtb.com.ge/test-rs/RSService.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

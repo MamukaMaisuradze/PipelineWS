@@ -1,0 +1,1584 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:s1="http://cb4.creditinfosolutions.com/BatchUploader/Batch" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:import namespace="http://cb4.creditinfosolutions.com/BatchUploader/Batch" />
+      <s:element name="GetClientInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="personal_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="user" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetClientInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetClientInfoResult" type="s1:Cis.CB4.Projects.GE.CIG.Reports.Body.Products.StandardIndividual.Response" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://cb4.creditinfosolutions.com/BatchUploader/Batch">
+      <s:complexType name="Cis.CB4.Projects.GE.CIG.Reports.Body.Products.StandardIndividual.Response">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="NationalID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PersonalCurrent" type="s1:Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.PersonalCurrent" />
+          <s:element minOccurs="0" maxOccurs="1" name="PersonalOld" type="s1:Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.PersonalOld" />
+          <s:element minOccurs="0" maxOccurs="1" name="NegativeStatuses" type="s1:Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.NegativeStatuses" />
+          <s:element minOccurs="0" maxOccurs="1" name="LinkedCompanies" type="s1:ArrayOfCisCB4ProjectsGECIGReportsSchemaTypesLinkedCompaniesLinkedCompany" />
+          <s:element minOccurs="0" maxOccurs="1" name="PersonalHistory" type="s1:Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.PersonalHistory" />
+          <s:element minOccurs="0" maxOccurs="1" name="ContractSummary" type="s1:Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.ContractSummary" />
+          <s:element minOccurs="0" maxOccurs="1" name="ExistingContractsDebtor" type="s1:Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.ExistingContractsDebtor" />
+          <s:element minOccurs="0" maxOccurs="1" name="ExistingContractsGuarantor" type="s1:Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.ExistingContractsGuarantor" />
+          <s:element minOccurs="0" maxOccurs="1" name="TerminatedContractsDebtor" type="s1:Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.TerminatedContractsDebtor" />
+          <s:element minOccurs="0" maxOccurs="1" name="TerminatedContractsGuarantor" type="s1:Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.TerminatedContractsGuarantor" />
+          <s:element minOccurs="1" maxOccurs="1" name="ReportIssueDate" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Inquiries" type="s1:Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.Inquiries" />
+          <s:element minOccurs="1" maxOccurs="1" name="ReportStatus" type="s1:Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.ReportStatus" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.PersonalCurrent">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Firstname" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Surname" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Gender" type="s1:Cis.CB4.Projects.GE.CIG.Schema.Types.Gender" />
+          <s:element minOccurs="1" maxOccurs="1" name="MaritalStatus" type="s1:Cis.CB4.Projects.GE.CIG.Schema.Types.MaritalStatus" />
+          <s:element minOccurs="1" maxOccurs="1" name="BirthDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="LastUpdate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="BorrowerClassification" type="s1:Cis.CB4.Projects.GE.CIG.Schema.Types.BorrowerClassification" />
+          <s:element minOccurs="0" maxOccurs="1" name="TradeName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LicenseNumber" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="Cis.CB4.Projects.GE.CIG.Schema.Types.Gender">
+        <s:restriction base="s:string">
+          <s:enumeration value="Gender.Male" />
+          <s:enumeration value="Gender.Female" />
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="Cis.CB4.Projects.GE.CIG.Schema.Types.MaritalStatus">
+        <s:restriction base="s:string">
+          <s:enumeration value="MaritalStatus.Single" />
+          <s:enumeration value="MaritalStatus.Married" />
+          <s:enumeration value="MaritalStatus.Divorced" />
+          <s:enumeration value="MaritalStatus.Widowed" />
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="Cis.CB4.Projects.GE.CIG.Schema.Types.BorrowerClassification">
+        <s:restriction base="s:string">
+          <s:enumeration value="BorrowerClassification.Individual" />
+          <s:enumeration value="BorrowerClassification.IndividualWithTradingLicence" />
+        </s:restriction>
+      </s:simpleType>
+      <s:complexType name="Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.PersonalOld">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="FirstnameNative" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FirstnameEN" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SurnameNative" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SurnameEN" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NationalID" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.NegativeStatuses">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CurrentStatus">
+            <s:complexType>
+              <s:complexContent mixed="false">
+                <s:extension base="s1:Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.CurrentStatus">
+                  <s:attribute name="key" type="s:string" />
+                </s:extension>
+              </s:complexContent>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="PastStatus">
+            <s:complexType>
+              <s:complexContent mixed="false">
+                <s:extension base="s1:Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.PastStatus">
+                  <s:attribute name="key" type="s:string" />
+                </s:extension>
+              </s:complexContent>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="AddSubjectStatus">
+            <s:complexType>
+              <s:complexContent mixed="false">
+                <s:extension base="s1:Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.AddSubjectStatus">
+                  <s:attribute name="key" type="s:string" />
+                </s:extension>
+              </s:complexContent>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="AddContractStatusDebtor">
+            <s:complexType>
+              <s:complexContent mixed="false">
+                <s:extension base="s1:Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.AddContractStatusDebtor">
+                  <s:attribute name="key" type="s:string" />
+                </s:extension>
+              </s:complexContent>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="AddContractStatusGuarantor">
+            <s:complexType>
+              <s:complexContent mixed="false">
+                <s:extension base="s1:Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.AddContractStatusGuarantor">
+                  <s:attribute name="key" type="s:string" />
+                </s:extension>
+              </s:complexContent>
+            </s:complexType>
+          </s:element>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.CurrentStatus">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Status" type="s1:Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.Status" />
+          <s:element minOccurs="1" maxOccurs="1" name="DaysInDeliquency" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="OverdueDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="RegistrationDate" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="RepaymentDate" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.Status">
+        <s:restriction base="s:string">
+          <s:enumeration value="NegativeStatus.IsNegative" />
+          <s:enumeration value="NegativeStatus.WasNegative" />
+        </s:restriction>
+      </s:simpleType>
+      <s:complexType name="Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.PastStatus">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Status" type="s1:Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.Status" />
+          <s:element minOccurs="1" maxOccurs="1" name="DaysInDeliquency" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="OverdueDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="RegistrationDate" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="RepaymentDate" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.AddSubjectStatus">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="SubjectStatus" type="s1:Cis.CB4.Projects.GE.CIG.Schema.Types.SubjectStatus" />
+          <s:element minOccurs="1" maxOccurs="1" name="LastUpdate" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Creditor" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="Cis.CB4.Projects.GE.CIG.Schema.Types.SubjectStatus">
+        <s:restriction base="s:string">
+          <s:enumeration value="AdditionalSubjectStatus.NoNegativeStatus" />
+          <s:enumeration value="AdditionalSubjectStatus.SupervisoryCrisisAdministration" />
+          <s:enumeration value="AdditionalSubjectStatus.OtherCourtActionByBank" />
+          <s:enumeration value="AdditionalSubjectStatus.BankruptcyPetitionByBank" />
+          <s:enumeration value="AdditionalSubjectStatus.CourtDeclaredBankruptcy" />
+          <s:enumeration value="AdditionalSubjectStatus.Liquidation" />
+          <s:enumeration value="AdditionalSubjectStatus.AssetsFrozenOrSeized" />
+          <s:enumeration value="AdditionalSubjectStatus.CustomerUntraceableOrDeceased" />
+        </s:restriction>
+      </s:simpleType>
+      <s:complexType name="Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.AddContractStatusDebtor">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ContractStatus" type="s1:Cis.CB4.Projects.GE.CIG.Schema.Types.NegativeContractStatus" />
+          <s:element minOccurs="1" maxOccurs="1" name="LastUpdate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="RegistrationDate" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="Cis.CB4.Projects.GE.CIG.Schema.Types.NegativeContractStatus">
+        <s:restriction base="s:string">
+          <s:enumeration value="ContractStatus.AssignmentOfCreditToThirdParty" />
+          <s:enumeration value="ContractStatus.Blocked" />
+          <s:enumeration value="ContractStatus.CancelledDueToDelayedPayments" />
+          <s:enumeration value="ContractStatus.CreditReassignedToNewBorrower" />
+          <s:enumeration value="ContractStatus.FraudTowardsBank" />
+          <s:enumeration value="ContractStatus.IncreasedRisk" />
+          <s:enumeration value="ContractStatus.InsuranceFraud" />
+          <s:enumeration value="ContractStatus.LoanTransferredToLosses" />
+          <s:enumeration value="ContractStatus.LoanWrittenOff" />
+          <s:enumeration value="ContractStatus.NoNegativeStatus" />
+          <s:enumeration value="ContractStatus.UnauthorizedDebitBalanceOnCurrentAccount" />
+        </s:restriction>
+      </s:simpleType>
+      <s:complexType name="Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.AddContractStatusGuarantor">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ContractStatus" type="s1:Cis.CB4.Projects.GE.CIG.Schema.Types.NegativeContractStatus" />
+          <s:element minOccurs="1" maxOccurs="1" name="LastUpdate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="RegistrationDate" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfCisCB4ProjectsGECIGReportsSchemaTypesLinkedCompaniesLinkedCompany">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="LinkedCompany">
+            <s:complexType>
+              <s:complexContent mixed="false">
+                <s:extension base="s1:Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.LinkedCompany">
+                  <s:attribute name="key" type="s:string" />
+                </s:extension>
+              </s:complexContent>
+            </s:complexType>
+          </s:element>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.LinkedCompany">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="TaxNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TradeName" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.PersonalHistory">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="FirstnameHistory">
+            <s:complexType>
+              <s:complexContent mixed="false">
+                <s:extension base="s1:Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.FirstnameHistory">
+                  <s:attribute name="key" type="s:string" />
+                </s:extension>
+              </s:complexContent>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="SurnameHistory">
+            <s:complexType>
+              <s:complexContent mixed="false">
+                <s:extension base="s1:Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.SurnameHistory">
+                  <s:attribute name="key" type="s:string" />
+                </s:extension>
+              </s:complexContent>
+            </s:complexType>
+          </s:element>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.FirstnameHistory">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Firstname" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="LastUpdate" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.SurnameHistory">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Surname" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="LastUpdate" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.ContractSummary">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="SummaryDebtor" type="s1:Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.SummaryDebtor" />
+          <s:element minOccurs="0" maxOccurs="1" name="SummaryGuarantor" type="s1:Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.SummaryGuarantor" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.SummaryDebtor">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="TotalDebtOverdue">
+            <s:complexType>
+              <s:complexContent mixed="false">
+                <s:extension base="s1:Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.TotalDebtOverdue">
+                  <s:attribute name="key" type="s:string" />
+                </s:extension>
+              </s:complexContent>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="1" maxOccurs="1" name="TotalUnpaidInstalments" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="unbounded" name="TotalOutstandingAmount">
+            <s:complexType>
+              <s:complexContent mixed="false">
+                <s:extension base="s1:Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.TotalOutstandingAmount">
+                  <s:attribute name="key" type="s:string" />
+                </s:extension>
+              </s:complexContent>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="1" maxOccurs="1" name="ExistingOperations" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="TerminatedOperations" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.TotalDebtOverdue">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="AmountValue" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Currency" type="s1:Cis.CB4.Projects.GE.CIG.Schema.Types.CurrencyOfContract" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="Cis.CB4.Projects.GE.CIG.Schema.Types.CurrencyOfContract">
+        <s:restriction base="s:string">
+          <s:enumeration value="CurrencyCodes.ADP" />
+          <s:enumeration value="CurrencyCodes.AED" />
+          <s:enumeration value="CurrencyCodes.AFA" />
+          <s:enumeration value="CurrencyCodes.ALL" />
+          <s:enumeration value="CurrencyCodes.AMD" />
+          <s:enumeration value="CurrencyCodes.ANG" />
+          <s:enumeration value="CurrencyCodes.AON" />
+          <s:enumeration value="CurrencyCodes.AOR" />
+          <s:enumeration value="CurrencyCodes.ARS" />
+          <s:enumeration value="CurrencyCodes.ATS" />
+          <s:enumeration value="CurrencyCodes.AUD" />
+          <s:enumeration value="CurrencyCodes.AWG" />
+          <s:enumeration value="CurrencyCodes.AZM" />
+          <s:enumeration value="CurrencyCodes.BBD" />
+          <s:enumeration value="CurrencyCodes.BDT" />
+          <s:enumeration value="CurrencyCodes.BEF" />
+          <s:enumeration value="CurrencyCodes.BGL" />
+          <s:enumeration value="CurrencyCodes.BHD" />
+          <s:enumeration value="CurrencyCodes.BIF" />
+          <s:enumeration value="CurrencyCodes.BMD" />
+          <s:enumeration value="CurrencyCodes.BND" />
+          <s:enumeration value="CurrencyCodes.BOB" />
+          <s:enumeration value="CurrencyCodes.BOV" />
+          <s:enumeration value="CurrencyCodes.BRL" />
+          <s:enumeration value="CurrencyCodes.BSD" />
+          <s:enumeration value="CurrencyCodes.BTN" />
+          <s:enumeration value="CurrencyCodes.BWP" />
+          <s:enumeration value="CurrencyCodes.BYB" />
+          <s:enumeration value="CurrencyCodes.BZD" />
+          <s:enumeration value="CurrencyCodes.CAD" />
+          <s:enumeration value="CurrencyCodes.CLF" />
+          <s:enumeration value="CurrencyCodes.CLP" />
+          <s:enumeration value="CurrencyCodes.CNY" />
+          <s:enumeration value="CurrencyCodes.COP" />
+          <s:enumeration value="CurrencyCodes.CRC" />
+          <s:enumeration value="CurrencyCodes.CUP" />
+          <s:enumeration value="CurrencyCodes.CVE" />
+          <s:enumeration value="CurrencyCodes.CYP" />
+          <s:enumeration value="CurrencyCodes.CZK" />
+          <s:enumeration value="CurrencyCodes.DEM" />
+          <s:enumeration value="CurrencyCodes.DJF" />
+          <s:enumeration value="CurrencyCodes.DKK" />
+          <s:enumeration value="CurrencyCodes.DOP" />
+          <s:enumeration value="CurrencyCodes.DZD" />
+          <s:enumeration value="CurrencyCodes.ECS" />
+          <s:enumeration value="CurrencyCodes.ECV" />
+          <s:enumeration value="CurrencyCodes.EEK" />
+          <s:enumeration value="CurrencyCodes.EGP" />
+          <s:enumeration value="CurrencyCodes.ESP" />
+          <s:enumeration value="CurrencyCodes.ETB" />
+          <s:enumeration value="CurrencyCodes.EUR" />
+          <s:enumeration value="CurrencyCodes.FIM" />
+          <s:enumeration value="CurrencyCodes.FJD" />
+          <s:enumeration value="CurrencyCodes.FKP" />
+          <s:enumeration value="CurrencyCodes.FRF" />
+          <s:enumeration value="CurrencyCodes.GBP" />
+          <s:enumeration value="CurrencyCodes.GEL" />
+          <s:enumeration value="CurrencyCodes.GHC" />
+          <s:enumeration value="CurrencyCodes.GIP" />
+          <s:enumeration value="CurrencyCodes.GMD" />
+          <s:enumeration value="CurrencyCodes.GNF" />
+          <s:enumeration value="CurrencyCodes.GRD" />
+          <s:enumeration value="CurrencyCodes.GTQ" />
+          <s:enumeration value="CurrencyCodes.GWP" />
+          <s:enumeration value="CurrencyCodes.GYD" />
+          <s:enumeration value="CurrencyCodes.HKD" />
+          <s:enumeration value="CurrencyCodes.HNL" />
+          <s:enumeration value="CurrencyCodes.HRK" />
+          <s:enumeration value="CurrencyCodes.HTG" />
+          <s:enumeration value="CurrencyCodes.HUF" />
+          <s:enumeration value="CurrencyCodes.CHF" />
+          <s:enumeration value="CurrencyCodes.IDR" />
+          <s:enumeration value="CurrencyCodes.IEP" />
+          <s:enumeration value="CurrencyCodes.ILS" />
+          <s:enumeration value="CurrencyCodes.INR" />
+          <s:enumeration value="CurrencyCodes.IQD" />
+          <s:enumeration value="CurrencyCodes.IRR" />
+          <s:enumeration value="CurrencyCodes.ISK" />
+          <s:enumeration value="CurrencyCodes.ITL" />
+          <s:enumeration value="CurrencyCodes.JMD" />
+          <s:enumeration value="CurrencyCodes.JOD" />
+          <s:enumeration value="CurrencyCodes.JPY" />
+          <s:enumeration value="CurrencyCodes.KES" />
+          <s:enumeration value="CurrencyCodes.KGS" />
+          <s:enumeration value="CurrencyCodes.KHR" />
+          <s:enumeration value="CurrencyCodes.KMF" />
+          <s:enumeration value="CurrencyCodes.KPW" />
+          <s:enumeration value="CurrencyCodes.KRW" />
+          <s:enumeration value="CurrencyCodes.KWD" />
+          <s:enumeration value="CurrencyCodes.KYD" />
+          <s:enumeration value="CurrencyCodes.KZT" />
+          <s:enumeration value="CurrencyCodes.LAK" />
+          <s:enumeration value="CurrencyCodes.LBP" />
+          <s:enumeration value="CurrencyCodes.LKR" />
+          <s:enumeration value="CurrencyCodes.LRD" />
+          <s:enumeration value="CurrencyCodes.LSL" />
+          <s:enumeration value="CurrencyCodes.LTL" />
+          <s:enumeration value="CurrencyCodes.LUF" />
+          <s:enumeration value="CurrencyCodes.LVL" />
+          <s:enumeration value="CurrencyCodes.LYD" />
+          <s:enumeration value="CurrencyCodes.MAD" />
+          <s:enumeration value="CurrencyCodes.MDL" />
+          <s:enumeration value="CurrencyCodes.MGF" />
+          <s:enumeration value="CurrencyCodes.MKD" />
+          <s:enumeration value="CurrencyCodes.MMK" />
+          <s:enumeration value="CurrencyCodes.MNT" />
+          <s:enumeration value="CurrencyCodes.MOP" />
+          <s:enumeration value="CurrencyCodes.MRO" />
+          <s:enumeration value="CurrencyCodes.MTL" />
+          <s:enumeration value="CurrencyCodes.MUR" />
+          <s:enumeration value="CurrencyCodes.MVR" />
+          <s:enumeration value="CurrencyCodes.MWK" />
+          <s:enumeration value="CurrencyCodes.MXN" />
+          <s:enumeration value="CurrencyCodes.MYR" />
+          <s:enumeration value="CurrencyCodes.MZM" />
+          <s:enumeration value="CurrencyCodes.NAD" />
+          <s:enumeration value="CurrencyCodes.NGN" />
+          <s:enumeration value="CurrencyCodes.NIO" />
+          <s:enumeration value="CurrencyCodes.NLG" />
+          <s:enumeration value="CurrencyCodes.NOK" />
+          <s:enumeration value="CurrencyCodes.NPR" />
+          <s:enumeration value="CurrencyCodes.NZD" />
+          <s:enumeration value="CurrencyCodes.OMR" />
+          <s:enumeration value="CurrencyCodes.PAB" />
+          <s:enumeration value="CurrencyCodes.PEN" />
+          <s:enumeration value="CurrencyCodes.PGK" />
+          <s:enumeration value="CurrencyCodes.PHP" />
+          <s:enumeration value="CurrencyCodes.PKR" />
+          <s:enumeration value="CurrencyCodes.PLN" />
+          <s:enumeration value="CurrencyCodes.PTE" />
+          <s:enumeration value="CurrencyCodes.PYG" />
+          <s:enumeration value="CurrencyCodes.QAR" />
+          <s:enumeration value="CurrencyCodes.ROL" />
+          <s:enumeration value="CurrencyCodes.RUR" />
+          <s:enumeration value="CurrencyCodes.RWF" />
+          <s:enumeration value="CurrencyCodes.SAR" />
+          <s:enumeration value="CurrencyCodes.SBD" />
+          <s:enumeration value="CurrencyCodes.SCR" />
+          <s:enumeration value="CurrencyCodes.SDD" />
+          <s:enumeration value="CurrencyCodes.SEK" />
+          <s:enumeration value="CurrencyCodes.SGD" />
+          <s:enumeration value="CurrencyCodes.SHP" />
+          <s:enumeration value="CurrencyCodes.SIT" />
+          <s:enumeration value="CurrencyCodes.SKK" />
+          <s:enumeration value="CurrencyCodes.SLL" />
+          <s:enumeration value="CurrencyCodes.SOS" />
+          <s:enumeration value="CurrencyCodes.SRG" />
+          <s:enumeration value="CurrencyCodes.STD" />
+          <s:enumeration value="CurrencyCodes.SVC" />
+          <s:enumeration value="CurrencyCodes.SYP" />
+          <s:enumeration value="CurrencyCodes.SZL" />
+          <s:enumeration value="CurrencyCodes.THB" />
+          <s:enumeration value="CurrencyCodes.TJR" />
+          <s:enumeration value="CurrencyCodes.TMM" />
+          <s:enumeration value="CurrencyCodes.TND" />
+          <s:enumeration value="CurrencyCodes.TOP" />
+          <s:enumeration value="CurrencyCodes.TPE" />
+          <s:enumeration value="CurrencyCodes.TRL" />
+          <s:enumeration value="CurrencyCodes.TTD" />
+          <s:enumeration value="CurrencyCodes.TWD" />
+          <s:enumeration value="CurrencyCodes.TZS" />
+          <s:enumeration value="CurrencyCodes.UAH" />
+          <s:enumeration value="CurrencyCodes.UAK" />
+          <s:enumeration value="CurrencyCodes.UGX" />
+          <s:enumeration value="CurrencyCodes.USD" />
+          <s:enumeration value="CurrencyCodes.UYU" />
+          <s:enumeration value="CurrencyCodes.UZS" />
+          <s:enumeration value="CurrencyCodes.VEB" />
+          <s:enumeration value="CurrencyCodes.VND" />
+          <s:enumeration value="CurrencyCodes.VUV" />
+          <s:enumeration value="CurrencyCodes.WST" />
+          <s:enumeration value="CurrencyCodes.XAF" />
+          <s:enumeration value="CurrencyCodes.XCD" />
+          <s:enumeration value="CurrencyCodes.XOF" />
+          <s:enumeration value="CurrencyCodes.XPF" />
+          <s:enumeration value="CurrencyCodes.YER" />
+          <s:enumeration value="CurrencyCodes.YUM" />
+          <s:enumeration value="CurrencyCodes.ZAL" />
+          <s:enumeration value="CurrencyCodes.ZAR" />
+          <s:enumeration value="CurrencyCodes.ZMK" />
+          <s:enumeration value="CurrencyCodes.ZRN" />
+          <s:enumeration value="CurrencyCodes.ZWD" />
+        </s:restriction>
+      </s:simpleType>
+      <s:complexType name="Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.TotalOutstandingAmount">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="AmountValue" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Currency" type="s1:Cis.CB4.Projects.GE.CIG.Schema.Types.CurrencyOfContract" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.SummaryGuarantor">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="TotalDebtOverdue">
+            <s:complexType>
+              <s:complexContent mixed="false">
+                <s:extension base="s1:Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.TotalDebtOverdue">
+                  <s:attribute name="key" type="s:string" />
+                </s:extension>
+              </s:complexContent>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="1" maxOccurs="1" name="TotalUnpaidInstalments" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="unbounded" name="TotalOutstandingAmount">
+            <s:complexType>
+              <s:complexContent mixed="false">
+                <s:extension base="s1:Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.TotalOutstandingAmount">
+                  <s:attribute name="key" type="s:string" />
+                </s:extension>
+              </s:complexContent>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="1" maxOccurs="1" name="ExistingOperations" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="TerminatedOperations" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.ExistingContractsDebtor">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Instalment">
+            <s:complexType>
+              <s:complexContent mixed="false">
+                <s:extension base="s1:Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.Instalment">
+                  <s:attribute name="key" type="s:string" />
+                </s:extension>
+              </s:complexContent>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Noninstalment">
+            <s:complexType>
+              <s:complexContent mixed="false">
+                <s:extension base="s1:Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.Noninstalment">
+                  <s:attribute name="key" type="s:string" />
+                </s:extension>
+              </s:complexContent>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CreditCard">
+            <s:complexType>
+              <s:complexContent mixed="false">
+                <s:extension base="s1:Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.CreditCard">
+                  <s:attribute name="key" type="s:string" />
+                </s:extension>
+              </s:complexContent>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="InvoiceBill">
+            <s:complexType>
+              <s:complexContent mixed="false">
+                <s:extension base="s1:Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.InvoiceBill">
+                  <s:attribute name="key" type="s:string" />
+                </s:extension>
+              </s:complexContent>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CaseDebt">
+            <s:complexType>
+              <s:complexContent mixed="false">
+                <s:extension base="s1:Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.CaseDebt">
+                  <s:attribute name="key" type="s:string" />
+                </s:extension>
+              </s:complexContent>
+            </s:complexType>
+          </s:element>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.Instalment">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="InstalmentDetails" type="s1:Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.InstalmentDetails" />
+          <s:element minOccurs="0" maxOccurs="1" name="InstalmentHistory" type="s1:ArrayOfCisCB4ProjectsGECIGReportsSchemaTypesInstalmentHistoryInstalmentRecord" />
+          <s:element minOccurs="0" maxOccurs="1" name="General" type="s1:Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.General" />
+          <s:element minOccurs="0" maxOccurs="1" name="CurrentStatus" type="s1:Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.CurrentStatus" />
+          <s:element minOccurs="0" maxOccurs="unbounded" name="PastStatus">
+            <s:complexType>
+              <s:complexContent mixed="false">
+                <s:extension base="s1:Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.PastStatus">
+                  <s:attribute name="key" type="s:string" />
+                </s:extension>
+              </s:complexContent>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" maxOccurs="1" name="AddContractStatus" type="s1:Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.AddContractStatus" />
+          <s:element minOccurs="0" maxOccurs="1" name="Dates" type="s1:Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.Dates" />
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Guarantee">
+            <s:complexType>
+              <s:complexContent mixed="false">
+                <s:extension base="s1:Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.Guarantee">
+                  <s:attribute name="key" type="s:string" />
+                </s:extension>
+              </s:complexContent>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" maxOccurs="1" name="Subjects" type="s1:Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.Subjects" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.InstalmentDetails">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="RepaymentInstalment" type="s1:Cis.CB4.Projects.GE.CIG.Schema.Types.RepaymentInstalment" />
+          <s:element minOccurs="0" maxOccurs="1" name="TotalCreditAmount" type="s1:Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.TotalCreditAmount" />
+          <s:element minOccurs="0" maxOccurs="1" name="StandardInstalmentAmount" type="s1:Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.StandardInstalmentAmount" />
+          <s:element minOccurs="1" maxOccurs="1" name="StandardInstalmentCount" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="InstalmentType" type="s1:Cis.CB4.Projects.GE.CIG.Schema.Types.InstalmentType" />
+          <s:element minOccurs="1" maxOccurs="1" name="PeriodicityOfPayments" type="s1:Cis.CB4.Projects.GE.CIG.Schema.Types.PeriodicityOfPayments" />
+          <s:element minOccurs="0" maxOccurs="1" name="MethodOfPayment" type="s1:Cis.CB4.Projects.GE.CIG.Schema.Types.MethodOfPayment" />
+          <s:element minOccurs="0" maxOccurs="1" name="OverdueAmount" type="s1:Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.OverdueAmount" />
+          <s:element minOccurs="1" maxOccurs="1" name="OverdueInstalmentsCount" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="OverdueDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="OutstandingInstalmentsCount" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="OutstandingAmount" type="s1:Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.OutstandingAmount" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="Cis.CB4.Projects.GE.CIG.Schema.Types.RepaymentInstalment">
+        <s:restriction base="s:string">
+          <s:enumeration value="RepaymentInstalment.InstallmentLoan" />
+          <s:enumeration value="RepaymentInstalment.Other" />
+        </s:restriction>
+      </s:simpleType>
+      <s:complexType name="Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.TotalCreditAmount">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="AmountValue" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Currency" type="s1:Cis.CB4.Projects.GE.CIG.Schema.Types.CurrencyOfContract" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.StandardInstalmentAmount">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="AmountValue" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Currency" type="s1:Cis.CB4.Projects.GE.CIG.Schema.Types.CurrencyOfContract" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="Cis.CB4.Projects.GE.CIG.Schema.Types.InstalmentType">
+        <s:restriction base="s:string">
+          <s:enumeration value="InstalmentsType.Fixed" />
+          <s:enumeration value="InstalmentsType.Variable" />
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="Cis.CB4.Projects.GE.CIG.Schema.Types.PeriodicityOfPayments">
+        <s:restriction base="s:string">
+          <s:enumeration value="PeriodicityOfPayments.AtTheFinalDayOfThePeriodOfContract" />
+          <s:enumeration value="PeriodicityOfPayments.FortnightlyInstalments15Days" />
+          <s:enumeration value="PeriodicityOfPayments.MonthlyInstalments30Days" />
+          <s:enumeration value="PeriodicityOfPayments.BimonthlyInstalments60Days" />
+          <s:enumeration value="PeriodicityOfPayments.QuarterlyInstalments90Days" />
+          <s:enumeration value="PeriodicityOfPayments.FourMonthInstalments120Days" />
+          <s:enumeration value="PeriodicityOfPayments.FiveMonthInstalments150Days" />
+          <s:enumeration value="PeriodicityOfPayments.SixMonthInstalments180Days" />
+          <s:enumeration value="PeriodicityOfPayments.AnnualInstalments360Days" />
+          <s:enumeration value="PeriodicityOfPayments.IrregularInstalments" />
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="Cis.CB4.Projects.GE.CIG.Schema.Types.MethodOfPayment">
+        <s:restriction base="s:string">
+          <s:enumeration value="MethodOfPayment.CurrentAccount" />
+          <s:enumeration value="MethodOfPayment.BillOfExchange" />
+          <s:enumeration value="MethodOfPayment.BankingReceipt" />
+          <s:enumeration value="MethodOfPayment.DirectRemittance" />
+          <s:enumeration value="MethodOfPayment.AuthorizationToDirectCurrentAccountDebit" />
+        </s:restriction>
+      </s:simpleType>
+      <s:complexType name="Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.OverdueAmount">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="AmountValue" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Currency" type="s1:Cis.CB4.Projects.GE.CIG.Schema.Types.CurrencyOfContract" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.OutstandingAmount">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="AmountValue" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Currency" type="s1:Cis.CB4.Projects.GE.CIG.Schema.Types.CurrencyOfContract" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfCisCB4ProjectsGECIGReportsSchemaTypesInstalmentHistoryInstalmentRecord">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="InstalmentRecord">
+            <s:complexType>
+              <s:complexContent mixed="false">
+                <s:extension base="s1:Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.InstalmentRecord">
+                  <s:attribute name="key" type="s:string" />
+                </s:extension>
+              </s:complexContent>
+            </s:complexType>
+          </s:element>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.InstalmentRecord">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="TotalCreditAmount" type="s1:Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.TotalCreditAmount" />
+          <s:element minOccurs="0" maxOccurs="1" name="OverdueAmount" type="s1:Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.OverdueAmount" />
+          <s:element minOccurs="0" maxOccurs="1" name="OverdueInstalmentsCount" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="OutstandingAmount" type="s1:Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.OutstandingAmount" />
+          <s:element minOccurs="0" maxOccurs="1" name="Year" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Month" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.General">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ContractCode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreditCurrency" type="s1:Cis.CB4.Projects.GE.CIG.Schema.Types.CurrencyOfContract" />
+          <s:element minOccurs="1" maxOccurs="1" name="PhaseOfOperation" type="s1:Cis.CB4.Projects.GE.CIG.Schema.Types.PhaseOfOperation" />
+          <s:element minOccurs="1" maxOccurs="1" name="RoleOfClient" type="s1:Cis.CB4.Projects.GE.CIG.Schema.Types.RoleOfClient" />
+          <s:element minOccurs="0" maxOccurs="1" name="Creditor" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PenaltySum" type="s1:Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.PenaltySum" />
+          <s:element minOccurs="0" maxOccurs="1" name="PenaltyPaid" type="s1:Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.PenaltyPaid" />
+          <s:element minOccurs="1" maxOccurs="1" name="LoanType" type="s1:Cis.CB4.Projects.GE.CIG.Schema.Types.LoanType" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreditPurpose" type="s1:Cis.CB4.Projects.GE.CIG.Schema.Types.CreditPurpose" />
+          <s:element minOccurs="0" maxOccurs="1" name="RecordLock" type="s1:Cis.CB4.Projects.GE.CIG.Schema.Types.Lookups.RecordLock" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="Cis.CB4.Projects.GE.CIG.Schema.Types.PhaseOfOperation">
+        <s:restriction base="s:string">
+          <s:enumeration value="PhaseOfContract.Existing" />
+          <s:enumeration value="PhaseOfContract.TerminatedAccordingTheContract" />
+          <s:enumeration value="PhaseOfContract.TerminatedInAdvanceCorrectlyBecauseOfClientsWish" />
+          <s:enumeration value="PhaseOfContract.TerminatedInAdvanceIncorrectlyBecauseOfClientsNegativeBehaviour" />
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="Cis.CB4.Projects.GE.CIG.Schema.Types.RoleOfClient">
+        <s:restriction base="s:string">
+          <s:enumeration value="RoleOfClient.MainDebtorApplicant" />
+          <s:enumeration value="RoleOfClient.CoDebtorCoApplicant" />
+          <s:enumeration value="RoleOfClient.Guarantor" />
+        </s:restriction>
+      </s:simpleType>
+      <s:complexType name="Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.PenaltySum">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="AmountValue" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Currency" type="s1:Cis.CB4.Projects.GE.CIG.Schema.Types.CurrencyOfContract" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.PenaltyPaid">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="AmountValue" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Currency" type="s1:Cis.CB4.Projects.GE.CIG.Schema.Types.CurrencyOfContract" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="Cis.CB4.Projects.GE.CIG.Schema.Types.LoanType">
+        <s:restriction base="s:string">
+          <s:enumeration value="LoanType.ConsumerLoan" />
+          <s:enumeration value="LoanType.BusinessLoan" />
+          <s:enumeration value="LoanType.MortgageLoan" />
+          <s:enumeration value="LoanType.LeasingFinancials" />
+          <s:enumeration value="LoanType.LeasingOperational" />
+          <s:enumeration value="LoanType.PawnLoan" />
+          <s:enumeration value="LoanType.CreditCard" />
+          <s:enumeration value="LoanType.Overdraft" />
+          <s:enumeration value="LoanType.Other" />
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="Cis.CB4.Projects.GE.CIG.Schema.Types.CreditPurpose">
+        <s:restriction base="s:string">
+          <s:enumeration value="CreditPurpose.Construct" />
+          <s:enumeration value="CreditPurpose.Development" />
+          <s:enumeration value="CreditPurpose.WorkingCapital" />
+          <s:enumeration value="CreditPurpose.PurchaseOfBuilding" />
+          <s:enumeration value="CreditPurpose.PurchaseOfPersonalConsumingProducts" />
+          <s:enumeration value="CreditPurpose.Repair" />
+          <s:enumeration value="CreditPurpose.Others" />
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="Cis.CB4.Projects.GE.CIG.Schema.Types.Lookups.RecordLock">
+        <s:restriction base="s:string">
+          <s:enumeration value="RecordLock.Locked" />
+          <s:enumeration value="RecordLock.Unlocked" />
+        </s:restriction>
+      </s:simpleType>
+      <s:complexType name="Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.AddContractStatus">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ContractStatus" type="s1:Cis.CB4.Projects.GE.CIG.Schema.Types.NegativeContractStatus" />
+          <s:element minOccurs="1" maxOccurs="1" name="LastUpdate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="RegistrationDate" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.Dates">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Start" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="ExpectedEnd" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="RealEnd" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="LastUpdate" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.Guarantee">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="GuaranteeType" type="s1:Cis.CB4.Projects.GE.CIG.Schema.Types.GuaranteeType" />
+          <s:element minOccurs="0" maxOccurs="1" name="GuaranteeAmount" type="s1:Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.GuaranteeAmount" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="Cis.CB4.Projects.GE.CIG.Schema.Types.GuaranteeType">
+        <s:restriction base="s:string">
+          <s:enumeration value="GuaranteeType.Blank" />
+          <s:enumeration value="GuaranteeType.Car" />
+          <s:enumeration value="GuaranteeType.Deposit" />
+          <s:enumeration value="GuaranteeType.Equipment" />
+          <s:enumeration value="GuaranteeType.Gold" />
+          <s:enumeration value="GuaranteeType.Guarantee" />
+          <s:enumeration value="GuaranteeType.Other" />
+          <s:enumeration value="GuaranteeType.RealEstate" />
+          <s:enumeration value="GuaranteeType.Securities" />
+          <s:enumeration value="GuaranteeType.StateGuaranty" />
+          <s:enumeration value="GuaranteeType.Stocks" />
+        </s:restriction>
+      </s:simpleType>
+      <s:complexType name="Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.GuaranteeAmount">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="AmountValue" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Currency" type="s1:Cis.CB4.Projects.GE.CIG.Schema.Types.CurrencyOfContract" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.Subjects">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="IndividualRelation">
+            <s:complexType>
+              <s:complexContent mixed="false">
+                <s:extension base="s1:Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.IndividualRelation">
+                  <s:attribute name="key" type="s:string" />
+                </s:extension>
+              </s:complexContent>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CompanyRelation">
+            <s:complexType>
+              <s:complexContent mixed="false">
+                <s:extension base="s1:Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.CompanyRelation">
+                  <s:attribute name="key" type="s:string" />
+                </s:extension>
+              </s:complexContent>
+            </s:complexType>
+          </s:element>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.IndividualRelation">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="NationalID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="RoleOfClient" type="s1:Cis.CB4.Projects.GE.CIG.Schema.Types.RoleOfClient" />
+          <s:element minOccurs="0" maxOccurs="1" name="Firstname" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Surname" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.CompanyRelation">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="TaxNumber" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="RoleOfClient" type="s1:Cis.CB4.Projects.GE.CIG.Schema.Types.RoleOfClient" />
+          <s:element minOccurs="0" maxOccurs="1" name="TradeName" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.Noninstalment">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="NoninstalmentDetails" type="s1:Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.NoninstalmentDetails" />
+          <s:element minOccurs="0" maxOccurs="1" name="NoninstalmentHistory" type="s1:ArrayOfCisCB4ProjectsGECIGReportsSchemaTypesNoninstalmentHistoryNonInstalmentRecord" />
+          <s:element minOccurs="0" maxOccurs="1" name="General" type="s1:Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.General" />
+          <s:element minOccurs="0" maxOccurs="1" name="CurrentStatus" type="s1:Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.CurrentStatus" />
+          <s:element minOccurs="0" maxOccurs="unbounded" name="PastStatus">
+            <s:complexType>
+              <s:complexContent mixed="false">
+                <s:extension base="s1:Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.PastStatus">
+                  <s:attribute name="key" type="s:string" />
+                </s:extension>
+              </s:complexContent>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" maxOccurs="1" name="AddContractStatus" type="s1:Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.AddContractStatus" />
+          <s:element minOccurs="0" maxOccurs="1" name="Dates" type="s1:Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.Dates" />
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Guarantee">
+            <s:complexType>
+              <s:complexContent mixed="false">
+                <s:extension base="s1:Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.Guarantee">
+                  <s:attribute name="key" type="s:string" />
+                </s:extension>
+              </s:complexContent>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" maxOccurs="1" name="Subjects" type="s1:Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.Subjects" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.NoninstalmentDetails">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="RepaymentNoninstalment" type="s1:Cis.CB4.Projects.GE.CIG.Schema.Types.RepaymentNoninstalment" />
+          <s:element minOccurs="0" maxOccurs="1" name="CreditLimitAmount" type="s1:Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.CreditLimitAmount" />
+          <s:element minOccurs="0" maxOccurs="1" name="UsedAmount" type="s1:Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.UsedAmount" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreditUsedInMonth" type="s1:Cis.CB4.Projects.GE.CIG.Schema.Types.CreditUsedInMonth" />
+          <s:element minOccurs="0" maxOccurs="1" name="Overdraft" type="s1:Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.Overdraft" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="Cis.CB4.Projects.GE.CIG.Schema.Types.RepaymentNoninstalment">
+        <s:restriction base="s:string">
+          <s:enumeration value="RepaymentNoninstalment.LineOfCreditOnCurrentAccount" />
+          <s:enumeration value="RepaymentNoninstalment.AllowedDebitOnCurrentAccount" />
+          <s:enumeration value="RepaymentNoninstalment.OtherNoninstalmentOperation" />
+        </s:restriction>
+      </s:simpleType>
+      <s:complexType name="Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.CreditLimitAmount">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="AmountValue" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Currency" type="s1:Cis.CB4.Projects.GE.CIG.Schema.Types.CurrencyOfContract" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.UsedAmount">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="AmountValue" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Currency" type="s1:Cis.CB4.Projects.GE.CIG.Schema.Types.CurrencyOfContract" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="Cis.CB4.Projects.GE.CIG.Schema.Types.CreditUsedInMonth">
+        <s:restriction base="s:string">
+          <s:enumeration value="CreditInCurrentMonth.NotUsed" />
+          <s:enumeration value="CreditInCurrentMonth.Used" />
+        </s:restriction>
+      </s:simpleType>
+      <s:complexType name="Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.Overdraft">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="AmountValue" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Currency" type="s1:Cis.CB4.Projects.GE.CIG.Schema.Types.CurrencyOfContract" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfCisCB4ProjectsGECIGReportsSchemaTypesNoninstalmentHistoryNonInstalmentRecord">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="NonInstalmentRecord">
+            <s:complexType>
+              <s:complexContent mixed="false">
+                <s:extension base="s1:Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.NonInstalmentRecord">
+                  <s:attribute name="key" type="s:string" />
+                </s:extension>
+              </s:complexContent>
+            </s:complexType>
+          </s:element>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.NonInstalmentRecord">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="CreditLimitAmount" type="s1:Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.CreditLimitAmount" />
+          <s:element minOccurs="0" maxOccurs="1" name="UsedAmount" type="s1:Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.UsedAmount" />
+          <s:element minOccurs="0" maxOccurs="1" name="Overdraft" type="s1:Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.Overdraft" />
+          <s:element minOccurs="0" maxOccurs="1" name="CreditUsedInMonth" type="s1:Cis.CB4.Projects.GE.CIG.Schema.Types.CreditUsedInMonth" />
+          <s:element minOccurs="0" maxOccurs="1" name="Year" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Month" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.CreditCard">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="CreditCardDetails" type="s1:Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.CreditCardDetails" />
+          <s:element minOccurs="0" maxOccurs="1" name="CreditCardHistory" type="s1:ArrayOfCisCB4ProjectsGECIGReportsSchemaTypesCreditCardHistoryCreditCardRecord" />
+          <s:element minOccurs="0" maxOccurs="1" name="General" type="s1:Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.General" />
+          <s:element minOccurs="0" maxOccurs="1" name="CurrentStatus" type="s1:Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.CurrentStatus" />
+          <s:element minOccurs="0" maxOccurs="unbounded" name="PastStatus">
+            <s:complexType>
+              <s:complexContent mixed="false">
+                <s:extension base="s1:Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.PastStatus">
+                  <s:attribute name="key" type="s:string" />
+                </s:extension>
+              </s:complexContent>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" maxOccurs="1" name="AddContractStatus" type="s1:Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.AddContractStatus" />
+          <s:element minOccurs="0" maxOccurs="1" name="Dates" type="s1:Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.Dates" />
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Guarantee">
+            <s:complexType>
+              <s:complexContent mixed="false">
+                <s:extension base="s1:Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.Guarantee">
+                  <s:attribute name="key" type="s:string" />
+                </s:extension>
+              </s:complexContent>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" maxOccurs="1" name="Subjects" type="s1:Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.Subjects" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.CreditCardDetails">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="RepaymentCreditCard" type="s1:Cis.CB4.Projects.GE.CIG.Schema.Types.RepaymentCreditCard" />
+          <s:element minOccurs="0" maxOccurs="1" name="TotalCreditAmount" type="s1:Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.TotalCreditAmount" />
+          <s:element minOccurs="0" maxOccurs="1" name="StandardInstalmentAmount" type="s1:Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.StandardInstalmentAmount" />
+          <s:element minOccurs="1" maxOccurs="1" name="PeriodicityOfPayments" type="s1:Cis.CB4.Projects.GE.CIG.Schema.Types.PeriodicityOfPayments" />
+          <s:element minOccurs="0" maxOccurs="1" name="MethodOfPayment" type="s1:Cis.CB4.Projects.GE.CIG.Schema.Types.MethodOfPayment" />
+          <s:element minOccurs="0" maxOccurs="1" name="UsagesInMonth" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="OverdueAmount" type="s1:Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.OverdueAmount" />
+          <s:element minOccurs="0" maxOccurs="1" name="OutstandingAmount" type="s1:Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.OutstandingAmount" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="Cis.CB4.Projects.GE.CIG.Schema.Types.RepaymentCreditCard">
+        <s:restriction base="s:string">
+          <s:enumeration value="RepaymentCreditCard.CreditCard" />
+          <s:enumeration value="RepaymentCreditCard.CreditCardWithRegularPaymentInstalments" />
+          <s:enumeration value="RepaymentCreditCard.CreditCardOverdrafts" />
+          <s:enumeration value="RepaymentCreditCard.RevolvingCredit" />
+          <s:enumeration value="RepaymentCreditCard.OtherCreditOperations" />
+        </s:restriction>
+      </s:simpleType>
+      <s:complexType name="ArrayOfCisCB4ProjectsGECIGReportsSchemaTypesCreditCardHistoryCreditCardRecord">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CreditCardRecord">
+            <s:complexType>
+              <s:complexContent mixed="false">
+                <s:extension base="s1:Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.CreditCardRecord">
+                  <s:attribute name="key" type="s:string" />
+                </s:extension>
+              </s:complexContent>
+            </s:complexType>
+          </s:element>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.CreditCardRecord">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="TotalCreditAmount" type="s1:Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.TotalCreditAmount" />
+          <s:element minOccurs="0" maxOccurs="1" name="UsagesInMonth" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="OverdueAmount" type="s1:Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.OverdueAmount" />
+          <s:element minOccurs="0" maxOccurs="1" name="OutstandingAmount" type="s1:Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.OutstandingAmount" />
+          <s:element minOccurs="0" maxOccurs="1" name="Year" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Month" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.InvoiceBill">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="InvoiceDetails" type="s1:Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.InvoiceDetails" />
+          <s:element minOccurs="0" maxOccurs="1" name="InvoiceHistory" type="s1:ArrayOfCisCB4ProjectsGECIGReportsSchemaTypesInvoiceHistoryInvoiceBillRecord" />
+          <s:element minOccurs="0" maxOccurs="1" name="General" type="s1:Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.General" />
+          <s:element minOccurs="0" maxOccurs="1" name="CurrentStatus" type="s1:Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.CurrentStatus" />
+          <s:element minOccurs="0" maxOccurs="unbounded" name="PastStatus">
+            <s:complexType>
+              <s:complexContent mixed="false">
+                <s:extension base="s1:Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.PastStatus">
+                  <s:attribute name="key" type="s:string" />
+                </s:extension>
+              </s:complexContent>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" maxOccurs="1" name="AddContractStatus" type="s1:Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.AddContractStatus" />
+          <s:element minOccurs="0" maxOccurs="1" name="Dates" type="s1:Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.Dates" />
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Guarantee">
+            <s:complexType>
+              <s:complexContent mixed="false">
+                <s:extension base="s1:Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.Guarantee">
+                  <s:attribute name="key" type="s:string" />
+                </s:extension>
+              </s:complexContent>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" maxOccurs="1" name="Subjects" type="s1:Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.Subjects" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.InvoiceDetails">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="RepaymentInvoiceBills" type="s1:Cis.CB4.Projects.GE.CIG.Schema.Types.RepaymentInvoiceBills" />
+          <s:element minOccurs="0" maxOccurs="1" name="TotalAmount" type="s1:Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.TotalAmount" />
+          <s:element minOccurs="0" maxOccurs="1" name="NotPaidAmount" type="s1:Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.NotPaidAmount" />
+          <s:element minOccurs="0" maxOccurs="1" name="InvoiceReason" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AdditionalInfo" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="Cis.CB4.Projects.GE.CIG.Schema.Types.RepaymentInvoiceBills">
+        <s:restriction base="s:string">
+          <s:enumeration value="RepaymentInvoiceBills.InvoiceForServices" />
+          <s:enumeration value="RepaymentInvoiceBills.InvoiceForGoods" />
+          <s:enumeration value="RepaymentInvoiceBills.Bill" />
+          <s:enumeration value="RepaymentInvoiceBills.OtherOneshotPaymentAgreement" />
+        </s:restriction>
+      </s:simpleType>
+      <s:complexType name="Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.TotalAmount">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="AmountValue" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Currency" type="s1:Cis.CB4.Projects.GE.CIG.Schema.Types.CurrencyOfContract" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.NotPaidAmount">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="AmountValue" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Currency" type="s1:Cis.CB4.Projects.GE.CIG.Schema.Types.CurrencyOfContract" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfCisCB4ProjectsGECIGReportsSchemaTypesInvoiceHistoryInvoiceBillRecord">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="InvoiceBillRecord">
+            <s:complexType>
+              <s:complexContent mixed="false">
+                <s:extension base="s1:Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.InvoiceBillRecord">
+                  <s:attribute name="key" type="s:string" />
+                </s:extension>
+              </s:complexContent>
+            </s:complexType>
+          </s:element>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.InvoiceBillRecord">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="TotalAmount" type="s1:Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.TotalAmount" />
+          <s:element minOccurs="0" maxOccurs="1" name="NotPaidAmount" type="s1:Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.NotPaidAmount" />
+          <s:element minOccurs="0" maxOccurs="1" name="Year" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Month" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.CaseDebt">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ClaimOwner" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ClaimOwnerName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RoleOfClient" type="s1:Cis.CB4.Projects.GE.CIG.Schema.Types.RoleOfClient" />
+          <s:element minOccurs="0" maxOccurs="1" name="Creditor" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CurrencyOfContract" type="s1:Cis.CB4.Projects.GE.CIG.Schema.Types.CurrencyOfContract" />
+          <s:element minOccurs="0" maxOccurs="1" name="PaidUpdate" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="CaseFailindDate" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="CaseType" type="s1:Cis.CB4.Projects.GE.CIG.Schema.Types.CaseType" />
+          <s:element minOccurs="0" maxOccurs="1" name="DefaultDate" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="CaseRulingDate" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="ClaimAmount" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="TotalCaseAmount" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="CurrentBalance" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="Old.OverdueAmount" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="AccruedInterest" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="AccruedPenalties" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="CaseNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Old.Guarantee">
+            <s:complexType>
+              <s:complexContent mixed="false">
+                <s:extension base="s1:Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.Old.Guarantee">
+                  <s:attribute name="key" type="s:string" />
+                </s:extension>
+              </s:complexContent>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" maxOccurs="1" name="RecordLock" type="s1:Cis.CB4.Projects.GE.CIG.Schema.Types.Lookups.RecordLock" />
+          <s:element minOccurs="0" maxOccurs="1" name="Subjects" type="s1:Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.Subjects" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="Cis.CB4.Projects.GE.CIG.Schema.Types.CaseType">
+        <s:restriction base="s:string">
+          <s:enumeration value="CaseType.DebtRepayment" />
+          <s:enumeration value="CaseType.UtilityDebtRepayment" />
+          <s:enumeration value="CaseType.OrderToPay" />
+          <s:enumeration value="CaseType.ForcedSaleOfCollateral" />
+          <s:enumeration value="CaseType.RedressOfWrong" />
+          <s:enumeration value="CaseType.Bankruptcy" />
+          <s:enumeration value="CaseType.DefaultedDebt" />
+          <s:enumeration value="CaseType.TelecommunicationDebt" />
+          <s:enumeration value="CaseType.Positive" />
+        </s:restriction>
+      </s:simpleType>
+      <s:complexType name="Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.Old.Guarantee">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Old.GuaranteeType" type="s1:Cis.CB4.Projects.GE.CIG.Schema.Types.Old.GuaranteeType" />
+          <s:element minOccurs="0" maxOccurs="1" name="Old.GuaranteeAmount" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="GuaranteOwner" type="s1:Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.GuaranteOwner" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="Cis.CB4.Projects.GE.CIG.Schema.Types.Old.GuaranteeType">
+        <s:restriction base="s:string">
+          <s:enumeration value="GuaranteeTypeOld.AVT" />
+          <s:enumeration value="GuaranteeTypeOld.CLN" />
+          <s:enumeration value="GuaranteeTypeOld.DEP" />
+          <s:enumeration value="GuaranteeTypeOld.EQP" />
+          <s:enumeration value="GuaranteeTypeOld.GLD" />
+          <s:enumeration value="GuaranteeTypeOld.GUR" />
+          <s:enumeration value="GuaranteeTypeOld.OTH" />
+          <s:enumeration value="GuaranteeTypeOld.RLE" />
+          <s:enumeration value="GuaranteeTypeOld.SEC" />
+          <s:enumeration value="GuaranteeTypeOld.STC" />
+          <s:enumeration value="GuaranteeTypeOld.STG" />
+        </s:restriction>
+      </s:simpleType>
+      <s:complexType name="Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.GuaranteOwner">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="IndividualOwner" type="s1:Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.IndividualOwner" />
+          <s:element minOccurs="0" maxOccurs="1" name="CompanyOwner" type="s1:Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.CompanyOwner" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.IndividualOwner">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Old.Firstname" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Old.Surname" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NationalID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AddressNative" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Old.Country" type="s1:Cis.CB4.Projects.GE.CIG.Schema.Types.Old.Country" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="Cis.CB4.Projects.GE.CIG.Schema.Types.Old.Country">
+        <s:restriction base="s:string">
+          <s:enumeration value="CountriesOld.Afghanistan" />
+          <s:enumeration value="CountriesOld.Albania" />
+          <s:enumeration value="CountriesOld.Algeria" />
+          <s:enumeration value="CountriesOld.Andorra" />
+          <s:enumeration value="CountriesOld.Angola" />
+          <s:enumeration value="CountriesOld.AntiguaAndBarbuda" />
+          <s:enumeration value="CountriesOld.Argentina" />
+          <s:enumeration value="CountriesOld.Armenia" />
+          <s:enumeration value="CountriesOld.Australia" />
+          <s:enumeration value="CountriesOld.Austria" />
+          <s:enumeration value="CountriesOld.Azerbaijan" />
+          <s:enumeration value="CountriesOld.Bahamas" />
+          <s:enumeration value="CountriesOld.Bahrain" />
+          <s:enumeration value="CountriesOld.Bangladesh" />
+          <s:enumeration value="CountriesOld.Barbados" />
+          <s:enumeration value="CountriesOld.Belarus" />
+          <s:enumeration value="CountriesOld.Belgium" />
+          <s:enumeration value="CountriesOld.Belize" />
+          <s:enumeration value="CountriesOld.Benin" />
+          <s:enumeration value="CountriesOld.Bhutan" />
+          <s:enumeration value="CountriesOld.Bolivia" />
+          <s:enumeration value="CountriesOld.BosniaHerzegovina" />
+          <s:enumeration value="CountriesOld.Botswana" />
+          <s:enumeration value="CountriesOld.Brazil" />
+          <s:enumeration value="CountriesOld.Brunei" />
+          <s:enumeration value="CountriesOld.Bulgaria" />
+          <s:enumeration value="CountriesOld.BurkinaFaso" />
+          <s:enumeration value="CountriesOld.Burundi" />
+          <s:enumeration value="CountriesOld.Cambodia" />
+          <s:enumeration value="CountriesOld.Cameroon" />
+          <s:enumeration value="CountriesOld.Canada" />
+          <s:enumeration value="CountriesOld.CentralAfricanRepublic" />
+          <s:enumeration value="CountriesOld.Colombia" />
+          <s:enumeration value="CountriesOld.ComoroIslands" />
+          <s:enumeration value="CountriesOld.CostaRica" />
+          <s:enumeration value="CountriesOld.CotedIvoire" />
+          <s:enumeration value="CountriesOld.Croatia" />
+          <s:enumeration value="CountriesOld.Cuba" />
+          <s:enumeration value="CountriesOld.Cyprus" />
+          <s:enumeration value="CountriesOld.CzechRepublic" />
+          <s:enumeration value="CountriesOld.DemocraticRepublicOfTheCongo" />
+          <s:enumeration value="CountriesOld.Denmark" />
+          <s:enumeration value="CountriesOld.Djibouti" />
+          <s:enumeration value="CountriesOld.Dominica" />
+          <s:enumeration value="CountriesOld.DominicanRepublic" />
+          <s:enumeration value="CountriesOld.EastTimor" />
+          <s:enumeration value="CountriesOld.Ecuador" />
+          <s:enumeration value="CountriesOld.Egypt" />
+          <s:enumeration value="CountriesOld.ElSalvador" />
+          <s:enumeration value="CountriesOld.EquatorialGuinea" />
+          <s:enumeration value="CountriesOld.Eritrea" />
+          <s:enumeration value="CountriesOld.Estonia" />
+          <s:enumeration value="CountriesOld.Ethiopia" />
+          <s:enumeration value="CountriesOld.FederatedStatesOfMicronesia" />
+          <s:enumeration value="CountriesOld.Fiji" />
+          <s:enumeration value="CountriesOld.Finland" />
+          <s:enumeration value="CountriesOld.France" />
+          <s:enumeration value="CountriesOld.FrenchGuiana" />
+          <s:enumeration value="CountriesOld.Gabon" />
+          <s:enumeration value="CountriesOld.Georgia" />
+          <s:enumeration value="CountriesOld.Germany" />
+          <s:enumeration value="CountriesOld.Ghana" />
+          <s:enumeration value="CountriesOld.Greece" />
+          <s:enumeration value="CountriesOld.Grenada" />
+          <s:enumeration value="CountriesOld.Guatemala" />
+          <s:enumeration value="CountriesOld.Guinea" />
+          <s:enumeration value="CountriesOld.GuineaBissau" />
+          <s:enumeration value="CountriesOld.Guyana" />
+          <s:enumeration value="CountriesOld.Haiti" />
+          <s:enumeration value="CountriesOld.Honduras" />
+          <s:enumeration value="CountriesOld.Hungary" />
+          <s:enumeration value="CountriesOld.Chad" />
+          <s:enumeration value="CountriesOld.Chile" />
+          <s:enumeration value="CountriesOld.ChinaPeoplesRepublic" />
+          <s:enumeration value="CountriesOld.ChinaRepublicOfTaiwan" />
+          <s:enumeration value="CountriesOld.Iceland" />
+          <s:enumeration value="CountriesOld.India" />
+          <s:enumeration value="CountriesOld.Indonesia" />
+          <s:enumeration value="CountriesOld.Iran" />
+          <s:enumeration value="CountriesOld.Iraq" />
+          <s:enumeration value="CountriesOld.Israel" />
+          <s:enumeration value="CountriesOld.Italy" />
+          <s:enumeration value="CountriesOld.Jamaica" />
+          <s:enumeration value="CountriesOld.Japan" />
+          <s:enumeration value="CountriesOld.Jordan" />
+          <s:enumeration value="CountriesOld.Kazakhstan" />
+          <s:enumeration value="CountriesOld.Kenya" />
+          <s:enumeration value="CountriesOld.Kiribati" />
+          <s:enumeration value="CountriesOld.Kuwait" />
+          <s:enumeration value="CountriesOld.Kyrgyzstan" />
+          <s:enumeration value="CountriesOld.Laos" />
+          <s:enumeration value="CountriesOld.Latvia" />
+          <s:enumeration value="CountriesOld.Lebanon" />
+          <s:enumeration value="CountriesOld.Lesotho" />
+          <s:enumeration value="CountriesOld.Liberia" />
+          <s:enumeration value="CountriesOld.Libya" />
+          <s:enumeration value="CountriesOld.Liechtenstein" />
+          <s:enumeration value="CountriesOld.Lithuania" />
+          <s:enumeration value="CountriesOld.Luxembourg" />
+          <s:enumeration value="CountriesOld.Madagascar" />
+          <s:enumeration value="CountriesOld.Malawi" />
+          <s:enumeration value="CountriesOld.Malaysia" />
+          <s:enumeration value="CountriesOld.Maldives" />
+          <s:enumeration value="CountriesOld.Mali" />
+          <s:enumeration value="CountriesOld.Malta" />
+          <s:enumeration value="CountriesOld.MarshallIslands" />
+          <s:enumeration value="CountriesOld.Mauritania" />
+          <s:enumeration value="CountriesOld.Mauritius" />
+          <s:enumeration value="CountriesOld.Mexico" />
+          <s:enumeration value="CountriesOld.Moldova" />
+          <s:enumeration value="CountriesOld.Monaco" />
+          <s:enumeration value="CountriesOld.Mongolia" />
+          <s:enumeration value="CountriesOld.Montenegro" />
+          <s:enumeration value="CountriesOld.Morocco" />
+          <s:enumeration value="CountriesOld.Mozambique" />
+          <s:enumeration value="CountriesOld.Myanmar" />
+          <s:enumeration value="CountriesOld.Namibia" />
+          <s:enumeration value="CountriesOld.Nauru" />
+          <s:enumeration value="CountriesOld.Nepal" />
+          <s:enumeration value="CountriesOld.Netherlands" />
+          <s:enumeration value="CountriesOld.NewZealand" />
+          <s:enumeration value="CountriesOld.Nicaragua" />
+          <s:enumeration value="CountriesOld.Niger" />
+          <s:enumeration value="CountriesOld.Nigeria" />
+          <s:enumeration value="CountriesOld.NorthKorea" />
+          <s:enumeration value="CountriesOld.Norway" />
+          <s:enumeration value="CountriesOld.Oman" />
+          <s:enumeration value="CountriesOld.Pakistan" />
+          <s:enumeration value="CountriesOld.Palau" />
+          <s:enumeration value="CountriesOld.Panama" />
+          <s:enumeration value="CountriesOld.PapuaNewGuinea" />
+          <s:enumeration value="CountriesOld.Paraguay" />
+          <s:enumeration value="CountriesOld.Peru" />
+          <s:enumeration value="CountriesOld.Philippines" />
+          <s:enumeration value="CountriesOld.Poland" />
+          <s:enumeration value="CountriesOld.Portugal" />
+          <s:enumeration value="CountriesOld.PuertoRico" />
+          <s:enumeration value="CountriesOld.Qatar" />
+          <s:enumeration value="CountriesOld.RepublicOfIreland" />
+          <s:enumeration value="CountriesOld.RepublicOfMacedonia" />
+          <s:enumeration value="CountriesOld.RepublicOfTheCongo" />
+          <s:enumeration value="CountriesOld.RoastedTurkey" />
+          <s:enumeration value="CountriesOld.Romania" />
+          <s:enumeration value="CountriesOld.Russia" />
+          <s:enumeration value="CountriesOld.Rwanda" />
+          <s:enumeration value="CountriesOld.SaintKittsAndNevis" />
+          <s:enumeration value="CountriesOld.SaintLucia" />
+          <s:enumeration value="CountriesOld.SaintVincentAndTheGrenadines" />
+          <s:enumeration value="CountriesOld.Samoa" />
+          <s:enumeration value="CountriesOld.SanMarino" />
+          <s:enumeration value="CountriesOld.SaoTomeAndPrincipe" />
+          <s:enumeration value="CountriesOld.SaudiArabia" />
+          <s:enumeration value="CountriesOld.Senegal" />
+          <s:enumeration value="CountriesOld.Serbia" />
+          <s:enumeration value="CountriesOld.Seychelles" />
+          <s:enumeration value="CountriesOld.SierraLeone" />
+          <s:enumeration value="CountriesOld.Singapore" />
+          <s:enumeration value="CountriesOld.Slovakia" />
+          <s:enumeration value="CountriesOld.Slovenia" />
+          <s:enumeration value="CountriesOld.SolomonIslands" />
+          <s:enumeration value="CountriesOld.Somalia" />
+          <s:enumeration value="CountriesOld.SouthAfrica" />
+          <s:enumeration value="CountriesOld.SouthKorea" />
+          <s:enumeration value="CountriesOld.Spain" />
+          <s:enumeration value="CountriesOld.SriLanka" />
+          <s:enumeration value="CountriesOld.Sudan" />
+          <s:enumeration value="CountriesOld.Suriname" />
+          <s:enumeration value="CountriesOld.Swaziland" />
+          <s:enumeration value="CountriesOld.Sweden" />
+          <s:enumeration value="CountriesOld.Switzerland" />
+          <s:enumeration value="CountriesOld.Syria" />
+          <s:enumeration value="CountriesOld.Tajikistan" />
+          <s:enumeration value="CountriesOld.Tanzania" />
+          <s:enumeration value="CountriesOld.Thailand" />
+          <s:enumeration value="CountriesOld.TheGambia" />
+          <s:enumeration value="CountriesOld.Togo" />
+          <s:enumeration value="CountriesOld.Tonga" />
+          <s:enumeration value="CountriesOld.TrinidadAndTobago" />
+          <s:enumeration value="CountriesOld.Tunisia" />
+          <s:enumeration value="CountriesOld.Turkey" />
+          <s:enumeration value="CountriesOld.Turkmenistan" />
+          <s:enumeration value="CountriesOld.Tuvalu" />
+          <s:enumeration value="CountriesOld.Uganda" />
+          <s:enumeration value="CountriesOld.Ukraine" />
+          <s:enumeration value="CountriesOld.UnitedArabEmirates" />
+          <s:enumeration value="CountriesOld.UnitedKingdom" />
+          <s:enumeration value="CountriesOld.UnitedStates" />
+          <s:enumeration value="CountriesOld.Uruguay" />
+          <s:enumeration value="CountriesOld.Uzbekistan" />
+          <s:enumeration value="CountriesOld.Vanuatu" />
+          <s:enumeration value="CountriesOld.VaticanCity" />
+          <s:enumeration value="CountriesOld.Venezuela" />
+          <s:enumeration value="CountriesOld.Vietnam" />
+          <s:enumeration value="CountriesOld.WesternSahara" />
+          <s:enumeration value="CountriesOld.Yemen" />
+          <s:enumeration value="CountriesOld.Zambia" />
+          <s:enumeration value="CountriesOld.Zimbabwe" />
+        </s:restriction>
+      </s:simpleType>
+      <s:complexType name="Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.CompanyOwner">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Old.TradeName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TaxNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AddressNative" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Old.Country" type="s1:Cis.CB4.Projects.GE.CIG.Schema.Types.Old.Country" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.ExistingContractsGuarantor">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Instalment">
+            <s:complexType>
+              <s:complexContent mixed="false">
+                <s:extension base="s1:Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.Instalment">
+                  <s:attribute name="key" type="s:string" />
+                </s:extension>
+              </s:complexContent>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Noninstalment">
+            <s:complexType>
+              <s:complexContent mixed="false">
+                <s:extension base="s1:Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.Noninstalment">
+                  <s:attribute name="key" type="s:string" />
+                </s:extension>
+              </s:complexContent>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CreditCard">
+            <s:complexType>
+              <s:complexContent mixed="false">
+                <s:extension base="s1:Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.CreditCard">
+                  <s:attribute name="key" type="s:string" />
+                </s:extension>
+              </s:complexContent>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="InvoiceBill">
+            <s:complexType>
+              <s:complexContent mixed="false">
+                <s:extension base="s1:Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.InvoiceBill">
+                  <s:attribute name="key" type="s:string" />
+                </s:extension>
+              </s:complexContent>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CaseDebt">
+            <s:complexType>
+              <s:complexContent mixed="false">
+                <s:extension base="s1:Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.CaseDebt">
+                  <s:attribute name="key" type="s:string" />
+                </s:extension>
+              </s:complexContent>
+            </s:complexType>
+          </s:element>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.TerminatedContractsDebtor">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Instalment">
+            <s:complexType>
+              <s:complexContent mixed="false">
+                <s:extension base="s1:Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.Instalment">
+                  <s:attribute name="key" type="s:string" />
+                </s:extension>
+              </s:complexContent>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Noninstalment">
+            <s:complexType>
+              <s:complexContent mixed="false">
+                <s:extension base="s1:Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.Noninstalment">
+                  <s:attribute name="key" type="s:string" />
+                </s:extension>
+              </s:complexContent>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CreditCard">
+            <s:complexType>
+              <s:complexContent mixed="false">
+                <s:extension base="s1:Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.CreditCard">
+                  <s:attribute name="key" type="s:string" />
+                </s:extension>
+              </s:complexContent>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="InvoiceBill">
+            <s:complexType>
+              <s:complexContent mixed="false">
+                <s:extension base="s1:Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.InvoiceBill">
+                  <s:attribute name="key" type="s:string" />
+                </s:extension>
+              </s:complexContent>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CaseDebt">
+            <s:complexType>
+              <s:complexContent mixed="false">
+                <s:extension base="s1:Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.CaseDebt">
+                  <s:attribute name="key" type="s:string" />
+                </s:extension>
+              </s:complexContent>
+            </s:complexType>
+          </s:element>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.TerminatedContractsGuarantor">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Instalment">
+            <s:complexType>
+              <s:complexContent mixed="false">
+                <s:extension base="s1:Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.Instalment">
+                  <s:attribute name="key" type="s:string" />
+                </s:extension>
+              </s:complexContent>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Noninstalment">
+            <s:complexType>
+              <s:complexContent mixed="false">
+                <s:extension base="s1:Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.Noninstalment">
+                  <s:attribute name="key" type="s:string" />
+                </s:extension>
+              </s:complexContent>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CreditCard">
+            <s:complexType>
+              <s:complexContent mixed="false">
+                <s:extension base="s1:Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.CreditCard">
+                  <s:attribute name="key" type="s:string" />
+                </s:extension>
+              </s:complexContent>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="InvoiceBill">
+            <s:complexType>
+              <s:complexContent mixed="false">
+                <s:extension base="s1:Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.InvoiceBill">
+                  <s:attribute name="key" type="s:string" />
+                </s:extension>
+              </s:complexContent>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CaseDebt">
+            <s:complexType>
+              <s:complexContent mixed="false">
+                <s:extension base="s1:Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.CaseDebt">
+                  <s:attribute name="key" type="s:string" />
+                </s:extension>
+              </s:complexContent>
+            </s:complexType>
+          </s:element>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.Inquiries">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Last1Month" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Last3Months" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Last6Months" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Last12Months" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="Cis.CB4.Projects.GE.CIG.Reports.Schema.Types.ReportStatus">
+        <s:restriction base="s:string">
+          <s:enumeration value="ReportStatus.DataNotFound" />
+          <s:enumeration value="ReportStatus.SubjectBlocked" />
+          <s:enumeration value="ReportStatus.ContractBlocked" />
+          <s:enumeration value="ReportStatus.Ok" />
+          <s:enumeration value="ReportStatus.Unavailable" />
+          <s:enumeration value="ReportStatus.SubjectAndContractBlocked" />
+        </s:restriction>
+      </s:simpleType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetClientInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetClientInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetClientInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetClientInfoResponse" />
+  </wsdl:message>
+  <wsdl:portType name="CreditInfoDataSoap">
+    <wsdl:operation name="GetClientInfo">
+      <wsdl:input message="tns:GetClientInfoSoapIn" />
+      <wsdl:output message="tns:GetClientInfoSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CreditInfoDataSoap" type="tns:CreditInfoDataSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetClientInfo">
+      <soap:operation soapAction="http://tempuri.org/GetClientInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="CreditInfoDataSoap12" type="tns:CreditInfoDataSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetClientInfo">
+      <soap12:operation soapAction="http://tempuri.org/GetClientInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CreditInfoData">
+    <wsdl:port name="CreditInfoDataSoap" binding="tns:CreditInfoDataSoap">
+      <soap:address location="http://intranet.bank/WebServices/CreditInfoWS/CreditInfoData.asmx" />
+    </wsdl:port>
+    <wsdl:port name="CreditInfoDataSoap12" binding="tns:CreditInfoDataSoap12">
+      <soap12:address location="http://intranet.bank/WebServices/CreditInfoWS/CreditInfoData.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

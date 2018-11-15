@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DiscoveryClientResultsFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Results>
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="http://intranet.bank/WebServices/WcfCRAService/CRAService.svc?wsdl" filename="CRAService.wsdl" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://intranet.bank/WebServices/WcfCRAService/CRAService.svc?xsd=xsd2" filename="CRAService.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://intranet.bank/WebServices/WcfCRAService/CRAService.svc?xsd=xsd1" filename="CRAService0.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://intranet.bank/WebServices/WcfCRAService/CRAService.svc?xsd=xsd0" filename="CRAService1.xsd" />
+  </Results>
+</DiscoveryClientResultsFile>

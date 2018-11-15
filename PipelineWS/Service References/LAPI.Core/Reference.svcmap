@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="6efd4e1d-c676-4ba5-8314-aae7e4762bc7" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>true</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://abs.vtb.com.ge/lapi/LoansService.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://abs.vtb.com.ge/lapi/InsurancesService.svc" Protocol="http" SourceId="2" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="LoansService8.xsd" MetadataType="Schema" ID="6b3ac6eb-2453-4722-8332-c8939a211488" SourceId="1" SourceUrl="http://abs.vtb.com.ge/lapi/LoansService.svc?xsd=xsd6" />
+    <MetadataFile FileName="LoansService2.wsdl" MetadataType="Wsdl" ID="a4e32982-51a7-401b-bd77-7fb8a943ee40" SourceId="1" SourceUrl="http://abs.vtb.com.ge/lapi/LoansService.svc?wsdl" />
+    <MetadataFile FileName="LoansService81.xsd" MetadataType="Schema" ID="73c43d91-6fc6-4c40-9cad-c0c7c941fce2" SourceId="1" SourceUrl="http://abs.vtb.com.ge/lapi/LoansService.svc?xsd=xsd4" />
+    <MetadataFile FileName="LoansService21.wsdl" MetadataType="Wsdl" ID="3fa28776-ad19-44de-bbed-e0710ba9bb8e" SourceId="1" SourceUrl="http://abs.vtb.com.ge/lapi/LoansService.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="LoansService82.xsd" MetadataType="Schema" ID="3cf468a3-102d-4dfa-aca5-ae51d5153ee6" SourceId="1" SourceUrl="http://abs.vtb.com.ge/lapi/LoansService.svc?xsd=xsd7" />
+    <MetadataFile FileName="LoansService1.disco" MetadataType="Disco" ID="ad700c02-1532-4c70-aa16-59ced1accbdf" SourceId="1" SourceUrl="http://abs.vtb.com.ge/lapi/LoansService.svc?disco" />
+    <MetadataFile FileName="LoansService83.xsd" MetadataType="Schema" ID="5a7d3b57-2188-4a75-adf7-4599625b960c" SourceId="1" SourceUrl="http://abs.vtb.com.ge/lapi/LoansService.svc?xsd=xsd0" />
+    <MetadataFile FileName="LoansService84.xsd" MetadataType="Schema" ID="e760a556-5e5f-4f9a-b93a-9637805c8f9e" SourceId="1" SourceUrl="http://abs.vtb.com.ge/lapi/LoansService.svc?xsd=xsd1" />
+    <MetadataFile FileName="LoansService85.xsd" MetadataType="Schema" ID="f543bfb1-01e4-4109-9ee6-3cb5a64c090f" SourceId="1" SourceUrl="http://abs.vtb.com.ge/lapi/LoansService.svc?xsd=xsd5" />
+    <MetadataFile FileName="LoansService86.xsd" MetadataType="Schema" ID="6d492f74-e244-4e41-bae8-94fff699753a" SourceId="1" SourceUrl="http://abs.vtb.com.ge/lapi/LoansService.svc?xsd=xsd2" />
+    <MetadataFile FileName="LoansService87.xsd" MetadataType="Schema" ID="1c42d7e6-b445-47ea-9e00-7568e6dba137" SourceId="1" SourceUrl="http://abs.vtb.com.ge/lapi/LoansService.svc?xsd=xsd3" />
+    <MetadataFile FileName="InsurancesService7.xsd" MetadataType="Schema" ID="9990faca-b687-4f12-87ef-619bc2a0468d" SourceId="2" SourceUrl="http://abs.vtb.com.ge/lapi/InsurancesService.svc?xsd=xsd4" />
+    <MetadataFile FileName="InsurancesService2.wsdl" MetadataType="Wsdl" ID="a1887886-3d3e-478b-8763-d74d59a797b2" SourceId="2" SourceUrl="http://abs.vtb.com.ge/lapi/InsurancesService.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="InsurancesService1.disco" MetadataType="Disco" ID="4f2fbc91-8989-492f-9fbb-c341d39443fb" SourceId="2" SourceUrl="http://abs.vtb.com.ge/lapi/InsurancesService.svc?disco" />
+    <MetadataFile FileName="InsurancesService71.xsd" MetadataType="Schema" ID="d6569374-62d4-4252-982a-d588009c1c4a" SourceId="2" SourceUrl="http://abs.vtb.com.ge/lapi/InsurancesService.svc?xsd=xsd5" />
+    <MetadataFile FileName="InsurancesService21.wsdl" MetadataType="Wsdl" ID="d8403eeb-bdc9-4b95-adfb-0efec7973d78" SourceId="2" SourceUrl="http://abs.vtb.com.ge/lapi/InsurancesService.svc?wsdl" />
+    <MetadataFile FileName="InsurancesService72.xsd" MetadataType="Schema" ID="87b665bb-c9ac-40ea-ad95-4109926c6fe9" SourceId="2" SourceUrl="http://abs.vtb.com.ge/lapi/InsurancesService.svc?xsd=xsd2" />
+    <MetadataFile FileName="InsurancesService73.xsd" MetadataType="Schema" ID="79a6f83f-176d-4086-99a1-80449e7c4551" SourceId="2" SourceUrl="http://abs.vtb.com.ge/lapi/InsurancesService.svc?xsd=xsd3" />
+    <MetadataFile FileName="InsurancesService74.xsd" MetadataType="Schema" ID="711a860a-a13e-4baa-a981-3dd810988142" SourceId="2" SourceUrl="http://abs.vtb.com.ge/lapi/InsurancesService.svc?xsd=xsd0" />
+    <MetadataFile FileName="InsurancesService75.xsd" MetadataType="Schema" ID="f59e2ec2-2bd6-4148-9628-68606f28cc89" SourceId="2" SourceUrl="http://abs.vtb.com.ge/lapi/InsurancesService.svc?xsd=xsd1" />
+    <MetadataFile FileName="InsurancesService76.xsd" MetadataType="Schema" ID="e09376fd-42f1-4f77-9f61-0009f5725a17" SourceId="2" SourceUrl="http://abs.vtb.com.ge/lapi/InsurancesService.svc?xsd=xsd6" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

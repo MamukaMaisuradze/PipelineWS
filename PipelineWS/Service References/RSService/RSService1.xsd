@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://outproxy.vtb.com.ge/test-rs/RSService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/rs" />
+  <xs:element name="GetPayerSmsCode">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="saidCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="fullname" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="mobile" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPayerSmsCodeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/rs" minOccurs="0" name="GetPayerSmsCodeResult" nillable="true" type="q1:RSError" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPayerInfoData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="saidCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="smsCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="applicationId" type="xs:int" />
+        <xs:element minOccurs="0" name="userId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPayerInfoDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/rs" minOccurs="0" name="GetPayerInfoDataResult" nillable="true" type="q2:PayerInfoData" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPayerInfoDataLocal">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="saidCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="applicationId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPayerInfoDataLocalResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/rs" minOccurs="0" name="GetPayerInfoDataLocalResult" nillable="true" type="q3:PayerInfoData" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMedian">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="saidCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="applicationId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMedianResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/rs" minOccurs="0" name="GetMedianResult" nillable="true" type="q4:Median" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
